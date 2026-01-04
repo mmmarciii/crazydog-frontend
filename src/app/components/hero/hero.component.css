@@ -1,0 +1,15 @@
+.hero-1 {
+    height: 100vh;
+    height: 100svh;
+    background-image: url('/images/products/bg-9-16.jpg');
+    background-size: 100%;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+.hero-text {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.9px);
+    border-radius: 48px;
+}

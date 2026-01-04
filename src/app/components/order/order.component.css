@@ -1,0 +1,16 @@
+.hero-2 {
+    height: 100vh;
+    height: 100svh;
+    background-size: 100%;
+    background: linear-gradient(rgba(218, 10, 107, 0.2), rgba(218, 10, 107, 0.1)), url('/images/products/star-wars.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
+
+.hero-text {
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.9px);
+    border-radius: 48px;
+}

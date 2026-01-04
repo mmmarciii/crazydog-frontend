@@ -1,0 +1,28 @@
+<section id="howwework" class="howwework d-flex align-items-center justify-content-center py-5">
+    <div class="container">
+        <div class="row col-12 g-3 mt-5 px-5 py-4">
+            <h1 class="display-3">
+                The process<br>
+                <small class="display-5 text-muted">How magic happens</small>
+            </h1>
+        </div>
+    @for (item of processItems; track item.name) {
+        <div class="row">
+            <div class="col-md-6 gx-5 mb-4" [class.order-md-last]="item.order === 'imageLast'">
+                <div class="bg-image">
+                    <img [src]="item.link" class="img-fluid" />
+                    <a href="#!">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-6 gx-5 mb-4 d-flex align-items-center" [class.order-md-first]="item.order === 'imageLast'"> 
+                <div class="container">
+                <h4><strong>{{ item.name }}</strong></h4>
+                        {{ item.desc }}
+                </div>
+            </div>
+        </div>
+    }
+    </div>
+</section>

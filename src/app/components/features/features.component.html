@@ -1,0 +1,23 @@
+<section id="products" class="products d-flex align-items-center justify-content-center py-5">
+    <div class="container">
+        <div class="row row-cols-1 g-3 mt-5 px-5 py-4">
+            <h1 class="display-3">
+                Our Products<br>
+                <small class="display-5 text-muted">made with passion</small>
+            </h1>
+            
+        </div>
+        <div class="row row-cols-1 row-cols-md-3 g-3 px-5 py-4">
+            @for (item of productItems; track item.name) {
+            <div class="col-md-4">
+                <div class="card shadow-sm mx-3 my-3">
+                    <img [src]="item.link" class="card-img-top" [alt]="item.name">
+                    <div class="card-body">
+                        <p class="card-text">{{ item.desc }}</p>
+                    </div>
+                </div>
+            </div>
+            }            
+        </div>
+    </div>
+</section>

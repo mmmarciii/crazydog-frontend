@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --primary-bg-color: #ffffff;
+    --primary-lila: rgb(218, 10, 107);
+    --primary-yellow: #f7b231;
+    --primary-orange: oklch(73.543% 0.1725 58.364);
+    --primary-blue: #00a7b7;
+    --primary-black: #010101;
+}
+
+body {
+    background-color: var(--primary-bg-color);
+}
+
+a{
+    text-decoration: none;
+}

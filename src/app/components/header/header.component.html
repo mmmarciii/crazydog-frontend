@@ -1,0 +1,21 @@
+    <header class="justify-content-center border-bottom">
+            <nav class="navbar navbar-expand-md fixed-top ps-3 pe-5">
+                <div class="container-fluid">
+                    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <a class="navbar-brand navlogo" href="#">
+                        <img src="images/logo2.png" alt="Crazy Dog Logo">
+                    </a>
+                    <div class="collapse navbar-collapse py-3" id="navbarNav">
+                        <ul class="nav navbar-nav ms-auto fs-5 fw-light">
+                                @for (item of menuItems; track item.name) {
+                                    <li class="nav-item">
+                                        <a class="nav-link" [href]="item.link" [class.active]="item.name === 'Home'">{{ item.name }}</a>
+                                    </li>
+                                }
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+    </header>

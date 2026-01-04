@@ -1,0 +1,30 @@
+<section id="instafeed" class="d-flex align-items-center justify-content-center min-vh-100">
+    <div class="row">
+        
+        @for (item of instaItems; track item.id){
+            <div class="col-sm m-3 post-card">
+                <div class="post-header">
+                    <img src="images/logo.png" alt="Profile" class="profile-img">
+                    <div class="ms-3">
+                    <strong>Crazy Dog Customs</strong>
+                    <br>
+                    <small class="text-muted">5 min ago</small>
+                    </div>
+                </div>
+                <img [src]="item.link" alt="Post Image" class="post-img">
+                <div class="post-actions p-3">
+                    <button><span class="btn-1"><i class="bi bi-heart"></i> Like</span></button>
+                    <button><span class="btn-1"><i class="bi bi-chat"></i> Comment</span></button>
+                    <button><span class="btn-1"><i class="bi bi-share"></i> Share</span></button>
+                </div>
+                <div class="comment-section">
+                    <strong>user12</strong> Loving the vibes here!
+                    <br>
+                    <small class="text-muted">View all 10 comments</small>
+                </div>
+                <!--<input type="text" class="comment-input" placeholder="Add a comment...">-->
+            </div>
+        }
+
+    </div>
+</section>
