@@ -7,18 +7,24 @@
             </h1>      
         </div>
         <div class="row px-5 g-3 mb-5">
-            <form>
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
                 <div class="form-group mt-5 mb-4">
-                    <input type="text" class="form-control form-control-lg" id="nameInput" placeholder="Name" onfocus="this.placeholder = ''"onblur="this.placeholder = 'Name'">
+                    <input type="text" class="form-control form-control-lg" id="nameInput" placeholder="Name" onfocus="this.placeholder = ''"onblur="this.placeholder = 'Name'" formControlName="name">
                 </div>
                 <div class="form-group mt-5 mb-4">
-                    <input type="email" class="form-control form-control-lg" id="emailInput" aria-describedby="emailHelp" placeholder="Email" onfocus="this.placeholder = ''"onblur="this.placeholder = 'Email'">
+                    <input type="email" class="form-control form-control-lg" id="emailInput" aria-describedby="emailHelp" placeholder="Email" onfocus="this.placeholder = ''"onblur="this.placeholder = 'Email'" formControlName="email">
+                    <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="text-danger ms-2">
+                        <small>Please enter a valid email address.</small>
+                    </div>      
                 </div>
                 <div class="form-group mt-5 mb-4">
-                    <textarea class="form-control form-control-lg" id="textareaInput" placeholder="Message" onfocus="this.placeholder = ''"onblur="this.placeholder = 'Message'"></textarea>
+                    <input type="text" class="form-control form-control-lg" id="subjectInput" aria-describedby="emailHelp" placeholder="Subject" onfocus="this.placeholder = ''"onblur="this.placeholder = 'Subject'" formControlName="subject">
+                </div>
+                <div class="form-group mt-5 mb-4">
+                    <textarea class="form-control form-control-lg" id="textareaInput" placeholder="Message" onfocus="this.placeholder = ''"onblur="this.placeholder = 'Message'" formControlName="message"></textarea>
                 </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <button type="submit" class="btn btn-outline-secondary btn-lg float-right">Submit</button>
+                    <button type="submit" class="btn btn-outline-secondary btn-lg float-right" [disabled]="contactForm.invalid">Submit</button>
                 </div>
             </form>
         </div>
