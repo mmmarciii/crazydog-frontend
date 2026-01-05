@@ -19,7 +19,7 @@ jobs:
       - name: Install and Build
         run: |
           npm install
-          npm run build -- --configuration production --base-href /dev/
+          npm run build -- --configuration production --base-href /
 
       - name: Upload via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
