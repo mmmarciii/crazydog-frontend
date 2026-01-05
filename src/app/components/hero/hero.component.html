@@ -1,8 +1,12 @@
 <section id="home" class="hero-1 d-flex align-items-center justify-content-center text-white">
-    <div class="container text-center">
+    <div class="container text-center hero-content">
         <div class="row">
             <div class="col-sm mx-auto">
-                <img src="images/name.png" class="img-fluid" alt="Crazy Dog Logo">
+                <img src="images/name.png" 
+                class="img-fluid" 
+                alt="Crazy Dog Logo"
+                [style.transform]="'translateY(' + offsetY + 'px) rotate(-5deg)'"
+                [style.opacity]="opacity">
             </div>
         </div>
     </div>

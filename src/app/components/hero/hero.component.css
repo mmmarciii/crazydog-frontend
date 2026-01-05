@@ -6,10 +6,19 @@
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
+    overflow: hidden;
+    position: relative;
 }
 .hero-text {
     background: rgba(255, 255, 255, 0.2);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(7.9px);
     border-radius: 48px;
+}
+
+.hero-logo {
+    max-width: 80%;
+    height: auto;
+    will-change: transform, opacity;
+    transition: transform 0.1s ease-out;
 }
