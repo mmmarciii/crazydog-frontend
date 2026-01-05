@@ -1,11 +1,15 @@
 #instafeed {
     background: linear-gradient(rgba(247, 137, 14, 0.5), rgba(255, 255, 255, 0.5));
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 .post-card {
   background: #fff;
-  border-radius: 10px;
+  border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 }
 .post-header {
   display: flex;
@@ -19,11 +23,11 @@
   object-fit: cover;
 }
 .post-img {
-  max-height: 400px;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   width: 100%;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
 }
 .post-actions button {
   background: none;
@@ -50,4 +54,28 @@
 }
 .btn-1:hover {
   color: red;
+}
+
+.action-btn {
+    background: none;
+    border: none;
+    font-size: 0.9rem;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: 0.3s;
+}
+
+.action-btn:hover {
+    color: #f7890e;
+}
+
+@media (max-width: 576px) {
+    #instafeed {
+        padding: 20px 10px;
+    }
+    .post-header {
+        padding: 10px;
+    }
 }

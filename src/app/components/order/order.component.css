@@ -1,16 +1,27 @@
-.hero-2 {
-    height: 100vh;
-    height: 100svh;
-    background-size: 100%;
-    background: linear-gradient(rgba(218, 10, 107, 0.2), rgba(218, 10, 107, 0.1)), url('/images/products/star-wars.jpg');
-    background-attachment: fixed;
-    background-position: center;
+.order {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('../../../../public/images/products/labubu-v1.jpg');
     background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 100px 0;
+    height: 100vh
 }
 
-.hero-text {
-    background: rgba(255, 255, 255, 0.2);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(7.9px);
-    border-radius: 48px;
+.btn-custom-order {
+    background-color: #f7890e;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    border: 2px solid #f7890e;
+    transition: all 0.3s ease;
+}
+
+.btn-custom-order:hover {
+    background-color: transparent;
+    color: #f7890e;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(247, 137, 14, 0.3);
 }

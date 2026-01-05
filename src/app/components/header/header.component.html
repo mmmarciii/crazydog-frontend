@@ -7,11 +7,11 @@
                     <a class="navbar-brand navlogo" href="#">
                         <img src="images/logo2.png" alt="Crazy Dog Logo">
                     </a>
-                    <div class="collapse navbar-collapse py-3" id="navbarNav">
-                        <ul class="nav navbar-nav ms-auto fs-5 fw-light">
+                    <div class="collapse navbar-collapse" id="navbarNav" #navbarCollapse>
+                        <ul class="navbar-nav ms-auto">
                                 @for (item of menuItems; track item.name) {
                                     <li class="nav-item">
-                                        <a class="nav-link" [href]="item.link" [class.active]="item.name === 'Home'">{{ item.name }}</a>
+                                        <a class="nav-link" [href]="item.link" (click)="collapseMenu(navbarCollapse)" [class.active]="item.name === 'Home'">{{ item.name }}</a>
                                     </li>
                                 }
                         </ul>

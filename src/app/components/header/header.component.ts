@@ -16,4 +16,15 @@ export class HeaderComponent {
       { name: 'FAQ', link: '#faq' },
       { name: 'Contact us', link: '#contactus' }
   ];
+
+  collapseMenu(menuElement: HTMLElement) {
+    if (menuElement.classList.contains('show')) {
+      const bootstrap = (window as any).bootstrap;
+      if (bootstrap) {
+        const bsCollapse = new bootstrap.Collapse(menuElement);
+        bsCollapse.hide();
+      }
+    }
+  }
+
 }
