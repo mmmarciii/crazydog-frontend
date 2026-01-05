@@ -17,7 +17,10 @@ export class HeaderComponent {
       { name: 'Contact us', link: '#contactus' }
   ];
 
-  collapseMenu(menuElement: HTMLElement) {
+  activeItem: string = 'Home';
+
+  collapseMenu(menuElement: HTMLElement, itemName: string) {
+    this.activeItem = itemName;
     if (menuElement.classList.contains('show')) {
       const bootstrap = (window as any).bootstrap;
       if (bootstrap) {
