@@ -14,6 +14,7 @@ import { from } from 'rxjs';
 export class ContactComponent {
 
   contactForm: FormGroup;
+  isSent = false;
 
   constructor(private fb: FormBuilder, private contactService: ContactService) {
     this.contactForm = this.fb.group({
@@ -30,7 +31,7 @@ onSubmit() {
       
       this.contactService.sendEmail(this.contactForm.value).subscribe({
         next: (response) => {
-          alert('Message sent succesfully!');
+          this.isSent = true;
           this.contactForm.reset();
         },
         error: (err) => {

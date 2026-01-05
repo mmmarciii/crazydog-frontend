@@ -1,30 +1,50 @@
 <section id="contactus" class="d-flex align-items-center justify-content-center min-vh-100">
     <div class="container">
-        <div class="row row-cols-1 g-3 mt-5 px-5 py-4">
+        <div *ngIf="!isSent" class="row row-cols-1 g-3 mt-5 px-5 py-4">
             <h1 class="display-3">
                 Contact<br>
                 <small class="display-5 text-muted">You can reach us</small>
             </h1>      
         </div>
-        <div class="row px-5 g-3 mb-5">
+
+        <div *ngIf="isSent" class="row px-5 py-5 justify-content-center animate__animated animate__fadeIn">
+            <div class="col-md-8 text-center">
+                <div class="mb-4">
+                    <i class="bi bi-check-circle-fill text-success" style="font-size: 5rem;"></i>
+                </div>
+                <h2 class="display-4">Thank you!</h2>
+                <p class="lead text-muted">Your message has been sent successfully. We will get back to you soon.</p>
+                <button class="btn btn-outline-secondary btn-lg mt-4" (click)="isSent = false">
+                    Send another message
+                </button>
+            </div>
+        </div>
+
+        <div *ngIf="!isSent" class="row px-5 g-3 mb-5">
             <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
                 <div class="form-group mt-5 mb-4">
-                    <input type="text" class="form-control form-control-lg" id="nameInput" placeholder="Name" onfocus="this.placeholder = ''"onblur="this.placeholder = 'Name'" formControlName="name">
+                    <input type="text" class="form-control form-control-lg" id="nameInput" placeholder="Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Name'" formControlName="name">
                 </div>
+                
                 <div class="form-group mt-5 mb-4">
-                    <input type="email" class="form-control form-control-lg" id="emailInput" aria-describedby="emailHelp" placeholder="Email" onfocus="this.placeholder = ''"onblur="this.placeholder = 'Email'" formControlName="email">
-                    <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="text-danger ms-2">
-                        <small>Please enter a valid email address.</small>
+                    <input type="email" class="form-control form-control-lg" id="emailInput" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" formControlName="email">
+                    <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="text-danger ms-2 mt-2">
+                        <small><i class="bi bi-exclamation-circle me-1"></i>Please enter a valid email address.</small>
                     </div>      
                 </div>
+
                 <div class="form-group mt-5 mb-4">
-                    <input type="text" class="form-control form-control-lg" id="subjectInput" aria-describedby="emailHelp" placeholder="Subject" onfocus="this.placeholder = ''"onblur="this.placeholder = 'Subject'" formControlName="subject">
+                    <input type="text" class="form-control form-control-lg" id="subjectInput" placeholder="Subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Subject'" formControlName="subject">
                 </div>
+
                 <div class="form-group mt-5 mb-4">
-                    <textarea class="form-control form-control-lg" id="textareaInput" placeholder="Message" onfocus="this.placeholder = ''"onblur="this.placeholder = 'Message'" formControlName="message"></textarea>
+                    <textarea class="form-control form-control-lg" id="textareaInput" rows="5" placeholder="Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Message'" formControlName="message"></textarea>
                 </div>
+
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <button type="submit" class="btn btn-outline-secondary btn-lg float-right" [disabled]="contactForm.invalid">Submit</button>
+                    <button type="submit" class="btn btn-outline-secondary btn-lg" [disabled]="contactForm.invalid">
+                        Submit
+                    </button>
                 </div>
             </form>
         </div>
