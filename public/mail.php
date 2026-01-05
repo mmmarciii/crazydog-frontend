@@ -30,7 +30,7 @@ if (!empty($_POST['email'])) {
         $mail->Host       = 'crazydogcustom.com';
         $mail->SMTPAuth   = true;
         $mail->Username   = $smtp_user;
-        $mail->Password   = $smtp_password; 
+        $mail->Password   = $smtp_pass; 
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS; 
         $mail->Port       = 465;
         $mail->CharSet    = 'UTF-8';
