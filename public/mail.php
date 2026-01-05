@@ -22,8 +22,6 @@ $_POST = json_decode($rest_json, true);
 if (!empty($_POST['email'])) {
 
     $mail = new PHPMailer(true);
-    $smtp_password = getenv('SMTP_PASS');
-    $smtp_user = getenv('SMTP_USER');
 
     try {
         // --- Server settings ---
