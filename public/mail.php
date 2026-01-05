@@ -8,7 +8,7 @@ require 'PHPMailer/Exception.php';
 require 'PHPMailer/PHPMailer.php';
 require 'PHPMailer/SMTP.php';
 
-require_once __DIR__ . '/../../crazydog_config.php';
+require_once '/home/helloly25579236/crazydog_config.php';
 
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST, OPTIONS");
