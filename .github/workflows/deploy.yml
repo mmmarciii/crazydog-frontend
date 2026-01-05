@@ -30,4 +30,3 @@ jobs:
 
           local-dir: ./dist/crazydog-frontend/browser/ # from here (project)
           server-dir: /public_html/dev/ # to here (server)
-
