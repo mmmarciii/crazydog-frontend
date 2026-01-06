@@ -1,10 +1,10 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 
 @Component({
     selector: 'app-insta-feed',
     standalone: true,
-    imports: [CommonModule],
+    imports: [],
     templateUrl: './insta-feed.component.html',
     styleUrl: './insta-feed.component.css'
 })
