@@ -25,7 +25,7 @@
 }
 
 .center-piece-main {
-  background-image: url("../../../../public/images/af1.png");
+  background-image: url("../../../../public/images/shoe/af1.png");
   z-index: 10;
   background-repeat: no-repeat;
   background-position: center center;
@@ -34,7 +34,7 @@
 }
 
 .center-piece-painted {
-  background-image: url("../../../../public/images/painted.png");
+  background-image: url("../../../../public/images/shoe/painted2.png");
   z-index: 10;
   background-repeat: no-repeat;
   background-position: center center;
@@ -49,38 +49,49 @@
   z-index: 15;
 }
 
-.top-left{
-  background-image: url("../../../../public/images/woosh.png");
+.swoosh{
+  background-image: url("../../../../public/images/shoe/swoosh.png");
+}
+.upper{
+  background-image: url("../../../../public/images/shoe/upper.png");
+}
+.laces{
+  background-image: url("../../../../public/images/shoe/laces.png");
+}
+.midsole{
+  background-image: url("../../../../public/images/shoe/midsole.png");
+}
+.heelportion{
+  background-image: url("../../../../public/images/shoe/heelportion.png");
+}
+.heel-tab{
+  background-image: url("../../../../public/images/shoe/heel-tab.png");
+}
+.middle{
+  background-image: url("../../../../public/images/shoe/middle.png");
+}
+.outer-toe{
+  background-image: url("../../../../public/images/shoe/outer-toe.png");
+}
+.sock-liner{
+  background-image: url("../../../../public/images/shoe/sock-liner.png");
+}
+.tongue{
+  background-image: url("../../../../public/images/shoe/tongue.png");
+}
+.upper2{
+  background-image: url("../../../../public/images/shoe/upper2.png");
+}
+
+.swoosh, .upper, .laces, .midsole, .heelportion, .heel-tab, 
+.middle, .outer-toe, .sock-liner, .tongue, .upper2{
   background-repeat: no-repeat;
   background-position: center center;
   opacity: 0.4;
-  width: 100%;
-  height: 100%;
+  width:50%;
+  height: 20%;
 }
-.top-right{
-  background-image: url("../../../../public/images/upper.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  opacity: 0.4;
-  width: 100%;
-  height: 100%;
-}
-.bottom-left{
-  background-image: url("../../../../public/images/middle.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  opacity: 0.4;
-  width: 100%;
-  height: 100%;
-}
-.bottom-right{
-  background-image: url("../../../../public/images/toe.png");
-  background-repeat: no-repeat;
-  background-position: center center;
-  opacity: 0.4;
-  width: 100%;
-  height: 100%;
-}
+
 
 .next-content {
   height: 100vh;
