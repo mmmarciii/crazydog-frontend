@@ -13,14 +13,15 @@ import { ContactComponent } from './components/contact/contact.component';
 @Component({
     selector: 'app-root',
     standalone: true,
-    imports: [RouterOutlet,
+    imports: [
+        /*RouterOutlet,*/
         HeaderComponent,
         HeroComponent,
         FeaturesComponent,
         HowWeWorkComponent,
         OrderComponent,
         FaqComponent,
-        InstaFeedComponent,
+        /*InstaFeedComponent,*/
         ContactComponent,
         FooterComponent],
     templateUrl: './app.component.html',
