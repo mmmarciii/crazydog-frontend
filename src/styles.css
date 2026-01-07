@@ -4,10 +4,12 @@
     --primary-yellow: #f7b231;
     --primary-orange: oklch(73.543% 0.1725 58.364);
     --primary-blue: #00a7b7;
+    --secondary-blue: #0096A9;
     --primary-black: #010101;
     --primary-grey: #6c757d;
     --primary-grey-dark: #343a40;
     /*--primary-yellow: #FAE525;*/
+    
 }
 
 body {

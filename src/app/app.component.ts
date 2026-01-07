@@ -9,12 +9,13 @@ import { OrderComponent } from './components/order/order.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { InstaFeedComponent } from './components/insta-feed/insta-feed.component';
 import { ContactComponent } from './components/contact/contact.component';
+import { CookieBannerComponent } from './components/cookie-banner/cookie-banner.component';
 
 @Component({
     selector: 'app-root',
     standalone: true,
     imports: [
-        /*RouterOutlet,*/
+        RouterOutlet,
         HeaderComponent,
         HeroComponent,
         OurProductsComponent,
@@ -23,7 +24,9 @@ import { ContactComponent } from './components/contact/contact.component';
         FaqComponent,
         /*InstaFeedComponent,*/
         ContactComponent,
-        FooterComponent],
+        FooterComponent,
+        CookieBannerComponent
+      ],
     templateUrl: './app.component.html',
     styleUrl: './app.component.css'
 })

@@ -1,0 +1,111 @@
+.cookie-container {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 800px;
+  z-index: 9999;
+  animation: slideInUp 1s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.cookie-box {
+  background: var(--primary-bg-color);
+  /*border: 1px solid var(--primary-grey-dark);*/
+  /*border-top: 3px solid var(--primary-orange);*/ 
+  padding: 25px;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+}
+
+.cookie-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.cookie-header h2 {
+  color: var(--primary-black);
+  margin: 0;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  font-family: var(--bs-body-font-family);
+}
+
+.blue-text {
+  color: var(--secondary-blue);
+}
+
+.cookie-text p {
+  color: var(--primary-black);
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.cookie-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 200px;
+}
+
+button {
+  padding: 12px 20px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+}
+
+.btn-primary {
+  background: var(--secondary-blue);
+  color: var(--primary-bg-color);
+  border-radius: 12px;
+}
+
+.btn-primary:hover {
+  background: var(--primary-orange);
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--primary-grey-dark);
+  border: 1px solid var(--primary-black);
+  border-radius: 12px;
+}
+
+.btn-secondary:hover {
+  border-color: var(--primary-orange);
+  color: var(--primary-orange);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .cookie-box {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+  }
+  .cookie-header {
+    justify-content: center;
+  }
+  .cookie-actions {
+    width: 100%;
+  }
+}
+
+@keyframes slideInUp {
+  from { transform: translate(-50%, 100%); opacity: 0; }
+  to { transform: translate(-50%, 0); opacity: 1; }
+}

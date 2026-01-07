@@ -56,11 +56,11 @@ export class HeroComponent {
       .from(".flying-item.midsole", { x: "200vw", y: "200vh", rotation: -180, duration: 1.4 }, 0.3)
       .from(".flying-item.heelportion", { x: "100vw", y: "100vh", rotation: -270, duration: 1 }, 0.4)
       .from(".flying-item.heel-tab", { x: "-100vw", y: "-100vh", rotation: 270, duration: 0.6 }, 0.5)
-      .from(".flying-item.middle", { x: "100vw", y: "-100vh", rotation: -360, duration: 1.4}, 0.6)
       .from(".flying-item.outer-toe", { x: "-100vw", y: "100vh", rotation: 360, duration: 1 }, 0.7)
       .from(".flying-item.sock-liner", { x: "150vw", y: "150vh", rotation: -180, duration: 1.2 }, 0.8)
       .from(".flying-item.tongue", { x: "-150vw", y: "-150vh", rotation: 180, duration: 1.4 }, 0.9)
       .from(".flying-item.upper2", { x: "150vw", y: "-150vh", rotation: -270, duration: 1.6 }, 1)
+      .from(".flying-item.middle", { x: "100vw", y: "-100vh", rotation: -360, duration: 1.4}, 0.6)
 
     tl.set(".flying-item, .center-piece-main", { display: "none" }, "+=0.5")
       .set(".center-piece-painted", { display: "block" })

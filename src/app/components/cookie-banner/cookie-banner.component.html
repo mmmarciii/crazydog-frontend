@@ -1,0 +1,21 @@
+@if (showBanner) {
+<div class="cookie-container">
+  <div class="cookie-box">
+    <div class="cookie-text">
+      <div class="cookie-header">
+        <mat-icon class="blue-text">security</mat-icon>
+        <h2>Cookies</h2>
+      </div>
+      <p>
+        <strong>Crazy Dog Custom</strong> uses cookies to ensure the best user experience and website security. 
+        By clicking 'Accept', you consent to the use of technical and analytical cookies...
+      </p>
+    </div>
+    
+    <div class="cookie-actions">
+      <button class="btn-secondary" (click)="reject()">Cancel</button>
+      <button class="btn-primary" (click)="accept()">Accept</button>
+    </div>
+  </div>
+</div>
+}
