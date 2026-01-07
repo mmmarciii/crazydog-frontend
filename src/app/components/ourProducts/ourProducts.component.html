@@ -4,7 +4,7 @@
             <div class="col-12">
                 <h1 class="display-3">
                     Our Products<br>
-                    <small class="display-5 text-muted">made with passion</small>
+                    <small class="display-5 text-muted">Break rules, wear style</small>
                 </h1>
             </div>
         </div>
@@ -12,7 +12,7 @@
         <div class="row g-4 px-3 px-md-5 py-4">
             @for (item of productItems; track item.name) {
             <div class="col-12 col-md-6 col-lg-4">
-                <div class="card shadow-sm h-100 product-card">
+                <div class="card h-100 product-card">
                     <div class="product-img-container">
                          <img [src]="item.link" class="card-img-top" [alt]="item.name">
                     </div>

@@ -11,8 +11,8 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
   menuItems = [
       { name: 'Home', link: '#home' },
-      { name: 'Products', link: '#products' },
-      { name: 'How we work', link: '#howwework' },
+      { name: 'Our Products', link: '#products' },
+      { name: 'Order', link: '#howwework' },
       { name: 'FAQ', link: '#faq' },
       { name: 'Contact us', link: '#contactus' }
   ];

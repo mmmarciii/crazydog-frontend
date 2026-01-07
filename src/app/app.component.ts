@@ -2,9 +2,9 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HeaderComponent } from "./components/header/header.component";
 import { HeroComponent } from "./components/hero/hero.component";
-import { FeaturesComponent } from "./components/features/features.component";
+import { OurProductsComponent } from "./components/ourProducts/ourProducts.component";
 import { FooterComponent } from "./components/footer/footer.component";
-import { HowWeWorkComponent } from './components/how-we-work/how-we-work.component';
+import { OrderProcessComponent } from './components/orderProcess/orderProcess.component';
 import { OrderComponent } from './components/order/order.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { InstaFeedComponent } from './components/insta-feed/insta-feed.component';
@@ -17,8 +17,8 @@ import { ContactComponent } from './components/contact/contact.component';
         /*RouterOutlet,*/
         HeaderComponent,
         HeroComponent,
-        FeaturesComponent,
-        HowWeWorkComponent,
+        OurProductsComponent,
+        OrderProcessComponent,
         OrderComponent,
         FaqComponent,
         /*InstaFeedComponent,*/
