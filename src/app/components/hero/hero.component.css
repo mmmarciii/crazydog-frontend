@@ -2,17 +2,8 @@
   height: 100vh;
   width: 100%;
   background: white;
-  /*background-image: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url("../../../../public/images/logo.png");*/
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: 33%;
-  
   overflow: hidden;
   position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
 }
 
 .animation-wrapper {
@@ -24,79 +15,59 @@
   align-items: center;
 }
 
+.center-piece-main, 
+.center-piece-painted, 
+.flying-item {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  width: 837px;
+  height: 412px;
+}
+
 .center-piece-main {
   background-image: url("../../../../public/images/shoe/af1.png");
   z-index: 10;
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 100%;
-  height: 100%;
 }
 
 .center-piece-painted {
   background-image: url("../../../../public/images/shoe/painted2.png");
   z-index: 10;
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 100%;
-  height: 100%;
   display: none;
 }
 
+.swoosh { background-image: url("../../../../public/images/shoe/swoosh.png"); }
+.upper { background-image: url("../../../../public/images/shoe/upper.png"); }
+.laces { background-image: url("../../../../public/images/shoe/laces.png"); }
+.midsole { background-image: url("../../../../public/images/shoe/midsole.png"); }
+.heelportion { background-image: url("../../../../public/images/shoe/heelportion.png"); }
+.heel-tab { background-image: url("../../../../public/images/shoe/heel-tab.png"); }
+.middle { background-image: url("../../../../public/images/shoe/middle.png"); }
+.outer-toe { background-image: url("../../../../public/images/shoe/outer-toe.png"); }
+.sock-liner { background-image: url("../../../../public/images/shoe/sock-liner.png"); }
+.tongue { background-image: url("../../../../public/images/shoe/tongue.png"); }
+.upper2 { background-image: url("../../../../public/images/shoe/upper2.png"); }
+
 .flying-item {
-  position: absolute;
-  font-size: 4rem;
   z-index: 15;
+  opacity: 1; 
 }
 
-.swoosh{
-  background-image: url("../../../../public/images/shoe/swoosh.png");
-}
-.upper{
-  background-image: url("../../../../public/images/shoe/upper.png");
-}
-.laces{
-  background-image: url("../../../../public/images/shoe/laces.png");
-}
-.midsole{
-  background-image: url("../../../../public/images/shoe/midsole.png");
-}
-.heelportion{
-  background-image: url("../../../../public/images/shoe/heelportion.png");
-}
-.heel-tab{
-  background-image: url("../../../../public/images/shoe/heel-tab.png");
-}
-.middle{
-  background-image: url("../../../../public/images/shoe/middle.png");
-}
-.outer-toe{
-  background-image: url("../../../../public/images/shoe/outer-toe.png");
-}
-.sock-liner{
-  background-image: url("../../../../public/images/shoe/sock-liner.png");
-}
-.tongue{
-  background-image: url("../../../../public/images/shoe/tongue.png");
-}
-.upper2{
-  background-image: url("../../../../public/images/shoe/upper2.png");
+@media (max-width: 1040px) {
+  .center-piece-main, 
+  .center-piece-painted, 
+  .flying-item {
+    width: 558px;  /* 837 * 0.666 */
+    height: 275px; /* 412 * 0.666 */
+  }
 }
 
-.swoosh, .upper, .laces, .midsole, .heelportion, .heel-tab, 
-.middle, .outer-toe, .sock-liner, .tongue, .upper2{
-  background-repeat: no-repeat;
-  background-position: center center;
-  opacity: 0.4;
-  width:50%;
-  height: 20%;
-}
-
-
-.next-content {
-  height: 100vh;
-  background: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@media (max-width: 768px) {
+  .center-piece-main, 
+  .center-piece-painted, 
+  .flying-item {
+    width: 334px;  /* 837 * 0.4 */
+    height: 165px; /* 412 * 0.4 */
+  }
 }
