@@ -1,0 +1,18 @@
+    <div class="mb-4">
+      <label class="form-label fw-bold">Reference Images (Max 5)</label>
+      <input type="file" class="form-control" accept="image/*" multiple (change)="onFileSelected($event)">
+      
+      <div class="d-flex flex-wrap gap-2 mt-3">
+        @for (preview of imagePreviews; track $index) {
+          <div class="position-relative shadow-sm rounded overflow-hidden" style="width: 100px; height: 100px;">
+            <img [src]="preview" class="w-100 h-100" style="object-fit: cover;">
+            <button type="button" 
+                    class="btn btn-danger btn-sm position-absolute top-0 end-0 p-0 d-flex align-items-center justify-content-center"
+                    style="width: 22px; height: 22px; border-radius: 50%;"
+                    (click)="removeImage($index)">
+              <i class="bi bi-x"></i>
+            </button>
+          </div>
+        }
+      </div>
+    </div>

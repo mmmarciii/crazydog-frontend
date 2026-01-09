@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProductService } from '../../services/product.service';
 
 
 @Component({
@@ -9,9 +10,11 @@ import { Component } from '@angular/core';
     styleUrl: './ourProducts.component.css'
 })
 export class OurProductsComponent {
-  productItems = [
-    { name: 'Basic', link: 'images/products/basic.jpg', desc: 'Some quick example text to build on the card title and make up the bulk of the cards content.'},
-    { name: 'Pro', link: 'images/products/labubu-v4-5-4.jpg', desc: 'Some quick example text to build on the card title and make up the bulk of the cards content.'},
-    { name: 'Elit', link: 'images/products/star-wars-v6-5-4.jpg', desc: 'Some quick example text to build on the card title and make up the bulk of the cards content.'},
-  ];
+  productItems: any[] = [];
+
+  constructor(private productService: ProductService){}
+
+  ngOnInit() {
+    this.productItems = this.productService.getProducts();
+  }
 }

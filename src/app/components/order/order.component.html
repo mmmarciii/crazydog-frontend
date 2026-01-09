@@ -6,10 +6,20 @@
                 <p class="lead text-white">Turn your sneakers into a unique masterpiece. Let's create something together!</p>
             </div>
             <div class="col-md-4 text-md-end mt-4 mt-md-0">
-                <a href="#contact" class="btn btn-custom-order px-5 py-3 shadow-lg">
+                <button (click)="openModal()" class="btn-custom-orange">
                     Start My Design <i class="bi bi-arrow-right ms-2"></i>
-                </a>
+                </button>
             </div>
         </div>
     </div>
 </section>
+
+<div class="modal fade" id="quoteModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-body">
+        <app-quote-form></app-quote-form>
+      </div>
+    </div>
+  </div>
+</div>

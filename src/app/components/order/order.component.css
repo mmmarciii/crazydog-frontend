@@ -8,20 +8,7 @@
     height: 100vh
 }
 
-.btn-custom-order {
-    background-color: #f7890e;
-    color: white;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 50px;
-    border: 2px solid #f7890e;
-    transition: all 0.3s ease;
-}
-
-.btn-custom-order:hover {
-    background-color: transparent;
-    color: #f7890e;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(247, 137, 14, 0.3);
+.modal-title{
+    font-size: 2rem;
+    font-weight: 400;
 }
