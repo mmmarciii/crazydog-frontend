@@ -1,121 +1,148 @@
 <?php
+
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'PHPMailer/Exception.php';
+require 'PHPMailer/PHPMailer.php';
+require 'PHPMailer/SMTP.php';
+require_once '/home/helloly25579236/crazydog_config.php';
+
+// CORS 
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST, OPTIONS");
-header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
+header("Access-Control-Allow-Headers: Content-Type");
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') { exit; }
 
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-    exit;
-}
+/**
+ * Quote Class
+ */
+class QuoteHandler {
+    private $pdo;
+    private $data;
+    private $fileLinks = "";
+    private $smtpConfig;
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    
-
-    $to = "info@crazydogcustom.com"; 
-    $subject = "New quotes";
-    $uploadDir = "uploads/"; 
-    $maxFileSize = 5 * 1024 * 1024; 
-    $allowedTypes = ['image/jpeg', 'image/png', 'image/webp'];
-
-    if (!file_exists($uploadDir)) {
-        mkdir($uploadDir, 0777, true);
+    public function __construct($smtpConfig) {
+        $this->smtpConfig = $smtpConfig;
+        $this->parseIncomingData();
     }
 
-    // --- Data cleaning ---
-    $data = $_POST;
-    $firstName = htmlspecialchars(strip_tags($data['firstName'] ?? ''));
-    $lastName = htmlspecialchars(strip_tags($data['lastName'] ?? ''));
-    $email = filter_var($data['email'] ?? '', FILTER_SANITIZE_EMAIL);
-    $phone = htmlspecialchars($data['phone'] ?? '');
-    $shoeSource = htmlspecialchars($data['shoeSource'] ?? '');
-    $shoeType = htmlspecialchars($data['shoeType'] ?? '');
-    $shoeSize = htmlspecialchars($data['shoeSize'] ?? '');
-    $notes = htmlspecialchars($data['notes'] ?? '');
+    // 1. REading and Cleaning the data
+    private function parseIncomingData() {
+        $rest_json = file_get_contents("php://input");
+        $json_data = json_decode($rest_json, true) ?? [];
+        $raw_data = array_merge($_POST, $json_data);
 
-    // Adddress datas
-    $city = htmlspecialchars($data['billingCity'] ?? '');
-    $zip = htmlspecialchars($data['billingZip'] ?? '');
-    $street = htmlspecialchars($data['billingStreet'] ?? '');
+        foreach ($raw_data as $key => $value) {
+            $this->data[$key] = htmlspecialchars(strip_tags($value));
+        }
+        if (isset($this->data['email'])) {
+            $this->data['email'] = filter_var($this->data['email'], FILTER_SANITIZE_EMAIL);
+        }
+    }
 
-    // --- File handling
-    $fileLinks = "";
-    if (!empty($_FILES['images'])) {
+    // 2. File handling
+    public function handleUploads($uploadDir = "uploads/") {
+        if (empty($_FILES['images'])) return;
+
+        if (!is_dir($uploadDir)) { mkdir($uploadDir, 0755, true); }
+
         foreach ($_FILES['images']['name'] as $key => $name) {
-            $fileType = $_FILES['images']['type'][$key];
-            $fileSize = $_FILES['images']['size'][$key];
-            $tmpName = $_FILES['images']['tmp_name'][$key];
-
-            if (in_array($fileType, $allowedTypes) && $fileSize <= $maxFileSize) {
+            $allowed = ['image/jpeg', 'image/png', 'image/webp'];
+            if (in_array($_FILES['images']['type'][$key], $allowed) && $_FILES['images']['size'][$key] <= 5 * 1024 * 1024) {
+                
                 $fileExt = pathinfo($name, PATHINFO_EXTENSION);
                 $newName = uniqid('img_', true) . "." . $fileExt;
                 $targetPath = $uploadDir . $newName;
 
-                if (move_uploaded_file($tmpName, $targetPath)) {
+                if (move_uploaded_file($_FILES['images']['tmp_name'][$key], $targetPath)) {
                     $actualLink = "https://" . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . "/" . $targetPath;
-                    $fileLinks .= "<li><a href='$actualLink'>$newName</a></li>";
+                    $this->fileLinks .= "<li><a href='$actualLink' target='_blank'>$newName</a></li>";
                 }
             }
         }
     }
 
-    // --- E-MAIL Body ---
-    $message = "
-    <html>
-    <head>
-        <style>
-            body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
-            .container { width: 80%; margin: 20px auto; border: 1px solid #ddd; padding: 20px; border-radius: 10px; }
-            .header { background: #f8f9fa; padding: 10px; border-bottom: 2px solid #ff6600; }
-            h2 { color: #ff6600; }
-            .section { margin-bottom: 20px; }
-            .label { font-weight: bold; }
-        </style>
-    </head>
-    <body>
-        <div class='container'>
-            <div class='header'>
-                <h2>New Quote</h2>
-            </div>
-            
-            <div class='section'>
-                <h3>Customer details:</h3>
-                <p><span class='label'>Name:</span> $lastName $firstName</p>
-                <p><span class='label'>Email:</span> $email</p>
-                <p><span class='label'>Phone:</span> $phone</p>
-                <p><span class='label'>Address:</span> $zip $city, $street</p>
-            </div>
+    // 3. Create the Message
+    private function buildMessage() {
+        $templateFile = 'email_template.html';
+        if (!file_exists($templateFile)) return "Template error.";
 
-            <div class='section'>
-                <h3>Product configuration:</h3>
-                <p><span class='label'>Source:</span> $shoeSource</p>
-                <p><span class='label'>Model:</span> $shoeType</p>
-                <p><span class='label'>Size:</span> $shoeSize</p>
-                <p><span class='label'>Information:</span><br> $notes</p>
-            </div>
+        $message = file_get_contents($templateFile);
+        $replace = [
+            '{{firstName}}'  => $this->data['firstName'] ?? '',
+            '{{lastName}}'   => $this->data['lastName'] ?? '',
+            '{{email}}'      => $this->data['email'] ?? '',
+            '{{phone}}'      => $this->data['phone'] ?? '',
+            '{{zip}}'        => $this->data['billingZip'] ?? '',
+            '{{city}}'       => $this->data['billingCity'] ?? '',
+            '{{street}}'     => $this->data['billingStreet'] ?? '',
+            '{{shoeSource}}' => $this->data['shoeSource'] ?? '',
+            '{{shoeType}}'   => $this->data['shoeType'] ?? '',
+            '{{shoeSize}}'   => $this->data['shoeSize'] ?? '',
+            '{{notes}}'      => nl2br($this->data['notes'] ?? ''),
+            '{{fileLinks}}'  => ($this->fileLinks ?: "<li>No uploaded pictures</li>")
+        ];
 
-            <div class='section'>
-                <h3>Moodboard:</h3>
-                <ul>" . ($fileLinks ?: "<li>No uploaded picture</li>") . "</ul>
-            </div>
-        </div>
-    </body>
-    </html>
-    ";
-
-    $headers = "MIME-Version: 1.0" . "\r\n";
-    $headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-    $headers .= "From: Crazydogcustom <info@crazydogcustom.com>" . "\r\n";
-    $headers .= "Reply-To: $email" . "\r\n";
-
-    // --- Sending ---
-    if (mail($to, $subject, $message, $headers)) {
-        echo json_encode(["status" => "success", "message" => "Thank You! We received your quote."]);
-    } else {
-        http_response_code(500);
-        echo json_encode(["status" => "error", "message" => "Something went wrong to send the quote."]);
+        return str_replace(array_keys($replace), array_values($replace), $message);
     }
 
-} else {
-    http_response_code(405);
-    echo json_encode(["status" => "error", "message" => "Just POST request is allowed"]);
+    // 4. E-mail sending
+    public function sendEmails() {
+        if (empty($this->data['email'])) {
+            throw new Exception("Email field is required.");
+        }
+
+        $message = $this->buildMessage();
+        $mail = new PHPMailer(true);
+
+        // SMTP serevr settings
+        $mail->isSMTP();
+        $mail->Host       = 'crazydogcustom.com';
+        $mail->SMTPAuth   = true;
+        $mail->Username   = $this->smtpConfig['user'];
+        $mail->Password   = $this->smtpConfig['pass'];
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+        $mail->Port       = 465;
+        $mail->CharSet    = 'UTF-8';
+
+        // 1. Letter to owner
+        $mail->setFrom('info@crazydogcustom.com', 'CrazyDog Website');
+        $mail->addAddress('info@crazydogcustom.com');
+        $mail->addReplyTo($this->data['email'], $this->data['lastName']);
+        $mail->isHTML(true);
+        $mail->Subject = 'New Quote: ' . ($this->data['lastName'] ?? 'Unknown');
+        $mail->Body    = $message;
+        $mail->send();
+
+        // 2. Letter to customer
+        $mail->clearAddresses();
+        $mail->clearReplyTos();
+        $mail->addAddress($this->data['email']);
+        $mail->setFrom('info@crazydogcustom.com', 'CrazyDog Custom');
+        $mail->Subject = 'Confirmation: We received your message';
+        $mail->Body    = $message;
+        $mail->send();
+
+        return ["status" => "success", "message" => "Thank You! We received your quote."];
+    }
 }
-?>
+
+// --- Execute ---
+
+try {
+    $handler = new QuoteHandler([
+        'user' => $smtp_user,
+        'pass' => $smtp_pass
+    ]);
+
+    $handler->handleUploads(); 
+    $response = $handler->sendEmails(); 
+    
+    echo json_encode($response);
+
+} catch (Exception $e) {
+    http_response_code(500);
+    echo json_encode(["status" => "error", "message" => $e->getMessage()]);
+}

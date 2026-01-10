@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: #444; margin: 0; padding: 0; }
+        .wrapper { background-color: #f4f4f4; padding: 20px; }
+        .container { 
+            max-width: 600px; 
+            margin: 0 auto; 
+            background: #ffffff; 
+            border-radius: 8px; 
+            overflow: hidden; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+        }
+        .header { background: #1a1a1a; color: #ffffff; padding: 25px; text-align: center; }
+        .header h2 { margin: 0; color: #ff6600; text-transform: uppercase; letter-spacing: 2px; }
+        .content { padding: 30px; }
+        h3 { border-bottom: 2px solid #ff6600; padding-bottom: 5px; color: #1a1a1a; margin-top: 25px; }
+        .info-row { margin-bottom: 10px; display: flex; }
+        .label { font-weight: bold; width: 120px; color: #666; }
+        .value { flex: 1; }
+        .notes-box { background: #f9f9f9; padding: 15px; border-left: 4px solid #ff6600; font-style: italic; margin-top: 10px; }
+        .footer { background: #f1f1f1; padding: 15px; text-align: center; font-size: 12px; color: #888; }
+        a { color: #ff6600; text-decoration: none; font-weight: bold; }
+        ul { padding-left: 20px; }
+        li { margin-bottom: 5px; }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="header">
+                <h2>CrazyDog Custom</h2>
+                <p style="margin: 5px 0 0;">New Quote Request</p>
+            </div>
+            <div class="content">
+                <h3>Customer Details</h3>
+                <div class="info-row"><span class="label">Name:</span> <span class="value">{{lastName}} {{firstName}}</span></div>
+                <div class="info-row"><span class="label">Email:</span> <span class="value">{{email}}</span></div>
+                <div class="info-row"><span class="label">Phone:</span> <span class="value">{{phone}}</span></div>
+                <div class="info-row"><span class="label">Address:</span> <span class="value">{{zip}} {{city}}, {{street}}</span></div>
+
+                <h3>Product Configuration</h3>
+                <div class="info-row"><span class="label">Source:</span> <span class="value">{{shoeSource}}</span></div>
+                <div class="info-row"><span class="label">Model:</span> <span class="value">{{shoeType}}</span></div>
+                <div class="info-row"><span class="label">Size:</span> <span class="value">{{shoeSize}}</span></div>
+                
+                <p class="label" style="margin-top:15px;">Information / Notes:</p>
+                <div class="notes-box">{{notes}}</div>
+
+                <h3>Moodboard / Images</h3>
+                <ul>
+                    {{fileLinks}}
+                </ul>
+            </div>
+            <div class="footer">
+                &copy; 2026 CrazyDog Custom | Sent from website contact form.
+            </div>
+        </div>
+    </div>
+</body>
+</html>
