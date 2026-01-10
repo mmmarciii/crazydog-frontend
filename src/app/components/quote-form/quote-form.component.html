@@ -1,3 +1,20 @@
+
+@if (isSent) {
+  <div class="row px-5 py-5 justify-content-center animate__animated animate__fadeIn">
+    <div class="col-md-8 text-center">
+      <div class="mb-4">
+        <i class="bi bi-check-circle-fill text-success" style="font-size: 5rem;"></i>
+      </div>
+      <h2 class="display-4">Thank you!</h2>
+      <p class="lead text-muted">Your quote has been sent successfully. We will get back to you soon.</p>
+      <button class="btn btn-outline-secondary btn-lg mt-4" (click)="isSent = false">
+        Send another Quote
+      </button>
+    </div>
+  </div>
+}
+
+@if (!isSent) {
 <form [formGroup]="quoteForm" (ngSubmit)="onSubmit()">
   <div class="accordion accordion-flush" id="accordionFlushExample">
     <div class="accordion-item">
@@ -31,7 +48,6 @@
               </div>
             }
           </div>
-
 
           <div class="row mt-3 mb-3">
             <div class="col-md-6 mb-3">
@@ -106,9 +122,15 @@
       <button type="button" class="btn-custom-blue" data-bs-dismiss="modal">
         <i class="bi bi-x-lg me-2"></i>Cancel
       </button>
-      <button type="submit" class="btn btn-custom-orange">
-        <i class="bi bi-send me-2"></i>Send
+      <button type="submit" class="btn btn-custom-orange" [disabled]="isLoading || quoteForm.invalid">
+        @if (isLoading) {
+          <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+          Sending...
+        } @else {
+          <i class="bi bi-send me-2"></i>Send
+        }
       </button>
     </div>
   </div>
 </form>
+}

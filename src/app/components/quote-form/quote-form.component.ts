@@ -24,12 +24,13 @@ export class QuoteFormComponent implements OnInit {
   quoteForm!: FormGroup;
   productItems: any[] = [];
   isSent = false;
+  isLoading = false;
   uploadedFiles: File[] = [];
 
   constructor(
     private fb: FormBuilder,
     private productService: ProductService,
-    private quoteService: QuoteFormService
+    private quoteService: QuoteFormService,
   ) {}
 
   ngOnInit(): void {
@@ -99,7 +100,6 @@ export class QuoteFormComponent implements OnInit {
     return !!(control && control.invalid && (control.touched || control.dirty));
   }
 
-
   private findInvalidControls() {
     const invalid = [];
     const controls = this.quoteForm.controls;
@@ -122,7 +122,9 @@ export class QuoteFormComponent implements OnInit {
 
     if (this.quoteForm.valid) {
       const formData = new FormData();
-      
+
+      this.isLoading = true;
+
       Object.keys(this.quoteForm.value).forEach(key => {
         formData.append(key, this.quoteForm.value[key]);
       });
@@ -133,13 +135,14 @@ export class QuoteFormComponent implements OnInit {
 
       this.quoteService.sendQuote(formData).subscribe({
         next: (response) => {
-          console.log('Siker!', response);
+          this.isLoading = false;
           this.isSent = true;
         },
-        error: (err) => console.error('Hiba!', err)
+        error: (err) => {
+          this.isLoading = false;
+        }
+        
       });
-
-      console.log([...formData.entries()]);
     
     }
   }
