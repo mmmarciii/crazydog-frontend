@@ -6,11 +6,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class QuoteFormService {
-  private url = 'https://crazydogcustom.com/dev/quoteform.php';
+  private readonly apiUrl = 'https://crazydogcustom.com/dev/quoteform.php';
 
   constructor(private http: HttpClient) { }
   
-  sendEmail(data: any): Observable<any> {
-    return this.http.post(this.url, data);
+  sendQuote(formData: FormData): Observable<any> {
+    return this.http.post(this.apiUrl, formData);
   }
 }

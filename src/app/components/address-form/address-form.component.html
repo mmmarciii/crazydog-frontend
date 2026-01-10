@@ -1,24 +1,24 @@
-<div class="row mb-3">
+<div class="row mb-3" [formGroup]="parentForm">
     <div class="col-md-4">
-        <select class="form-select" formControlName="billingCountry">
+        <select class="form-select" [formControlName]="prefix + 'Country'">
         <option value="Austria">Austria</option>
         <option value="Germany">Germany</option>
         <option value="Hungary">Hungary</option>
         </select>
     </div>
     <div class="col-md-4">
-        <input type="text" class="form-control" placeholder="Zip Code" formControlName="billingZip">
+        <input type="text" class="form-control" placeholder="Zip Code" [formControlName]="prefix + 'Zip'">
     </div>
     <div class="col-md-4">
-        <input type="text" class="form-control" placeholder="City" formControlName="billingCity">
+        <input type="text" class="form-control" placeholder="City" [formControlName]="prefix + 'City'">
     </div>
 </div>
-<div class="row mb-3">
+<div class="row mb-3" [formGroup]="parentForm">
     <div class="col-md-8">
-        <input type="text" class="form-control" placeholder="Street" formControlName="billingStreet">
+        <input type="text" class="form-control" placeholder="Street" [formControlName]="prefix + 'Street'">
     </div>
     <div class="col-md-4">
-        <input type="text" class="form-control" placeholder="House Number" formControlName="billingHouseNumber">
+        <input type="text" class="form-control" placeholder="House Number" [formControlName]="prefix + 'HouseNumber'">
     </div>
 </div>
 

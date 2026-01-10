@@ -90,11 +90,11 @@
     @if (!quoteForm.get('sameAsShipping')?.value) {
       <div class="accordion-item">
         <h5 class="accordion-header">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseBilling">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseShipping">
               Shipping Address
           </button>
         </h5>
-        <div id="flush-collapseBilling" class="accordion-collapse show" data-bs-parent="#accordionFlushExample">
+        <div id="flush-collapseShipping" class="accordion-collapse show" data-bs-parent="#accordionFlushExample">
         <div class="accordion-body">
           <app-address-form [parentForm]="quoteForm" prefix="shipping"></app-address-form>
         </div>
@@ -106,7 +106,7 @@
       <button type="button" class="btn-custom-blue" data-bs-dismiss="modal">
         <i class="bi bi-x-lg me-2"></i>Cancel
       </button>
-      <button type="submit" class="btn btn-custom-orange" [disabled]="quoteForm.invalid">
+      <button type="submit" class="btn btn-custom-orange">
         <i class="bi bi-send me-2"></i>Send
       </button>
     </div>

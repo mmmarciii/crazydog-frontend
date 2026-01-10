@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ProductService } from '../../services/product.service'; 
-import { FileUploadComponent } from '../../components/file-upload/file-upload.component'
+import { FileUploadComponent } from '../../components/file-upload/file-upload.component';
 import { ClientInfoComponent } from '../client-info/client-info.component';
-import { AddressFormComponent } from '../address-form/address-form.component'
+import { AddressFormComponent } from '../address-form/address-form.component';
+import { QuoteFormService } from '../../services/quote-form.service'; 
 
 @Component({
   selector: 'app-quote-form',
@@ -27,7 +28,8 @@ export class QuoteFormComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private productService: ProductService
+    private productService: ProductService,
+    private quoteService: QuoteFormService
   ) {}
 
   ngOnInit(): void {
@@ -97,17 +99,48 @@ export class QuoteFormComponent implements OnInit {
     return !!(control && control.invalid && (control.touched || control.dirty));
   }
 
+
+  private findInvalidControls() {
+    const invalid = [];
+    const controls = this.quoteForm.controls;
+    for (const name in controls) {
+      if (controls[name].invalid) {
+        invalid.push(name);
+      }
+    }
+    return invalid;
+  }
+
+
   onSubmit() {
+
+    if (this.quoteForm.invalid) {
+
+      this.quoteForm.markAllAsTouched();
+      return;
+    }
+
     if (this.quoteForm.valid) {
       const formData = new FormData();
       
-      
-      
-      this.uploadedFiles.forEach(file => {
-        formData.append('images', file, file.name);
+      Object.keys(this.quoteForm.value).forEach(key => {
+        formData.append(key, this.quoteForm.value[key]);
       });
 
-      console.log('Küldés alatt...', formData);
+      this.uploadedFiles.forEach(file => {
+        formData.append('images[]', file, file.name);
+      });
+
+      this.quoteService.sendQuote(formData).subscribe({
+        next: (response) => {
+          console.log('Siker!', response);
+          this.isSent = true;
+        },
+        error: (err) => console.error('Hiba!', err)
+      });
+
+      console.log([...formData.entries()]);
+    
     }
   }
 }
