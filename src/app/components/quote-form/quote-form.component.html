@@ -118,6 +118,19 @@
     </div>
     }
 
+
+    <div class="mb-4 form-check">
+      <input type="checkbox" class="form-check-input" id="gdprConsent" formControlName="gdprConsent">
+      <label class="form-check-label" for="dsgvoCheck" style="font-size: 0.9rem;">
+        "I have read the <a href="/privacy-policy" target="_blank">Privacy Policy</a> and agree to the processing of my data for the purpose of creating an offer."
+      </label>
+      
+      @if (quoteForm.get('gdprConsent')?.invalid && quoteForm.get('gdprConsent')?.touched) {
+        <div class="text-danger small">
+          You must agree to the privacy policy to continue.
+        </div>
+      }
+    </div>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4 mb-5">
       <button type="button" class="btn-custom-blue" data-bs-dismiss="modal">
         <i class="bi bi-x-lg me-2"></i>Cancel

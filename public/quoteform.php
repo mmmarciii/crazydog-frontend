@@ -12,24 +12,28 @@ require_once '/home/helloly25579236/crazydog_config.php';
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods: POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
-if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') { exit; }
+if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+    exit;
+}
 
 /**
  * Quote Class
  */
-class QuoteHandler {
-    private $pdo;
+class QuoteHandler
+{
     private $data;
     private $fileLinks = "";
     private $smtpConfig;
 
-    public function __construct($smtpConfig) {
+    public function __construct($smtpConfig)
+    {
         $this->smtpConfig = $smtpConfig;
         $this->parseIncomingData();
     }
 
     // 1. REading and Cleaning the data
-    private function parseIncomingData() {
+    private function parseIncomingData()
+    {
         $rest_json = file_get_contents("php://input");
         $json_data = json_decode($rest_json, true) ?? [];
         $raw_data = array_merge($_POST, $json_data);
@@ -43,15 +47,18 @@ class QuoteHandler {
     }
 
     // 2. File handling
-    public function handleUploads($uploadDir = "uploads/") {
+    public function handleUploads($uploadDir = "uploads/")
+    {
         if (empty($_FILES['images'])) return;
 
-        if (!is_dir($uploadDir)) { mkdir($uploadDir, 0755, true); }
+        if (!is_dir($uploadDir)) {
+            mkdir($uploadDir, 0755, true);
+        }
 
         foreach ($_FILES['images']['name'] as $key => $name) {
             $allowed = ['image/jpeg', 'image/png', 'image/webp'];
             if (in_array($_FILES['images']['type'][$key], $allowed) && $_FILES['images']['size'][$key] <= 5 * 1024 * 1024) {
-                
+
                 $fileExt = pathinfo($name, PATHINFO_EXTENSION);
                 $newName = uniqid('img_', true) . "." . $fileExt;
                 $targetPath = $uploadDir . $newName;
@@ -65,12 +72,23 @@ class QuoteHandler {
     }
 
     // 3. Create the Message
-    private function buildMessage() {
+    private function buildMessage()
+    {
         $templateFile = 'email_template.html';
         if (!file_exists($templateFile)) return "Template error.";
 
+        // DSGVO Naplózás adatai
+        $userIp = $_SERVER['REMOTE_ADDR'];
+        $timestamp = date('d-m-Y H:i:s');
+        $consentText = "The user has accepted the privacy policy";
+
         $message = file_get_contents($templateFile);
         $replace = [
+            '{{notes}}'      => nl2br($this->data['notes'] ?? ''),
+            '{{gdpr_info}}'  => "<strong>GDPR Consent:</strong> $consentText" .
+                "<strong>IP Address:</strong> $userIp<br>" .
+                "<strong>Timestamp:</strong> $timestamp",
+            '{{fileLinks}}'  => ($this->fileLinks ?: "<li>No uploaded pictures</li>"),
             '{{firstName}}'  => $this->data['firstName'] ?? '',
             '{{lastName}}'   => $this->data['lastName'] ?? '',
             '{{email}}'      => $this->data['email'] ?? '',
@@ -89,7 +107,8 @@ class QuoteHandler {
     }
 
     // 4. E-mail sending
-    public function sendEmails() {
+    public function sendEmails()
+    {
         if (empty($this->data['email'])) {
             throw new Exception("Email field is required.");
         }
@@ -137,11 +156,10 @@ try {
         'pass' => $smtp_pass
     ]);
 
-    $handler->handleUploads(); 
-    $response = $handler->sendEmails(); 
-    
-    echo json_encode($response);
+    $handler->handleUploads();
+    $response = $handler->sendEmails();
 
+    echo json_encode($response);
 } catch (Exception $e) {
     http_response_code(500);
     echo json_encode(["status" => "error", "message" => $e->getMessage()]);

@@ -69,7 +69,8 @@ export class QuoteFormComponent implements OnInit {
       shippingZip: [''],
       shippingCity: [''],
       shippingStreet: [''],
-      shippingHouseNumber: ['']
+      shippingHouseNumber: [''],
+      gdprConsent: [false, Validators.requiredTrue]
     });
   }
 
