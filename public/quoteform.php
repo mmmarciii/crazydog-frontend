@@ -84,26 +84,29 @@ class QuoteHandler
 
         $message = file_get_contents($templateFile);
         $replace = [
-            '{{fileLinks}}'  => ($this->fileLinks ?: "<li>No uploaded pictures</li>"),
-            '{{firstName}}'  => $this->data['firstName'] ?? '',
-            '{{lastName}}'   => $this->data['lastName'] ?? '',
-            '{{email}}'      => $this->data['email'] ?? '',
-            '{{phone}}'      => $this->data['phone'] ?? '',
-            '{{billingCountry}}' => $this->data['billingCountry'] ?? '',
-            '{{billingZip}}'        => $this->data['billingZip'] ?? '',
-            '{{billingCity}}'       => $this->data['billingCity'] ?? '',
-            '{{billingStreet}}'     => $this->data['billingStreet'] ?? '',
-            '{{billingHouseNumber}}'     => $this->data['billingHouseNumber'] ?? '',
-            '{{shippingCountry}}' => $this->data['shippingCountry'] ?? '',
-            '{{shippingZip}}'        => $this->data['shippingZip'] ?? '',
-            '{{shippingCity}}'       => $this->data['shippingCity'] ?? '',
-            '{{shippingStreet}}'     => $this->data['shippingStreet'] ?? '',
-            '{{shippingHouseNumber}}'     => $this->data['shippingHouseNumber'] ?? '',
-            '{{shoeSource}}' => $this->data['shoeSource'] ?? '',
-            '{{shoeType}}'   => $this->data['shoeType'] ?? '',
-            '{{shoeSize}}'   => $this->data['shoeSize'] ?? '',
-            '{{notes}}'      => nl2br($this->data['notes'] ?? ''),
-            '{{gdpr_info}}'  => "<strong>GDPR Consent:</strong> $consentText<br>" .
+            '{{fileLinks}}'           => ($this->fileLinks ?: "<li>No uploaded pictures</li>"),
+            '{{firstName}}'           => $this->data['firstName'] ?? '',
+            '{{lastName}}'            => $this->data['lastName'] ?? '',
+            '{{email}}'               => $this->data['email'] ?? '',
+            '{{phone}}'               => $this->data['phone'] ?? '',
+
+            '{{billingCountry}}'      => $this->data['billingCountry'] ?? '',
+            '{{billingZip}}'          => $this->data['billingZip'] ?? '',
+            '{{billingCity}}'         => $this->data['billingCity'] ?? '',
+            '{{billingStreet}}'       => $this->data['billingStreet'] ?? '',
+            '{{billingHouseNumber}}'  => $this->data['billingHouseNumber'] ?? '',
+
+            '{{shippingCountry}}'     => ($this->data['sameAsShipping'] === true) ? $this->data['billingCountry'] : $this->data['shippingCountry'] ?? '',
+            '{{shippingZip}}'         => ($this->data['sameAsShipping'] === true) ? $this->data['billingZip'] : $this->data['shippingZip'] ?? '',
+            '{{shippingCity}}'        => ($this->data['sameAsShipping'] === true) ? $this->data['billingCity'] : $this->data['shippingCity'] ?? '',
+            '{{shippingStreet}}'      => ($this->data['sameAsShipping'] === true) ? $this->data['billingStreet'] : $this->data['shippingStreet'] ?? '',
+            '{{shippingHouseNumber}}' => ($this->data['sameAsShipping'] === true) ? $this->data['billingHouseNumber'] : $this->data['shippingHouseNumber'] ?? '',
+
+            '{{shoeSource}}'          => $this->data['shoeSource'] ?? '',
+            '{{shoeType}}'            => $this->data['shoeType'] ?? '',
+            '{{shoeSize}}'            => $this->data['shoeSize'] ?? '',
+            '{{notes}}'               => nl2br($this->data['notes'] ?? ''),
+            '{{gdpr_info}}'           => "<strong>GDPR Consent:</strong> $consentText<br>" .
                 "<strong>IP Address:</strong> $userIp<br>" .
                 "<strong>Timestamp:</strong> $timestamp",
             '{{fileLinks}}'  => ($this->fileLinks ?: "<li>No uploaded pictures</li>")
