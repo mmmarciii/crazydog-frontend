@@ -74,6 +74,7 @@ class QuoteHandler
     // 3. Create the Message
     private function buildMessage()
     {
+        die();
         $templateFile = 'email_template.html';
         if (!file_exists($templateFile)) return "Template error.";
 
@@ -96,11 +97,11 @@ class QuoteHandler
             '{{billingStreet}}'       => $this->data['billingStreet'] ?? '',
             '{{billingHouseNumber}}'  => $this->data['billingHouseNumber'] ?? '',
 
-            '{{shippingCountry}}'     => ($this->data['sameAsShipping'] === true) ? $this->data['billingCountry'] : $this->data['shippingCountry'] ?? '',
-            '{{shippingZip}}'         => ($this->data['sameAsShipping'] === true) ? $this->data['billingZip'] : $this->data['shippingZip'] ?? '',
-            '{{shippingCity}}'        => ($this->data['sameAsShipping'] === true) ? $this->data['billingCity'] : $this->data['shippingCity'] ?? '',
-            '{{shippingStreet}}'      => ($this->data['sameAsShipping'] === true) ? $this->data['billingStreet'] : $this->data['shippingStreet'] ?? '',
-            '{{shippingHouseNumber}}' => ($this->data['sameAsShipping'] === true) ? $this->data['billingHouseNumber'] : $this->data['shippingHouseNumber'] ?? '',
+            '{{shippingCountry}}'     => ($this->data['sameAsShipping'] == true) ? $this->data['billingCountry'] : $this->data['shippingCountry'] ?? '',
+            '{{shippingZip}}'         => ($this->data['sameAsShipping'] == true) ? $this->data['billingZip'] : $this->data['shippingZip'] ?? '',
+            '{{shippingCity}}'        => ($this->data['sameAsShipping'] == true) ? $this->data['billingCity'] : $this->data['shippingCity'] ?? '',
+            '{{shippingStreet}}'      => ($this->data['sameAsShipping'] == true) ? $this->data['billingStreet'] : $this->data['shippingStreet'] ?? '',
+            '{{shippingHouseNumber}}' => ($this->data['sameAsShipping'] == true) ? $this->data['billingHouseNumber'] : $this->data['shippingHouseNumber'] ?? '',
 
             '{{shoeSource}}'          => $this->data['shoeSource'] ?? '',
             '{{shoeType}}'            => $this->data['shoeType'] ?? '',
