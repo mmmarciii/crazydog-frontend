@@ -74,7 +74,6 @@ class QuoteHandler
     // 3. Create the Message
     private function buildMessage()
     {
-        die();
         $templateFile = 'email_template.html';
         if (!file_exists($templateFile)) return "Template error.";
 
