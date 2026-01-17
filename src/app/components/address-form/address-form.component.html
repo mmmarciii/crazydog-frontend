@@ -7,19 +7,37 @@
         </select>
     </div>
     <div class="col-md-4">
-        <input type="text" class="form-control" placeholder="Zip Code" [formControlName]="prefix + 'Zip'">
+        <input type="text" class="form-control" placeholder="Zip Code" 
+               [class.is-invalid]="isFieldInvalid('Zip')"
+               [formControlName]="prefix + 'Zip'">
+        @if (isFieldInvalid('Zip')) {
+          <div class="invalid-feedback d-block">{{ getErrorMessage('Zip') }}</div>
+        }
     </div>
     <div class="col-md-4">
-        <input type="text" class="form-control" placeholder="City" [formControlName]="prefix + 'City'">
+        <input type="text" class="form-control" placeholder="City" 
+               [class.is-invalid]="isFieldInvalid('City')"
+               [formControlName]="prefix + 'City'">
+        @if (isFieldInvalid('City')) {
+          <div class="invalid-feedback d-block">{{ getErrorMessage('City') }}</div>
+        }
     </div>
 </div>
 <div class="row mb-3" [formGroup]="parentForm">
     <div class="col-md-8">
-        <input type="text" class="form-control" placeholder="Street" [formControlName]="prefix + 'Street'">
+        <input type="text" class="form-control" placeholder="Street" 
+               [class.is-invalid]="isFieldInvalid('Street')"
+               [formControlName]="prefix + 'Street'">
+        @if (isFieldInvalid('Street')) {
+          <div class="invalid-feedback d-block">{{ getErrorMessage('Street') }}</div>
+        }
     </div>
     <div class="col-md-4">
-        <input type="text" class="form-control" placeholder="House Number" [formControlName]="prefix + 'HouseNumber'">
+        <input type="text" class="form-control" placeholder="House Number" 
+               [class.is-invalid]="isFieldInvalid('HouseNumber')"
+               [formControlName]="prefix + 'HouseNumber'">
+        @if (isFieldInvalid('HouseNumber')) {
+          <div class="invalid-feedback d-block">{{ getErrorMessage('HouseNumber') }}</div>
+        }
     </div>
 </div>
-
-

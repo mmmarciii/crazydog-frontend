@@ -32,7 +32,7 @@
 }
 
 .center-piece-painted {
-  background-image: url("../../../../public/images/shoe/painted2.png");
+  background-image: url("../../../../public/images/shoe/painted4.png");
   z-index: 10;
   display: none;
 }
@@ -48,6 +48,7 @@
 .sock-liner { background-image: url("../../../../public/images/shoe/sock-liner.png"); }
 .tongue { background-image: url("../../../../public/images/shoe/tongue.png"); }
 .upper2 { background-image: url("../../../../public/images/shoe/upper2.png"); }
+.flying-logo { background-image: url("../../../../public/images/shoe/flying-logo.png"); }
 
 .flying-item {
   z-index: 15;

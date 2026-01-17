@@ -55,7 +55,7 @@ export class QuoteFormComponent implements OnInit {
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      phone: ['', Validators.required],
+      phone: ['', [Validators.required, Validators.pattern('^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\\s\\./0-9]*$')]],
       // Billing Address
       billingCountry: ['Austria', Validators.required],
       billingZip: ['', Validators.required],
@@ -101,15 +101,60 @@ export class QuoteFormComponent implements OnInit {
     return !!(control && control.invalid && (control.touched || control.dirty));
   }
 
-  private findInvalidControls() {
-    const invalid = [];
-    const controls = this.quoteForm.controls;
-    for (const name in controls) {
-      if (controls[name].invalid) {
-        invalid.push(name);
+  getErrorMessage(fieldName: string): string {
+    const control = this.quoteForm.get(fieldName);
+    
+    if (!control?.errors) return '';
+
+    const errors = control.errors;
+
+    if (errors['required']) {
+      return `${this.getFieldLabel(fieldName)} is required`;
+    }
+    if (errors['email']) {
+      return 'Please enter a valid email address';
+    }
+    if (errors['pattern']) {
+      if (fieldName === 'shoeSize') {
+        return 'Shoe size must contain only numbers';
+      }
+      if (fieldName === 'phone') {
+        return 'Please enter a valid phone number';
       }
     }
-    return invalid;
+    
+    return 'Invalid field';
+  }
+
+  private getFieldLabel(fieldName: string): string {
+    const labels: { [key: string]: string } = {
+      'shoeType': 'Shoe type',
+      'shoeSize': 'Shoe size',
+      'firstName': 'First name',
+      'lastName': 'Last name',
+      'email': 'Email',
+      'phone': 'Phone number',
+      'billingCountry': 'Billing country',
+      'billingZip': 'Postal code',
+      'billingCity': 'City',
+      'billingStreet': 'Street',
+      'billingHouseNumber': 'House number',
+      'shippingCountry': 'Shipping country',
+      'shippingZip': 'Postal code',
+      'shippingCity': 'City',
+      'shippingStreet': 'Street',
+      'shippingHouseNumber': 'House number'
+    };
+    
+    return labels[fieldName] || fieldName;
+  }
+
+  selectProduct(productName: string): void {
+    this.quoteForm.get('shoeSource')?.setValue(productName);
+  }
+
+  onProductSelect(productName: string): void {
+    this.quoteForm.get('shoeSource')?.setValue(productName);
   }
 
 
@@ -138,6 +183,14 @@ export class QuoteFormComponent implements OnInit {
         next: (response) => {
           this.isLoading = false;
           this.isSent = true;
+          this.quoteForm.reset({
+            shoeSource: 'Basic',
+            sameAsShipping: true,
+            billingCountry: 'Austria',
+            shippingCountry: 'Austria',
+            gdprConsent: false
+          });
+          this.uploadedFiles = [];
         },
         error: (err) => {
           this.isLoading = false;

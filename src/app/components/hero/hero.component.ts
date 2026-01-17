@@ -61,6 +61,7 @@ export class HeroComponent {
       .from(".flying-item.tongue", { x: "-150vw", y: "-150vh", rotation: 180, duration: 1.4 }, 0.9)
       .from(".flying-item.upper2", { x: "150vw", y: "-150vh", rotation: -270, duration: 1.6 }, 1)
       .from(".flying-item.middle", { x: "100vw", y: "-100vh", rotation: -360, duration: 1.4}, 0.6)
+      .from(".flying-item.flying-logo", { x: "-200vw", y: "-200vh", rotation: -720, duration: 1.8}, 0.6)
 
     tl.set(".flying-item, .center-piece-main", { display: "none" }, "+=0.5")
       .set(".center-piece-painted", { display: "block" })

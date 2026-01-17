@@ -11,4 +11,9 @@ import { FormGroup, ReactiveFormsModule } from "@angular/forms";
 })
 export class ClientInfoComponent {
   @Input() parentForm!: FormGroup;
+  
+  isFieldInvalid(fieldName: string): boolean {
+    const control = this.parentForm.get(fieldName);
+    return !!(control && control.invalid && (control.touched || control.dirty));
+  }
 }

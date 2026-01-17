@@ -84,10 +84,6 @@ class QuoteHandler
 
         $message = file_get_contents($templateFile);
         $replace = [
-            '{{notes}}'      => nl2br($this->data['notes'] ?? ''),
-            '{{gdpr_info}}'  => "<strong>GDPR Consent:</strong> $consentText" .
-                "<strong>IP Address:</strong> $userIp<br>" .
-                "<strong>Timestamp:</strong> $timestamp",
             '{{fileLinks}}'  => ($this->fileLinks ?: "<li>No uploaded pictures</li>"),
             '{{firstName}}'  => $this->data['firstName'] ?? '',
             '{{lastName}}'   => $this->data['lastName'] ?? '',
@@ -100,6 +96,9 @@ class QuoteHandler
             '{{shoeType}}'   => $this->data['shoeType'] ?? '',
             '{{shoeSize}}'   => $this->data['shoeSize'] ?? '',
             '{{notes}}'      => nl2br($this->data['notes'] ?? ''),
+            '{{gdpr_info}}'  => "<strong>GDPR Consent:</strong> $consentText<br>" .
+                "<strong>IP Address:</strong> $userIp<br>" .
+                "<strong>Timestamp:</strong> $timestamp",
             '{{fileLinks}}'  => ($this->fileLinks ?: "<li>No uploaded pictures</li>")
         ];
 

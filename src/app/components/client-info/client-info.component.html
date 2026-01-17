@@ -2,21 +2,61 @@
     <div class="row">
         <div class="col-md-6 mb-3">
             <input type="text" class="form-control"
+            [class.is-invalid]="isFieldInvalid('firstName')"
             placeholder="First Name" formControlName="firstName">
+            @if (isFieldInvalid('firstName')) {
+                <div class="invalid-feedback">
+                    @if (parentForm.get('firstName')?.errors?.['required']) { 
+                        First name is required. 
+                    } @else { 
+                        Please enter a valid first name. 
+                    }
+                </div>
+            }
         </div>
         <div class="col-md-6 mb-3">
             <input type="text" class="form-control" 
+            [class.is-invalid]="isFieldInvalid('lastName')"
             placeholder="Last Name" formControlName="lastName">
+            @if (isFieldInvalid('lastName')) {
+                <div class="invalid-feedback">
+                    @if (parentForm.get('lastName')?.errors?.['required']) { 
+                        Last name is required. 
+                    } @else { 
+                        Please enter a valid last name. 
+                    }
+                </div>
+            }
         </div>
     </div>
     <div class="row">
         <div class="col-md-6 mb-3">
             <input type="email" class="form-control"
+            [class.is-invalid]="isFieldInvalid('email')"
             placeholder="Email" formControlName="email">
+            @if (isFieldInvalid('email')) {
+                <div class="invalid-feedback">
+                    @if (parentForm.get('email')?.errors?.['required']) { 
+                        Email is required. 
+                    } @else { 
+                        Please enter a valid email address. 
+                    }
+                </div>
+            }
         </div>
         <div class="col-md-6 mb-3">
-            <input type="tel" class="form-control" 
+            <input type="tel" class="form-control"
+            [class.is-invalid]="isFieldInvalid('phone')"
             placeholder="Phone Number" formControlName="phone">
+            @if (isFieldInvalid('phone')) {
+                <div class="invalid-feedback">
+                    @if (parentForm.get('phone')?.errors?.['required']) { 
+                        Phone number is required. 
+                    } @else { 
+                        Invalid phone format. 
+                    }
+                </div>
+            }
         </div>
     </div>
 </div>

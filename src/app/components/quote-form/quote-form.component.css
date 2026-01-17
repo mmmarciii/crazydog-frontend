@@ -1,84 +1,258 @@
-.accordion-body label{
-    font-size: 1.5rem;
-    font-weight: 300;
-    margin: 24px 0;
-}
-.form-check label{
-    font-size: 1rem;
-    font-weight: 400;
-    margin: 0;
+/* Form Elements */
+input[type="text"], 
+input[type="email"], 
+input[type="tel"], 
+input[type="tel"],
+select, 
+textarea {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  padding: 10px 12px !important;
+  font-size: 1rem !important;
 }
 
-input[type="text"], input[type="email"], input[type="tel"], select, textarea {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid var(--bs-border-color);
-  -webkit-box-shadow: none;
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="tel"]:hover,
+select:hover,
+textarea:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+  border-color: #f78910;
+  box-shadow: 0 0 0 3px rgba(247, 137, 16, 0.1);
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  font-size: 0.95rem !important;
+  color: #94a3b8;
+}
+
+/* Invalid States */
+input.is-invalid,
+select.is-invalid,
+textarea.is-invalid {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+.invalid-feedback {
+  color: #ef4444;
+  font-size: 0.875rem;
+  margin-top: 4px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.invalid-feedback::before {
+  content: "⚠ ";
+  font-weight: bold;
+}
+
+/* Accordion */
+.accordion-item {
+  border: 1px solid #e2e8f0;
+  margin-bottom: 12px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.accordion-button {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1e293b;
+  padding: 16px;
+  background-color: #f8fafc;
+  transition: all 0.3s ease;
+}
+
+.accordion-button:hover {
+  background-color: #f1f5f9;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: #fff7ed;
+  color: #f78910;
   box-shadow: none;
-  border-radius: 0;
 }
 
-input[type="text"]:focus, input[type="email"]:focus, textarea#textareaInput:focus {
-  -webkit-box-shadow: none;
-  box-shadow: none;
+.accordion-body {
+  padding: 20px;
+  background-color: #ffffff;
 }
 
-input::placeholder, textarea::placeholder, select{
-    font-size: 1.5rem;
-    font-weight: 300;
-}
-.accordion-button{
-  font-size: 1.5rem;
-  font-weight: 350;
-}
-input:focus::placeholder, 
-textarea:focus::placeholder {
-    color: transparent;
-}
-.product-select{
+/* Product Selection */
+.product-select {
   cursor: pointer;
+  position: relative;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px;
+  transition: all 0.3s ease;
+  background-color: #f8fafc;
 }
+
+.product-select:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
 .product-select img {
   width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  max-height: 180px;
+  transition: transform 0.3s ease;
 }
 
-.form-select {
-  padding: 0 .75rem;
-}
-.form-select:focus{
-  background-color: var(--primary-bg-color);
+.product-select:hover img {
+  transform: scale(1.05);
 }
 
-.form-check-input:checked{
-  background-color: var(--primary-yellow);
-  border-color: var(--primary-orange);
-}
-.form-check-input:focus{
-  box-shadow: 0 0 0 .25rem rgba(139, 141, 7, 0.25);
+.product-select:has(input:checked) {
+  border: 2px solid #f78910;
+  background-color: #fff7ed;
+  box-shadow: 0 4px 12px rgba(247, 137, 16, 0.2);
 }
 
-.accordion-button:not(.collapsed){
-  background-color: rgba(247, 137, 14, 0.4);
-  box-shadow: inset 0 calc(-1 * var(--bs-accordion-border-width)) 0 var(--primary-orange);
+.product-select:has(input:checked)::after {
+  content: "✓";
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background-color: #f78910;
+  color: white;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 16px;
 }
 
-.spinner-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.7);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;
+.product-select span {
+  display: block;
+  margin-top: 12px;
+  font-weight: 600;
+  color: #1e293b;
 }
 
-form {
-    position: relative;
+.product-label {
+  display: block;
+  margin-top: 12px;
+  font-weight: 600;
+  color: #1e293b;
+  cursor: pointer;
+  margin: 0;
 }
 
-.text-orange {
-    color: #ff6600;
+/* Form Check */
+.form-check {
+  margin: 16px 0;
+  padding: 12px;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  border-left: 4px solid #f78910;
+}
+
+.form-check .form-check-input {
+  margin-left: 0;
+}
+.form-check label {
+  font-size: 0.95rem;
+  color: #475569;
+  margin: 0;
+  cursor: pointer;
+}
+
+.form-check label a {
+  color: #f78910;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.form-check label a:hover {
+  text-decoration: underline;
+}
+
+.form-check-input {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  margin-right: 8px;
+  transition: all 0.2s ease;
+}
+
+.form-check-input:hover {
+  border-color: #f78910;
+}
+
+.form-check-input:checked {
+  background-color: #f78910;
+  border-color: #f78910;
+}
+
+.form-check-input:focus {
+  box-shadow: 0 0 0 3px rgba(247, 137, 16, 0.1);
+  border-color: #f78910;
+}
+
+/* Success Message */
+.animate__animated {
+  animation-duration: 0.6s;
+}
+
+.success-icon {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+}
+
+/* Spinner */
+.spinner-border {
+  width: 16px;
+  height: 16px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .accordion-button {
+    font-size: 1rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  select,
+  textarea {
+    font-size: 16px !important;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    font-size: 0.9rem !important;
+  }
+
+  .product-select {
+    margin-bottom: 12px;
+  }
 }
