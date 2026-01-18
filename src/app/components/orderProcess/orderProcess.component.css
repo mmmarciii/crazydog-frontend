@@ -1,3 +1,98 @@
-.img-fluid{
-    width: 600px;
+.process-image-wrapper {
+    position: relative;
+    width: 100%;
+    padding: 10px; 
+    overflow: visible; 
+}
+
+.process-image-wrapper:hover {
+    transform: scale(1.02);
+}
+
+.process-image-wrapper img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+    object-position: center;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.step-number {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    background: #f78910;
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 800;
+    box-shadow: 0 10px 20px rgba(247, 137, 16, 0.3);
+    z-index: 2;
+}
+
+.note-box {
+    background-color: #f8fafc;
+    border-left: 4px solid #f78910;
+    color: #64748b;
+}
+
+@media (max-width: 768px) {
+  
+    .display-3 {
+        font-size: 2.5rem;
+    }
+    .order-process-section .row {
+        position: relative;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        min-height: 300px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .order-process-section .col-md-6.mb-4 {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1; 
+        opacity: 1; 
+        padding: 0 !important;
+        pointer-events: none; 
+    }
+
+    .process-image-wrapper {
+        height: 100%;
+    }
+
+    .process-image-wrapper img {
+        height: 100% !important;
+        object-fit: cover;
+        border-radius: 20px;
+        filter: grayscale(50%);
+        display: none;
+    }
+
+    .order-process-section .col-md-6.ps-md-5 {
+        position: relative;
+        z-index: 2; 
+        background: transparent;
+    }
+
+    .process-content {
+        padding: 1rem;
+        text-shadow: 0 0 10px rgba(255,255,255,0.8); 
+    }
+
+    .step-number {
+        opacity: 1 !important;
+        z-index: 3;
+    }
 }

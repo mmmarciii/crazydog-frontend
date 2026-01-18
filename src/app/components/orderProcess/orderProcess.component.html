@@ -1,28 +1,48 @@
-<section id="orderProcess" class="howwework d-flex align-items-center justify-content-center py-5">
+<section id="orderProcess" class="order-process-section py-5">
     <div class="container">
-        <div class="row col-12 g-3 mt-5 px-5 py-4">
-            <h1 class="display-3">
-                How to Order<br>
-                <small class="display-5 text-muted">Just few steps to became uniqe</small>
-            </h1>
-        </div>
-    @for (item of processItems; track item.name) {
-        <div class="row">
-            <div class="col-md-6 gx-5 mb-4" [class.order-md-last]="item.order === 'imageLast'">
-                <div class="bg-image">
-                    <img [src]="item.link" class="img-fluid" />
-                    <a href="#!">
-                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-md-6 gx-5 mb-4 d-flex align-items-center" [class.order-md-first]="item.order === 'imageLast'"> 
-                <div class="container">
-                <h4><strong>{{ item.name }}</strong></h4>
-                        {{ item.desc }}
-                </div>
+        <div class="row mb-5 px-3 px-md-5">
+            <div class="col-12 border-start border-orange border-4 ps-4">
+                <h1 class="display-3 fw-bold">How to Order</h1>
+                <p class="lead text-muted">Just few steps to become unique</p>
             </div>
         </div>
-    }
+
+        @for (item of processItems; track item.name; let i = $index) {
+        <div class="row align-items-center mb-5 pb-md-5 mx-0">
+            <div class="col-md-6 mb-4 px-0 px-md-3" [class.order-md-last]="item.order === 'imageLast'">
+                <div class="process-image-wrapper">
+                    <img [src]="item.link" class="img-fluid rounded-4 shadow-lg" [alt]="item.name" />
+                    <div class="step-number">{{ i + 1 }}</div>
+                </div>
+            </div>
+
+            <div class="col-md-6 ps-md-5 px-0 px-md-3" [class.order-md-first]="item.order === 'imageLast'">
+                <div class="process-content">
+                    <h2 class="h1 fw-bold mb-3">{{ item.name }}</h2>
+                    @if (item.desc) {
+                    <p class="text-secondary fs-5">{{ item.desc }}</p>
+                    }
+                    @if (item.list) {
+                        <ul class="process-list list-unstyled mt-4">
+                            @for (listItem of item.list; track $index) {
+                                <li class="d-flex align-items-start mb-3">
+                                    <div class="list-icon-wrapper me-3">
+                                        <i class="bi bi-check2 text-orange"></i>
+                                    </div>
+                                    <span class="text-secondary fs-6">{{ listItem }}</span>
+                                </li>
+                            }
+                        </ul>
+                    }
+                    @if (item.note) {
+                    <div class="note-box p-3 rounded-3 mt-4">
+                        <i class="bi bi-info-circle-fill me-2 text-orange"></i>
+                        <span class="small italic">{{ item.note }}</span>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+        }
     </div>
 </section>

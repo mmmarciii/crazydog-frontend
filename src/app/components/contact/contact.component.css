@@ -1,115 +1,57 @@
-input::placeholder, textarea::placeholder, #contactus label {
-    font-size: 1.25rem;
-    font-weight: 300;
-}
-input[type="text"], input[type="email"], textarea#textareaInput {
-  font-size: 1.1rem;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid var(--bs-border-color);
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  border-radius: 0;
+.contact-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
-input[type="text"]:focus, input[type="email"]:focus, textarea#textareaInput:focus {
-  -webkit-box-shadow: none;
-  box-shadow: none;
+.contact-card {
+    border: none;
 }
 
-input:focus::placeholder, 
-textarea:focus::placeholder {
-    color: transparent;
+.custom-input {
+    border: 2px solid #edf2f7 !important;
+    border-radius: 12px !important;
+    padding: 1rem 0.75rem !important;
+    transition: all 0.3s ease !important;
 }
 
-input.is-invalid,
-textarea.is-invalid {
-  border-color: #ef4444 !important;
-  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+.custom-input:focus {
+    border-color: #f78910 !important;
+    box-shadow: 0 0 0 4px rgba(247, 137, 16, 0.1) !important;
 }
 
-/* Form Check */
-.form-check {
-  margin: 16px 0;
-  padding: 12px;
-  background-color: #f8fafc;
-  border-radius: 8px;
-  border-left: 4px solid #f78910;
-}
-
-.form-check .form-check-input {
-  margin-left: 0;
-}
-.form-check label {
-  font-size: 0.95rem;
-  color: #475569;
-  margin: 0;
-  cursor: pointer;
-}
-
-.form-check label a {
-  color: #f78910;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-.form-check label a:hover {
-  text-decoration: underline;
-}
-
-.form-check-input {
-  width: 18px;
-  height: 18px;
-  border: 1px solid #cbd5e1;
-  border-radius: 4px;
-  margin-right: 8px;
-  transition: all 0.2s ease;
-}
-
-.form-check-input:hover {
-  border-color: #f78910;
-}
-
-.form-check-input:checked {
-  background-color: #f78910;
-  border-color: #f78910;
-}
-
-.form-check-input:focus {
-  box-shadow: 0 0 0 3px rgba(247, 137, 16, 0.1);
-  border-color: #f78910;
-}
-
-.btn-custom-orange {
+.btn-orange-submit {
     background-color: #f78910;
     color: white;
     border: none;
-    padding: 12px 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
 }
 
-.btn-custom-orange:hover {
-    background-color: #d6760d;
+.btn-orange-submit:hover:not(:disabled) {
+    background-color: #e67a00;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(247, 137, 16, 0.4);
+}
+
+.btn-orange-submit:disabled {
+    background-color: #cbd5e0;
+}
+
+.text-orange {
+    color: #f78910 !important;
+}
+
+.form-check-input:checked {
+    background-color: #f78910;
+    border-color: #f78910;
+}
+
+.btn-orange-outline {
+    border: 2px solid #f78910;
+    color: #f78910;
+    font-weight: 600;
+}
+
+.btn-orange-outline:hover {
+    background-color: #f78910;
     color: white;
-}
-
-@media (min-width: 768px) {
-    input::placeholder, textarea::placeholder, #contactus label {
-        font-size: 2rem;
-  }
-}
-
-@media (max-width: 576px) {
-    .container {
-        padding-left: 15px !important;
-        padding-right: 15px !important;
-    }
-    
-    .row.px-5 {
-        padding-left: 1rem !important;
-        padding-right: 1rem !important;
-    }
-
-    .display-3 {
-        font-size: 2.5rem;
-    }
 }

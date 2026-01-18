@@ -2,7 +2,7 @@
     --primary-bg-color: #ffffff;
     --primary-lila: rgb(218, 10, 107);
     --primary-yellow: #f7b231;
-    --primary-orange: oklch(73.543% 0.1725 58.364);
+    --primary-orange: #f78910;
     --primary-blue: #00a7b7;
     --secondary-blue: #0096A9;
     --primary-black: #010101;
@@ -60,4 +60,12 @@ a{
     color: #ffffff;
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 167, 183, 0.302);
+}
+
+.border-orange {
+    border-color: var(--primary-orange) !important;
+}
+
+.text-orange {
+    color: var(--primary-orange);
 }
