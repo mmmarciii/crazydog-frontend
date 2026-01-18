@@ -60,7 +60,7 @@ class MailHandler
 
         $message = file_get_contents($templateFile);
         $replace = [
-            '{{name}}'            => $this->data['lastName'] ?? '',
+            '{{name}}'            => $this->data['name'] ?? '',
             '{{email}}'           => $this->data['email'] ?? '',
             '{{subject}}'           => $this->data['subject'] ?? '',
             '{{message}}'           => $this->data['message'] ?? '',
