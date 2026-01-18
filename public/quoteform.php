@@ -77,7 +77,7 @@ class QuoteHandler
         $templateFile = 'email_template.html';
         if (!file_exists($templateFile)) return "Template error.";
 
-        // DSGVO Naplózás adatai
+        // DSGVO
         $userIp = $_SERVER['REMOTE_ADDR'];
         $timestamp = date('d-m-Y H:i:s');
         $consentText = "The user has accepted the privacy policy";

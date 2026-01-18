@@ -1,7 +1,7 @@
 <section id="contactus" class="d-flex align-items-center justify-content-center min-vh-100">
   <div class="container">
     @if (!isSent) {
-      <div class="row row-cols-1 g-3 mt-5 px-5 py-4">
+      <div class="row row-cols-1 g-3 mt-4 mt-md-5 px-3 px-md-5 py-4">
         <h1 class="display-3">
           Contact<br>
           <small class="display-5 text-muted">You can reach us</small>
@@ -25,24 +25,65 @@
     }
 
     @if (!isSent) {
-      <div class="row px-5 g-3 mb-5">
+      <div class="row px-3 px-md-5 g-3 mb-5">
         <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
-          <div class="form-group mt-5 mb-4">
-            <input type="text" class="form-control form-control-lg" id="nameInput" placeholder="Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Name'" formControlName="name">
-          </div>
-          <div class="form-group mt-5 mb-4">
-            <input type="email" class="form-control form-control-lg" id="emailInput" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" formControlName="email">
-            @if (contactForm.get('email')?.invalid && contactForm.get('email')?.touched) {
-              <div class="text-danger ms-2 mt-2">
-                <small><i class="bi bi-exclamation-circle me-1"></i>Please enter a valid email address.</small>
+          <div class="form-group px-3 px-md-5 mb-4">
+            <input type="text" class="form-control form-control-lg" id="nameInput" 
+            placeholder="Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Name'" 
+            [class.is-invalid]="isFieldInvalid('name')"
+            formControlName="name">
+            @if (isFieldInvalid('name')) {
+              <div class="invalid-feedback d-block">
+                {{ getErrorMessage('name') }}
               </div>
             }
           </div>
-          <div class="form-group mt-5 mb-4">
-            <input type="text" class="form-control form-control-lg" id="subjectInput" placeholder="Subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Subject'" formControlName="subject">
+          <div class="form-group px-3 px-md-5 mb-4">
+            <input type="email" class="form-control form-control-lg" id="emailInput" 
+            placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" 
+            [class.is-invalid]="isFieldInvalid('email')"
+            formControlName="email">
+            @if (isFieldInvalid('email')) {
+              <div class="invalid-feedback d-block">
+                {{ getErrorMessage('email') }}
+              </div>
+            }
           </div>
-          <div class="form-group mt-5 mb-4">
-            <textarea class="form-control form-control-lg" id="textareaInput" rows="5" placeholder="Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Message'" formControlName="message"></textarea>
+          <div class="form-group px-3 px-md-5 mb-4">
+            <input type="text" class="form-control form-control-lg" id="subjectInput" 
+            placeholder="Subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Subject'" 
+            [class.is-invalid]="isFieldInvalid('subject')"
+            formControlName="subject">
+            @if (isFieldInvalid('subject')) {
+              <div class="invalid-feedback d-block">
+                {{ getErrorMessage('subject') }}
+              </div>
+            }
+          </div>
+          <div class="form-group px-3 px-md-5 mb-4">
+            <textarea class="form-control form-control-lg" id="textareaInput" rows="5" 
+            placeholder="Message" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Message'" 
+            [class.is-invalid]="isFieldInvalid('message')"
+            formControlName="message"></textarea>
+            @if (isFieldInvalid('message')) {
+              <div class="invalid-feedback d-block">
+                {{ getErrorMessage('message') }}
+              </div>
+            }
+          </div>
+
+          <!-- GDPR Checkbox Fix -->
+          <div class="mb-4 form-check">
+            <input type="checkbox" class="form-check-input" id="gdprConsent" formControlName="gdprConsent">
+            <label class="form-check-label" for="gdprConsent" style="font-size: 0.9rem;">
+              I have read the <a href="/privacy-policy" target="_blank">Privacy Policy</a> and agree to the processing of my data for the purpose of creating an offer.
+            </label>
+            
+            @if (contactForm.get('gdprConsent')?.invalid && contactForm.get('gdprConsent')?.touched) {
+              <div class="text-danger small d-block mt-2">
+                You must agree to the privacy policy to continue.
+              </div>
+            }
           </div>
           <div class="d-grid gap-2 d-md-flex justify-content-md-end">
             <button type="submit" class="btn btn-custom-orange" [disabled]="contactForm.invalid">
