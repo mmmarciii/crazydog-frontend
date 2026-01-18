@@ -82,6 +82,11 @@ class QuoteHandler
         $timestamp = date('d-m-Y H:i:s');
         $consentText = "The user has accepted the privacy policy";
 
+        $sameAsShipping = isset($this->data['sameAsShipping']) &&
+            ($this->data['sameAsShipping'] === true ||
+                $this->data['sameAsShipping'] === 'true' ||
+                $this->data['sameAsShipping'] === '1');
+
         $message = file_get_contents($templateFile);
         $replace = [
             '{{fileLinks}}'           => ($this->fileLinks ?: "<li>No uploaded pictures</li>"),
@@ -96,11 +101,11 @@ class QuoteHandler
             '{{billingStreet}}'       => $this->data['billingStreet'] ?? '',
             '{{billingHouseNumber}}'  => $this->data['billingHouseNumber'] ?? '',
 
-            '{{shippingCountry}}'     => (($this->data['sameAsShipping'] == true || empty($this->data['shippingCountry']))) ? $this->data['billingCountry'] : $this->data['shippingCountry'] ?? '',
-            '{{shippingZip}}'         => (($this->data['sameAsShipping'] == true || empty($this->data['shippingZip']))) ? $this->data['billingZip'] : $this->data['shippingZip'] ?? '',
-            '{{shippingCity}}'        => (($this->data['sameAsShipping'] == true || empty($this->data['shippingCity']))) ? $this->data['billingCity'] : $this->data['shippingCity'] ?? '',
-            '{{shippingStreet}}'      => (($this->data['sameAsShipping'] == true || empty($this->data['shippingStreet']))) ? $this->data['billingStreet'] : $this->data['shippingStreet'] ?? '',
-            '{{shippingHouseNumber}}' => (($this->data['sameAsShipping'] == true || empty($this->data['shippingHouseNumber']))) ? $this->data['billingHouseNumber'] : $this->data['shippingHouseNumber'] ?? '',
+            '{{shippingCountry}}'     => ($sameAsShipping) ? $this->data['billingCountry'] : $this->data['shippingCountry'] ?? '',
+            '{{shippingZip}}'         => ($sameAsShipping) ? $this->data['billingZip'] : $this->data['shippingZip'] ?? '',
+            '{{shippingCity}}'        => ($sameAsShipping) ? $this->data['billingCity'] : $this->data['shippingCity'] ?? '',
+            '{{shippingStreet}}'      => ($sameAsShipping) ? $this->data['billingStreet'] : $this->data['shippingStreet'] ?? '',
+            '{{shippingHouseNumber}}' => ($sameAsShipping) ? $this->data['billingHouseNumber'] : $this->data['shippingHouseNumber'] ?? '',
 
             '{{shoeSource}}'          => $this->data['shoeSource'] ?? '',
             '{{shoeType}}'            => $this->data['shoeType'] ?? '',
