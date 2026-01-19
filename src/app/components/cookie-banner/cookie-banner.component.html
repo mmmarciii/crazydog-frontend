@@ -3,18 +3,18 @@
   <div class="cookie-box">
     <div class="cookie-text">
       <div class="cookie-header">
-        <mat-icon class="blue-text">security</mat-icon>
-        <h2>Cookies</h2>
+        <i class="bi bi-shield-check blue-text"></i><h2>Cookies</h2>
       </div>
       <p>
-        <strong>Crazy Dog Custom</strong> uses cookies to ensure the best user experience and website security. 
-        By clicking 'Accept', you consent to the use of technical and analytical cookies...
+        <strong>Crazy Dog Custom</strong> uses cookies to ensure the best user experience and security. 
+        By clicking 'Accept All', you consent to the use of all cookies. You can manage your preferences or read more in our 
+        <a href="/privacy-policy" class="text-orange">Privacy Policy</a>.
       </p>
     </div>
     
     <div class="cookie-actions">
-      <button class="btn-custom-blue" (click)="reject()"><i class="bi bi-x-lg"></i> Cancel</button>
-      <button class="btn-custom-orange" (click)="accept()"><i class="bi bi-cookie"></i> Accept</button>
+      <button class="btn-custom-orange" (click)="reject()"><i class="bi bi-x-lg"></i> Decline</button>
+      <button class="btn-custom-orange" (click)="accept()"><i class="bi bi-cookie"></i> Accept All</button>
     </div>
   </div>
 </div>

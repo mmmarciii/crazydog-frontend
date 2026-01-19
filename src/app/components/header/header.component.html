@@ -1,27 +1,33 @@
-    <header class="justify-content-center border-bottom">
-            <nav class="navbar navbar-expand-md fixed-top">
-                <div class="container-fluid">
-                    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" 
-                            data-bs-target="#navbarNav" aria-controls="navbarNav" 
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <div class="hamburger-icon">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </div>
-                    </button>
-                    <a class="navbar-brand navlogo" href="#">
-                        <img src="images/logo2.png" alt="Crazy Dog Logo">
-                    </a>
-                    <div class="collapse navbar-collapse" id="navbarNav" #navbarCollapse>
-                        <ul class="navbar-nav ms-auto">
-                                @for (item of menuItems; track item.name) {
-                                    <li class="nav-item">
-                                        <a class="nav-link" [href]="item.link" (click)="collapseMenu(navbarCollapse, item.name)" [class.active]="activeItem === item.name">{{ item.name }}</a>
-                                    </li>
-                                }
-                        </ul>
-                    </div>
+<header id="hero" class="justify-content-center">
+    <nav class="navbar navbar-expand-md fixed-top">
+        <div class="container"> <a class="navbar-brand navlogo" href="#">
+                <img src="images/logo2.png" alt="Crazy Dog Logo">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" 
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <div class="hamburger-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
-            </nav>
-    </header>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav" #navbarCollapse>
+                <ul class="navbar-nav ms-auto">
+                    @for (item of menuItems; track item.name) {
+                        <li class="nav-item">
+                            <a class="nav-link text-center text-md-start" 
+                               [href]="item.link" 
+                               (click)="collapseMenu(navbarCollapse, item.name)" 
+                               [class.active]="activeItem === item.name">
+                               {{ item.name }}
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

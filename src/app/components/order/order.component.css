@@ -1,14 +1,114 @@
-.order {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                url('../../../../public/images/products/labubu-v1.jpg');
+.order-cta-section {
+    position: relative;
+    background: linear-gradient(rgba(247, 137, 16, 0.15), rgba(0, 0, 0, 0.85)), url('../../../../public/images/products/labubu-v1.jpg');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
-    padding: 100px 0;
-    height: 100vh
+    padding: 120px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
-.modal-title{
-    font-size: 2rem;
-    font-weight: 400;
+.btn-glow-orange {
+    background: linear-gradient(45deg, #f78910, #ffae42);
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    letter-spacing: 0.5px;
+    z-index: 1;
+    animation: pulse-orange 2s infinite;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes pulse-orange {
+    0% {
+        box-shadow: 0 0 0 0 rgba(247, 137, 16, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(247, 137, 16, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(247, 137, 16, 0);
+    }
+}
+
+.shimmer {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.4) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    transition: none;
+}
+
+.btn-glow-orange:hover .shimmer {
+    animation: shimmer-effect 0.8s ease-in-out;
+}
+
+@keyframes shimmer-effect {
+    100% {
+        left: 150%;
+    }
+}
+
+.btn-glow-orange:hover {
+    transform: scale(1.08) translateY(-3px);
+    background: linear-gradient(45deg, #ff9d2e, #ffae42);
+    color: white;
+}
+
+.btn-glow-orange:active {
+    transform: scale(0.95);
+}
+
+.custom-modal .modal-content {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.custom-modal .btn-close {
+    background-color: #f8f9fa;
+    padding: 10px;
+    border-radius: 50%;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+.custom-modal .btn-close:hover {
+    background-color: #f78910;
+    filter: invert(1); 
+}
+
+
+.modal.fade .modal-dialog {
+    transform: scale(0.8);
+    transition: transform 0.3s ease-out;
+}
+
+.modal.show .modal-dialog {
+    transform: scale(1);
+}
+
+.custom-modal.fade .modal-dialog {
+    transform: translateY(100px);
+    opacity: 0;
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.3s ease;
+}
+
+.custom-modal.show .modal-dialog {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.modal-backdrop.show {
+    opacity: 0.7;
+    backdrop-filter: blur(4px);
 }

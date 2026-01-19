@@ -54,6 +54,7 @@ export class QuoteFormComponent implements OnInit {
       // Client Info
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
+      middleName: [''],
       email: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.required, Validators.pattern('^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\\s\\./0-9]*$')]],
       // Billing Address
@@ -159,45 +160,60 @@ export class QuoteFormComponent implements OnInit {
 
 
   onSubmit() {
-
     if (this.quoteForm.invalid) {
-
       this.quoteForm.markAllAsTouched();
       return;
     }
-
-    if (this.quoteForm.valid) {
-      const formData = new FormData();
-
-      this.isLoading = true;
-
-      Object.keys(this.quoteForm.value).forEach(key => {
-        formData.append(key, this.quoteForm.value[key]);
-      });
-
-      this.uploadedFiles.forEach(file => {
-        formData.append('images[]', file, file.name);
-      });
-
-      this.quoteService.sendQuote(formData).subscribe({
-        next: (response) => {
-          this.isLoading = false;
-          this.isSent = true;
-          this.quoteForm.reset({
-            shoeSource: 'Basic',
-            sameAsShipping: true,
-            billingCountry: 'Austria',
-            shippingCountry: 'Austria',
-            gdprConsent: false
-          });
-          this.uploadedFiles = [];
-        },
-        error: (err) => {
-          this.isLoading = false;
-        }
-        
-      });
     
+    if (this.quoteForm.value.middleName) {
+      console.warn('Bot detected!');
+      this.isLoading = true; 
+      
+      setTimeout(() => {
+        this.isLoading = false;
+        this.isSent = true; 
+        this.quoteForm.reset({
+          shoeSource: 'Basic',
+          sameAsShipping: true,
+          billingCountry: 'Austria',
+          shippingCountry: 'Austria',
+          gdprConsent: false
+        });
+      }, 1500); 
+      return;
     }
+
+    const formData = new FormData();
+    this.isLoading = true;
+
+    
+    Object.keys(this.quoteForm.value).forEach(key => {
+      if (key !== 'middleName') { 
+        formData.append(key, this.quoteForm.value[key]);
+      }
+    });
+
+    this.uploadedFiles.forEach(file => {
+      formData.append('images[]', file, file.name);
+    });
+
+    this.quoteService.sendQuote(formData).subscribe({
+      next: (response) => {
+        this.isLoading = false;
+        this.isSent = true;
+        this.quoteForm.reset({
+          shoeSource: 'Basic',
+          sameAsShipping: true,
+          billingCountry: 'Austria',
+          shippingCountry: 'Austria',
+          gdprConsent: false
+        });
+        this.uploadedFiles = [];
+      },
+      error: (err) => {
+        this.isLoading = false;
+        console.error('Error submitting quote:', err);
+      }
+    });
   }
 }

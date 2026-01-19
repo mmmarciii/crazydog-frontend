@@ -10,7 +10,7 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   menuItems = [
-      { name: 'Home', link: '#home' },
+      { name: 'Home', link: '#hero' },
       { name: 'Our Products', link: '#products' },
       { name: 'Order', link: '#order' },
       { name: 'FAQ', link: '#faq' },

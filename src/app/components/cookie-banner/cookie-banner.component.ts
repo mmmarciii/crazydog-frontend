@@ -21,7 +21,7 @@ export class CookieBannerComponent implements OnInit {
   constructor(private cookieService: MyCookieService) {}
 
   ngOnInit(): void {
-    this.showBanner = !this.cookieService.hasConsent();
+    this.showBanner = !this.cookieService.hasDecided();
   }
 
   accept(): void {
