@@ -1,0 +1,63 @@
+{
+  "NAV": {
+    "HOME": "Kezdőlap",
+    "OURPRODUCTS": "Termékeink",
+    "ORDER": "Rendelés",
+    "FAQ": "GYIK",
+    "CONTACTUS": "Kapcsolat"
+  },
+    "OURPRODUCTS": {
+    "TITLE": "Termékeink",
+    "SUBTITLE": "Szegd meg a szabályokat, viselj stílust",
+    "PROD1": "Basic",
+    "PROD1_DESC": "Ez tökéletes választás, ha egy visszafogott, mégis személyre szabott dizájnt szeretnél, ami könnyen kombinálható bármilyen outfithez.",
+    "PROD1_DET_1": "Maximum 2 szín",
+    "PROD1_DET_2": "Kisebb, célzott festett területek (a cipő kb. 10–20%-a)",
+    "PROD1_DET_3": "Egyszerű minták és formák",
+    "PROD1_DET_4": "Rövid feliratok, betűk, számok vagy monogramok",
+    "PROD2": "Pro",
+    "PROD2_DESC": "Azoknak szól, akik egy igazán látványos, karakteres dizájnt szeretnének, ami már messziről kitűnik.",
+    "PROD2_DET_1": "Maximum 4 szín",
+    "PROD2_DET_2": "Közepes méretű festett felületek (a cipő kb. 20–50%-a)",
+    "PROD2_DET_3": "Összetettebb minták és grafikai elemek",
+    "PROD2_DET_4": "Feliratok, nevek, számok, szlogenek",
+    "PROD3": "Elit",
+    "PROD3_DESC": "Ez azoknak készül, akik nem csak egy cipőt akarnak - hanem egy hordható műalkotást, ami valóban csak róluk szól.",
+    "PROD3_DET_1": "Nincs szín limit",
+    "PROD3_DET_2": "Teljes felületű vagy nagyméretű festés",
+    "PROD3_DET_3": "Extrán részletes, művészi grafikák",
+    "PROD3_DET_4": "Egyedi illusztrációk, logók, portrék, összetett minták"
+
+  },
+  "FAQ": {
+    "TITLE": "GYIK",
+    "TITLE": "Gyakran ismételt kérdések egyedi rendelésekhez",
+    "Q1": "Mennyi idő alatt készül el egy cipő?",
+    "A1": "Az elkészítési idő több tényezőtől függ: az aktuális kapacitástól, a kiválasztott cipőalap beszerzésétől és a dizájn összetettségétől. Általánosságban a tervezés 3-5 munkanapot, a gyártás folyamata ezt követően körülbelül 10-15 munkanapot vesz igénybe, azonban ez az időszak szezononként változhat. A pontos átfutási időt minden esetben a rendelés véglegesítésekor erősítjük meg.",
+    "Q2": "A feltünetett ár tartalmazza a cipő árát?",
+    "A2": "Nem tartalmazza.",
+    "Q3": "Használt cipőre is kérhető festés?",
+    "A3": "Igen, újszerű, enyhén használt tiszta cipőkre. Ezen esetek mindig egyedi megbeszélést igényelnek. Régebb óta használt vagy erősen kopott cipőkre nem vállalunk festést, mivel ezek nem biztosítják a kívánt minőségi végeredményt. A szabályok célja, hogy minden esetben tartós és esztétikus Crazy Dog Custom dizájnt tudjunk biztosítani. Használt cipő vagy különleges anyag esetén kérjük, a megrendelés előtt vedd fel velünk a kapcsolatot.",
+    "Q4": "Mennyire vízállóak és strapabíróak a cipők?",
+    "A4": "A Crazy Dog Custom cipők kizárólag kifejezetten lábbelikhez fejlesztett festékekkel és anyagokkal készülnek, hogy a lehető legjobb tartósságot biztosítsák. Minden pár több rétegű, vízálló védőbevonatot és impregnáló kezelést kap, amely segít megóvni a dizájnt a nedvességtől és a mindennapi használatból adódó kopástól.",
+    "Q5": "Le lehet mosni vagy tisztítani a cipőt?",
+    "A5": "Igen, a cipőt óvatosan tisztíthatod egy nedves, puha ronggyal. Erősebb tisztítószerek, dörzsölés vagy mosógép használatát kerüld, mert károsíthatják a festést és a védőréteget, valamint a cipő alapanyagát is.",
+    "Q6": "Hogyan hosszabbíthatom meg a custom cipőm élettartamát?",
+    "A6": "A festés és a felület védelme érdekében érdemes a cipőt tisztítás után körülbelül 3 havonta újra impregnálni. Ehhez használhatsz általános, cipőboltokban is kapható vízlepergető impregnáló sprayt, amely segít megőrizni a festés minőségét és meghosszabbítja a custom dizájn élettartamát. Így a Crazy Dog Custom cipőd hosszú távon is megőrzi eredeti megjelenését.",
+    "Q7": "Mi történik, ha módosítani szeretném a dizájnt?",
+    "A7": "Az előzetesen elküldött információk alapján, valamint az egyszeri tervezési díj kifizetése után megkapod álmaid cipőjének tervét, amin még kisebb módosítások természetesen lehetségesek, ebben rugalmasak vagyunk. Azonban a már elkészült terv átalakítása, új dizájn ötletet beépítése többletköltséggel jár, amiről természetesen informálunk. Fontos: Minden jóváhagyott design tervet követő megrendelés végleges, módosítani nem lehet!",
+    "Q8": "Mi történik, ha rossz méretet adok meg?",
+    "A8": "Kérjük inkább kétszer ellenőrizd a pontos méretet, mert méretprobléma miatt nem áll módunkban visszatérítést, cserét biztosítani.",
+    "Q9": "Mikor és hogyan kell fizetni?",
+    "A9": "A fizetés több ütemben zajlik:",
+    "A9_1": "A kapcsolatfelvétel, egyedi ötletek elküldése után, de még a tervezési fázis előtt: Egyszeri tervezési díj fizetése átutalással.",
+    "A9_2": "A kiküldött, majd általad jóváhagyott design terv elkészülte után, még a gyártás előtt: Cipő árának, szállítási költségnek, valamint a gyártás költségének fizetése átutalással.",
+    "Q10": "Milyen szállítási opciók közül választhatok?",
+    "A10": "Az elkészült cipőket minden esetben futárszolgálattal juttatjuk el az általad megadott címre.",
+    "Q11": "Szállítás lehetséges külföldre is?",
+    "A11": "Igen.",
+    "Q12": "Visszaküldhetem vagy kicserélhetem a cipőt?",
+    "A12": "Az egyedi gyártásból és személyre szabott kivitelezésből adódóan nem áll módunkban visszatérítést, cserét vagy garanciát biztosítani (a cipő anyaghibából eredő problémájára)."
+   }
+
+}

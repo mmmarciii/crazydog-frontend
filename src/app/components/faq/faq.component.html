@@ -1,9 +1,9 @@
 <section id="faq" class="faq-section py-5 min-vh-100 d-flex align-items-center">
     <div class="container">
-        <div class="row mb-5 px-3 px-md-5">
+        <div class="row mb-5 px-3 px-md-5 section-heading">
             <div class="col-12 border-start border-orange border-4 ps-4">
-                <h1 class="display-3 fw-bold">FAQ</h1>
-                <p class="lead text-muted">Common questions about custom orders</p>
+                <h1 class="display-3 fw-bold">{{ 'FAQ.TITLE' | translate }}</h1>
+                <p class="lead text-muted">{{ 'FAQ.TITLE' | translate }}</p>
             </div>
         </div>
         
@@ -19,7 +19,7 @@
                                     [attr.data-bs-target]="'#collapse' + item.id" 
                                     aria-expanded="false" 
                                     [attr.aria-controls]="'collapse' + item.id">
-                                {{ item.question }}
+                                {{ item.question | translate}}
                             </button>
                         </h2>
                         <div [id]="'collapse' + item.id" 
@@ -27,8 +27,17 @@
                              [attr.aria-labelledby]="'heading' + item.id" 
                              data-bs-parent="#faqAccordion">
                             <div class="accordion-body text-secondary pb-4">
-                                {{ item.answer }}
+                                {{ item.answer | translate}}
                             </div>
+                            
+                                @if(item.list && item.list.length > 0) {
+                                    <ul class="faq-list">
+                                    @for(listItem of item.list; track listItem) {
+                                        <li class="text-secondary">{{ 'FAQ.' + listItem | translate }}</li>
+                                    }
+                                    </ul>
+                                }
+                            
                         </div>
                     </div>
                     }

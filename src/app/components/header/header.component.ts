@@ -1,23 +1,24 @@
 import { Component } from '@angular/core';
-
+import { LanguageSelectorComponent } from '../language-selector/language-selector.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
     selector: 'app-header',
     standalone: true,
-    imports: [],
+    imports: [LanguageSelectorComponent, TranslateModule],
     templateUrl: './header.component.html',
     styleUrl: './header.component.css'
 })
 export class HeaderComponent {
   menuItems = [
-      { name: 'Home', link: '#hero' },
-      { name: 'Our Products', link: '#products' },
-      { name: 'Order', link: '#order' },
-      { name: 'FAQ', link: '#faq' },
-      { name: 'Contact us', link: '#contactus' }
+      { name: 'NAV.HOME', link: '#hero' },
+      { name: 'NAV.OURPRODUCTS', link: '#products' },
+      { name: 'NAV.ORDER', link: '#order' },
+      { name: 'NAV.FAQ', link: '#faq' },
+      { name: 'NAV.CONTACTUS', link: '#contactus' }
   ];
 
-  activeItem: string = 'Home';
+  activeItem: string = 'NAV.HOME';
 
   collapseMenu(menuElement: HTMLElement, itemName: string) {
     this.activeItem = itemName;

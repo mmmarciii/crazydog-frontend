@@ -22,12 +22,14 @@
                                [href]="item.link" 
                                (click)="collapseMenu(navbarCollapse, item.name)" 
                                [class.active]="activeItem === item.name">
-                               {{ item.name }}
+                               {{ item.name | translate }}
                             </a>
                         </li>
+                        
                     }
                 </ul>
             </div>
+            <app-language-selector></app-language-selector>
         </div>
     </nav>
 </header>

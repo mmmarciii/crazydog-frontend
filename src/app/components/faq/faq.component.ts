@@ -1,17 +1,26 @@
-
 import { Component } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
     selector: 'app-faq',
     standalone: true,
-    imports: [],
+    imports: [TranslateModule],
     templateUrl: './faq.component.html',
     styleUrl: './faq.component.css'
 })
 export class FaqComponent {
   questionItems = [
-    { id: '1', question: 'How can I buy a product from you?', answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'},
-    { id: '2', question: 'How can I pay?', answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'},
-    { id: '3', question: 'Which delivery options are available?', answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'}
+    { id: '1', question: 'FAQ.Q1', answer: 'FAQ.A1', list: ''},
+    { id: '2', question: 'FAQ.Q2', answer: 'FAQ.A2', list: ''},
+    { id: '3', question: 'FAQ.Q3', answer: 'FAQ.A3', list: ''},
+    { id: '4', question: 'FAQ.Q4', answer: 'FAQ.A4', list: ''},
+    { id: '5', question: 'FAQ.Q5', answer: 'FAQ.A5', list: ''},
+    { id: '6', question: 'FAQ.Q6', answer: 'FAQ.A6', list: ''},
+    { id: '7', question: 'FAQ.Q7', answer: 'FAQ.A7', list: ''},
+    { id: '8', question: 'FAQ.Q8', answer: 'FAQ.A8', list: ''},
+    { id: '9', question: 'FAQ.Q9', answer: 'FAQ.A9', list: ['A9_1', 'A9_2']},
+    { id: '10', question: 'FAQ.Q10', answer: 'FAQ.A10', list: ''},
+    { id: '11', question: 'FAQ.Q11', answer: 'FAQ.A11', list: ''},
+    { id: '12', question: 'FAQ.Q12', answer: 'FAQ.A12', list: ''}
   ];
 }

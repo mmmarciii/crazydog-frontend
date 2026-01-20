@@ -39,6 +39,13 @@
     background-color: white;
 }
 
+.faq-list {
+  list-style-type: disc;
+  padding: 0 1.5rem 0 2rem;
+}
+.faq-list li {
+  margin-bottom: 0.5rem;
+}
 @media (max-width: 768px) {
     .accordion-custom .accordion-button {
         font-size: 1rem;

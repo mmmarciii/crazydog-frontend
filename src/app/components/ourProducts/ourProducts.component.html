@@ -1,9 +1,9 @@
 <section id="products" class="products py-5 mi-vh-100">
     <div class="container">
-        <div class="row mb-5 px-3 px-md-5">
+        <div class="row mb-5 px-3 px-md-5 section-heading">
             <div class="col-12 border-start border-orange border-4 ps-4">
-                <h1 class="display-3 fw-bold">Our Products</h1>
-                <p class="lead text-muted">Break rules, wear style</p>
+                <h1 class="display-3 fw-bold">{{'OURPRODUCTS.TITLE' | translate}}</h1>
+                <p class="lead text-muted">{{'OURPRODUCTS.SUBTITLE' | translate}}</p>
             </div>
         </div>
 
@@ -15,16 +15,16 @@
                          <img [src]="item.link" class="card-img-top" [alt]="item.name">
                     </div>
                     <div class="card-body d-flex flex-column">
-                        <h5 class="fw-bold">{{ item.name }}</h5>
+                        <h5 class="fw-bold">{{ item.name | translate }}</h5>
                         <p class="card-text text-muted flex-grow-1 product-description">
-                            {{ item.desc }}
+                            {{ item.desc | translate }}
                         </p>
                         
                         <div class="product-badges d-flex flex-wrap gap-2 mt-3">
-                            <span class="badge-item"><i class="bi bi-droplet"></i> {{ item.colors }}</span>
-                            <span class="badge-item"><i class="bi bi-brush"></i> {{ item.areas }}</span>
-                            <span class="badge-item"><i class="bi bi-layers"></i> {{ item.patterns }}</span>
-                            <span class="badge-item"><i class="bi bi-fonts"></i> {{ item.desing }}</span>
+                            <span class="badge-item"><i class="bi bi-droplet"></i> {{ item.colors | translate }}</span>
+                            <span class="badge-item"><i class="bi bi-brush"></i> {{ item.areas | translate }}</span>
+                            <span class="badge-item"><i class="bi bi-layers"></i> {{ item.patterns | translate }}</span>
+                            <span class="badge-item"><i class="bi bi-fonts"></i> {{ item.desing | translate }}</span>
                         </div>
                     </div>
                 </div>

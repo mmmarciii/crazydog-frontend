@@ -30,6 +30,10 @@ a{
     text-decoration: none;
 }
 
+.section-heading{
+    padding-top: 90px;
+}
+
 .btn-custom-orange{
     background-color: var(--primary-orange);
     border: 3px solid var(--primary-orange);
