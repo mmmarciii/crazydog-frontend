@@ -29,9 +29,59 @@
     "PROD3_DET_4": "Egyedi illusztrációk, logók, portrék, összetett minták"
 
   },
+  "ORDER": {
+    "TITLE": "Készen állsz a kitűnésre?",
+    "SUBTITLE": "Változtasd a sneakeredet egyedi műalkotássá.",
+    "BUTTON": "Tervezés indítása"
+  },
+  "QUOTEFORM": {
+    "ACCORDION_TITLE": "Kérj ajánlatot",
+    "ACCORDION_SUBTITLE": "Töltsd ki az űrlapot, és mi elkészítjük neked az egyedi tervedet.",
+    "SHOETYPE_PLACEHOLDER": "Cipő típusa (pl. Jordan 1)",
+    "SHOESIZE_PLACEHOLDER": "Cipőméret (EU)",
+    "TEXTAREA_PLACEHOLDER": "Kérjük, írj pár részletet álmaid sneakeréről...",
+    "ACCORDION_TITLE1": "Termék konfiguráció",
+    "ACCORDION_TITLE2": "Ügyfél adatai",
+    "ACCORDION_TITLE3": "Számlázási cím",
+    "ACCORDION_LABEL1": "A szállítási cím megegyezik",
+    "ACCORDION_TITLE4": "Szállítási cím",
+    "GDPR1": "Elolvastam az ",
+    "GDPR2": "Adatkezelési tájékoztatót",
+    "GDPR3": " és hozzájárulok adataim kezeléséhez az ajánlatkészítés céljából.",
+    "GDPR_WARNNG": "A folytatáshoz el kell fogadnod az adatkezelési tájékoztatót.",
+    "SENDING": "Küldés...",
+    "BUTTON_1": "Küldés",
+    "GREETING": "Köszönjük!",
+    "MESSAGE": "Az ajánlatkérésedet sikeresen elküldtük. Hamarosan jelentkezünk.",
+    "BUTTON_2": "Új ajánlatkérés",
+    "BUTTON_3": "Mégse"
+  },
+  "ADDRESSFORM": {
+    "AUSTRIA": "Ausztria",
+    "GERMANY": "Németország",
+    "HUNGARY": "Magyarország",
+    "ZIPCODE": "Irányítószám",
+    "CITY": "Város",
+    "STREET": "Utca",
+    "HOUSE_NUMBER": "Házszám"
+  },
+  "CLIENTINFO": {
+    "FIRSTNAME": "Keresztnév",
+    "LASTNAME": "Vezetéknév",
+    "EMAIL": "E-mail cím",
+    "PHONE": "Telefonszám",
+    "ISREQUIRED": "kötelező",
+    "PLEASEENTER": "Kérjük, adj meg egy érvényes"
+  },
+  "FILEUPLOAD": {
+    "DRAGDROP": "Húzd ide a fájlokat",
+    "BROWSE": "Képek kiválasztása",
+    "MAXFILES": "Maximum 5 kép tölthető fel.",
+    "UPLOADED": "5 kép feltöltve"
+  },
   "FAQ": {
     "TITLE": "GYIK",
-    "TITLE": "Gyakran ismételt kérdések egyedi rendelésekhez",
+    "SUBTITLE": "Gyakran ismételt kérdések egyedi rendelésekhez",
     "Q1": "Mennyi idő alatt készül el egy cipő?",
     "A1": "Az elkészítési idő több tényezőtől függ: az aktuális kapacitástól, a kiválasztott cipőalap beszerzésétől és a dizájn összetettségétől. Általánosságban a tervezés 3-5 munkanapot, a gyártás folyamata ezt követően körülbelül 10-15 munkanapot vesz igénybe, azonban ez az időszak szezononként változhat. A pontos átfutási időt minden esetben a rendelés véglegesítésekor erősítjük meg.",
     "Q2": "A feltünetett ár tartalmazza a cipő árát?",
@@ -58,6 +108,34 @@
     "A11": "Igen.",
     "Q12": "Visszaküldhetem vagy kicserélhetem a cipőt?",
     "A12": "Az egyedi gyártásból és személyre szabott kivitelezésből adódóan nem áll módunkban visszatérítést, cserét vagy garanciát biztosítani (a cipő anyaghibából eredő problémájára)."
-   }
-
+   },
+  "CONTACT": {
+    "TITLE": "Kapcsolat",
+    "SUBTITLE": "Készen állsz az egyedi projektedre? Írj nekünk!",
+    "NAME": "Teljes név",
+    "EMAIL": "E-mail cím",
+    "SUBJECT": "Tárgy",
+    "MESSAGE": "Üzenet",
+    "AGGREE1": "Elfogadom az ",
+    "AGGREE2": "Adatkezelési tájékoztatót",
+    "AGGREE3": "A folytatáshoz el kell fogadnod a feltételeket.",
+    "SENDING": "Üzenet küldése",
+    "GREETING": "Köszönjük!",
+    "MESSAGE_SENT": "Az üzenetedet megkaptuk. Csapatunk hamarosan felveszi veled a kapcsolatot.",
+    "BUTTON": "Új üzenet küldése"
+  },
+  "FOOTER": {
+    "TITLE": "Kövess minket a közösségi oldalainkon:",
+    "MOTTO": "A te cipőd, a te szabályaid. Egyedi tervezésű darabokat keltünk életre professzionális szakértelemmel és művészi szenvedéllyel.",
+    "PRODUCTS": "Termékek",
+    "SHOES": "Cipők",
+    "BRANDS": "Márkák",
+    "MATERIALS": "Alapanyagok",
+    "USEFUL": "Hasznos információk",
+    "PRIVACY": "Adatvédelmi nyilatkozat",
+    "IMPRESSUM": "Impresszum",
+    "DELIVERY": "Szállítás és visszaküldés",
+    "GUARANTEE": "Garancia",
+    "CONTACT": "Kapcsolat"
+  }
 }

@@ -2,12 +2,12 @@
     <div class="container">
         <div class="row align-items-center py-5">
             <div class="col-md-8 text-center text-md-start">
-                <h2 class="display-3 fw-bold text-white mb-3">Ready to stand out?</h2>
-                <p class="lead text-white-50 fs-4 mb-0">Turn your sneakers into a unique masterpiece. <br class="d-none d-md-block"> Let's create something amazing together!</p>
+                <h2 class="display-3 fw-bold text-white mb-3">{{'ORDER.TITLE' | translate}}</h2>
+                <p class="lead text-white-50 fs-4 mb-0">{{'ORDER.SUBTITLE' | translate}} <br class="d-none d-md-block"></p>
             </div>
             <div class="col-md-4 text-center text-md-end mt-5 mt-md-0">
               <button (click)="openModal()" class="btn-glow-orange px-5 py-3 rounded-pill fw-bold position-relative overflow-hidden">
-                  <span class="btn-text">Start My Design</span>
+                  <span class="btn-text">{{'ORDER.BUTTON' | translate}}</span>
                   <div class="shimmer"></div>
               </button>
             </div>
@@ -23,8 +23,8 @@
             </div>
             <div class="modal-body p-4 p-md-5 pt-0">
                 <div class="text-center mb-4">
-                    <h2 class="fw-bold display-6">Get a Quote</h2>
-                    <p class="text-muted">Fill out the form and we'll get back to you with a custom plan.</p>
+                    <h2 class="fw-bold display-6">{{'QUOTEFORM.ACCORDION_TITLE' | translate}}</h2>
+                    <p class="text-muted">{{'QUOTEFORM.ACCORDION_SUBTITLE' | translate}}</p>
                 </div>
                 <app-quote-form></app-quote-form>
             </div>

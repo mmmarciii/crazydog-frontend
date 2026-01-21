@@ -29,6 +29,57 @@
     "PROD3_DET_4": "Individuelle Illustrationen, Logos, Porträts und komplexe Designs"
 
   },
+  "ORDER": {
+    "TITLE": "Bereit, aus der Masse herauszustechen?",
+    "SUBTITLE": "Verwandle deine Sneaker in ein einzigartiges Meisterwerk.",
+    "BUTTON": "Mein Design starten"
+  },
+  "QUOTEFORM": {
+    "ACCORDION_TITLE": "Angebot anfordern",
+    "ACCORDION_SUBTITLE": "Fülle das Formular aus und wir melden uns mit einem individuellen Plan bei dir.",
+    "SHOETYPE_PLACEHOLDER": "Schuhmodell (z.B. Jordan 1)",
+    "SHOESIZE_PLACEHOLDER": "Schuhgröße (EU)",
+    "TEXTAREA_PLACEHOLDER": "Bitte teile uns einige Details über deinen Traum-Sneaker mit...",
+    "ACCORDION_TITLE1": "Produktkonfiguration",
+    "ACCORDION_TITLE2": "Kundeninformationen",
+    "ACCORDION_TITLE3": "Rechnungsadresse",
+    "ACCORDION_LABEL1": "Lieferadresse ist identisch",
+    "ACCORDION_TITLE4": "Lieferadresse",
+    "GDPR1": "Ich habe die ",
+    "GDPR2": "Datenschutzerklärung",
+    "GDPR3": " gelesen und erkläre mich mit der Verarbeitung meiner Daten zum Zweck der Angebotserstellung einverstanden.",
+    "GDPR_WARNNG": "Du musst der Datenschutzerklärung zustimmen, um fortzufahren.",
+    "SENDING": "Wird gesendet...",
+    "BUTTON_1": "Absenden",
+    "GREETING": "Vielen Dank!",
+    "MESSAGE": "Deine Anfrage wurde erfolgreich versendet. Wir werden uns in Kürze bei dir melden.",
+    "BUTTON_2": "Weitere Anfrage senden",
+    "BUTTON_3": "Abbrechen"
+  },
+  "ADDRESSFORM": {
+    "AUSTRIA": "Österreich",
+    "GERMANY": "Deutschland",
+    "HUNGARY": "Ungarn",
+    "ZIPCODE": "PLZ",
+    "CITY": "Stadt",
+    "STREET": "Straße",
+    "HOUSE_NUMBER": "Hausnummer"
+  },
+  "CLIENTINFO": {
+    "FIRSTNAME": "Vorname",
+    "LASTNAME": "Nachname",
+    "EMAIL": "E-Mail-Adresse",
+    "PHONE": "Telefonnummer",
+    "ISREQUIRED": "ist ein Pflichtfeld",
+    "PLEASEENTER": "Bitte geben Sie eine gültige"
+  },
+  "FILEUPLOAD": {
+    "DRAGDROP": "Dateien hierher ziehen",
+    "BROWSE": "Bilder auswählen",
+    "MAXFILES": "Maximal 5 Bilder.",
+    "UPLOADED": "5 Bilder hochgeladen"
+  },
+  
   "FAQ": {
     "TITLE": "FAQ",
     "SUBTITLE": "Häufig gestellte Fragen zu Sonderanfertigungen",
@@ -58,5 +109,34 @@
     "A11": "Ja.",
     "Q12": "Kann ich die Schuhe zurückgeben oder umtauschen?",
     "A12": "Aufgrund der individuellen Anfertigung und Personalisierung können wir keine Rückerstattung, keinen Umtausch und keine Garantie anbieten (ausgenommen Materialfehler des Schuhs)."
-   }
+   },
+   "CONTACT": {
+    "TITLE": "Kontakt",
+    "SUBTITLE": "Bereit für dein individuelles Projekt? Schreib uns eine Nachricht!",
+    "NAME": "Dein Name",
+    "EMAIL": "E-Mail-Adresse",
+    "SUBJECT": "Betreff",
+    "MESSAGE": "Nachricht",
+    "AGGREE1": "Ich stimme der ",
+    "AGGREE2": "Datenschutzerklärung",
+    "AGGREE3": "Du musst zustimmen, um fortzufahren.",
+    "SENDING": "Nachricht senden",
+    "GREETING": "Vielen Dank!",
+    "MESSAGE_SENT": "Deine Nachricht ist bei uns eingegangen. Unser Team wird sich in Kürze bei dir melden.",
+    "BUTTON": "Weitere Nachricht senden"
+  },
+  "FOOTER": {
+    "TITLE": "Folge uns in den sozialen Netzwerken:",
+    "MOTTO": "Deine Sneaker, deine Regeln. Wir erwecken einzigartige Designs mit professioneller Sorgfalt und künstlerischer Leidenschaft zum Leben.",
+    "PRODUCTS": "Produkte",
+    "SHOES": "Schuhe",
+    "BRANDS": "Marken",
+    "MATERIALS": "Materialien",
+    "USEFUL": "Nützliche Infos",
+    "PRIVACY": "Datenschutz",
+    "IMPRESSUM": "Impressum",
+    "DELIVERY": "Versand & Rückgabe",
+    "GUARANTEE": "Garantie",
+    "CONTACT": "Kontakt"
+  }
 }

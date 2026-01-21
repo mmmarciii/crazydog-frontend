@@ -2,8 +2,8 @@
     <div class="container">
         <div class="row mb-5 px-3 px-md-5">
             <div class="col-12 border-start border-orange border-4 ps-4">
-                <h1 class="display-3 fw-bold">How to Order</h1>
-                <p class="lead text-muted">Just few steps to become unique</p>
+                <h1 class="display-3 fw-bold">{{ 'ORDERPROCESS.TITLE' | translate }}</h1>
+                <p class="lead text-muted">{{ 'ORDERPROCESS.SUBTITLE' | translate }}</p>
             </div>
         </div>
 
@@ -18,9 +18,9 @@
 
             <div class="col-md-6 ps-md-5 px-0 px-md-3" [class.order-md-first]="item.order === 'imageLast'">
                 <div class="process-content">
-                    <h2 class="h1 fw-bold mb-3">{{ item.name }}</h2>
+                    <h2 class="h1 fw-bold mb-3">{{ item.name | translate }}</h2>
                     @if (item.desc) {
-                    <p class="text-secondary fs-5">{{ item.desc }}</p>
+                    <p class="text-secondary fs-5">{{ item.desc | translate }}</p>
                     }
                     @if (item.list) {
                         <ul class="process-list list-unstyled mt-4">
@@ -29,7 +29,7 @@
                                     <div class="list-icon-wrapper me-3">
                                         <i class="bi bi-check2 text-orange"></i>
                                     </div>
-                                    <span class="text-secondary fs-6">{{ listItem }}</span>
+                                    <span class="text-secondary fs-6">{{ listItem | translate }}</span>
                                 </li>
                             }
                         </ul>
@@ -37,7 +37,7 @@
                     @if (item.note) {
                     <div class="note-box p-3 rounded-3 mt-4">
                         <i class="bi bi-info-circle-fill me-2 text-orange"></i>
-                        <span class="small italic">{{ item.note }}</span>
+                        <span class="small italic">{{ item.note | translate  }}</span>
                     </div>
                     }
                 </div>

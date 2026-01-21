@@ -4,10 +4,11 @@ import { HttpClient } from '@angular/common/http';
 import { of } from 'rxjs';
 import { catchError, debounceTime, distinctUntilChanged, filter, switchMap } from 'rxjs/operators';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-address-form',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, TranslateModule],
   templateUrl: './address-form.component.html',
   styleUrl:'../quote-form/quote-form.component.css'
 })

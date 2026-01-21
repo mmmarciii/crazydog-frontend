@@ -1,13 +1,13 @@
 <div class="row mb-3" [formGroup]="parentForm">
     <div class="col-md-4">
         <select class="form-select" [formControlName]="prefix + 'Country'">
-        <option value="Austria">Austria</option>
-        <option value="Germany">Germany</option>
-        <option value="Hungary">Hungary</option>
+        <option value="Austria">{{'ADDRESSFORM.AUSTRIA' | translate}}</option>
+        <option value="Germany">{{'ADDRESSFORM.GERMANY' | translate}}</option>
+        <option value="Hungary">{{'ADDRESSFORM.HUNGARY' | translate}}</option>
         </select>
     </div>
     <div class="col-md-4">
-        <input type="text" class="form-control" placeholder="Zip Code" 
+        <input type="text" class="form-control" placeholder="{{'ADDRESSFORM.ZIPCODE' | translate}}" 
                [class.is-invalid]="isFieldInvalid('Zip')"
                [formControlName]="prefix + 'Zip'">
         @if (isFieldInvalid('Zip')) {
@@ -15,7 +15,7 @@
         }
     </div>
     <div class="col-md-4">
-        <input type="text" class="form-control" placeholder="City" 
+        <input type="text" class="form-control" placeholder="{{'ADDRESSFORM.CITY' | translate}}" 
                [class.is-invalid]="isFieldInvalid('City')"
                [formControlName]="prefix + 'City'">
         @if (isFieldInvalid('City')) {
@@ -25,7 +25,7 @@
 </div>
 <div class="row mb-3" [formGroup]="parentForm">
     <div class="col-md-8">
-        <input type="text" class="form-control" placeholder="Street" 
+        <input type="text" class="form-control" placeholder="{{'ADDRESSFORM.STREET' | translate}}" 
                [class.is-invalid]="isFieldInvalid('Street')"
                [formControlName]="prefix + 'Street'">
         @if (isFieldInvalid('Street')) {
@@ -33,7 +33,7 @@
         }
     </div>
     <div class="col-md-4">
-        <input type="text" class="form-control" placeholder="House Number" 
+        <input type="text" class="form-control" placeholder="{{'ADDRESSFORM.HOUSENUMBER' | translate}}" 
                [class.is-invalid]="isFieldInvalid('HouseNumber')"
                [formControlName]="prefix + 'HouseNumber'">
         @if (isFieldInvalid('HouseNumber')) {

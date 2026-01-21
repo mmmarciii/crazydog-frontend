@@ -3,13 +3,13 @@
         <div class="col-md-6 mb-3">
             <input type="text" class="form-control"
             [class.is-invalid]="isFieldInvalid('firstName')"
-            placeholder="First Name" formControlName="firstName">
+            placeholder="{{ 'CLIENTINFO.FIRSTNAME' | translate }}" formControlName="firstName">
             @if (isFieldInvalid('firstName')) {
                 <div class="invalid-feedback">
                     @if (parentForm.get('firstName')?.errors?.['required']) { 
-                        First name is required. 
+                        {{ 'CLIENTINFO.FIRSTNAME' | translate }} {{ 'CLIENTINFO.ISREQUIRED' | translate }}. 
                     } @else { 
-                        Please enter a valid first name. 
+                        {{ 'CLIENTINFO.PLEASEENTER' | translate }} {{ 'CLIENTINFO.FIRSTNAME' | translate }}. 
                     }
                 </div>
             }
@@ -17,13 +17,13 @@
         <div class="col-md-6 mb-3">
             <input type="text" class="form-control" 
             [class.is-invalid]="isFieldInvalid('lastName')"
-            placeholder="Last Name" formControlName="lastName">
+            placeholder="{{ 'CLIENTINFO.LASTNAME' | translate }}" formControlName="lastName">
             @if (isFieldInvalid('lastName')) {
                 <div class="invalid-feedback">
                     @if (parentForm.get('lastName')?.errors?.['required']) { 
-                        Last name is required. 
+                        {{ 'CLIENTINFO.LASTNAME' | translate }} {{ 'CLIENTINFO.ISREQUIRED' | translate }}. 
                     } @else { 
-                        Please enter a valid last name. 
+                        {{ 'CLIENTINFO.PLEASEENTER' | translate }} {{ 'CLIENTINFO.LASTNAME' | translate }}. 
                     }
                 </div>
             }
@@ -37,13 +37,13 @@
         <div class="col-md-6 mb-3">
             <input type="email" class="form-control"
             [class.is-invalid]="isFieldInvalid('email')"
-            placeholder="Email" formControlName="email">
+            placeholder="{{ 'CLIENTINFO.EMAIL' | translate }}" formControlName="email">
             @if (isFieldInvalid('email')) {
                 <div class="invalid-feedback">
                     @if (parentForm.get('email')?.errors?.['required']) { 
-                        Email is required. 
-                    } @else { 
-                        Please enter a valid email address. 
+                        {{ 'CLIENTINFO.EMAIL' | translate }} {{ 'CLIENTINFO.ISREQUIRED' | translate }}. 
+                    } @else {
+                        {{ 'CLIENTINFO.PLEASEENTER' | translate }} {{ 'CLIENTINFO.EMAIL' | translate }}.
                     }
                 </div>
             }
@@ -51,13 +51,13 @@
         <div class="col-md-6 mb-3">
             <input type="tel" class="form-control"
             [class.is-invalid]="isFieldInvalid('phone')"
-            placeholder="Phone Number" formControlName="phone">
+            placeholder="{{ 'CLIENTINFO.PHONE' | translate }}" formControlName="phone">
             @if (isFieldInvalid('phone')) {
                 <div class="invalid-feedback">
                     @if (parentForm.get('phone')?.errors?.['required']) { 
-                        Phone number is required. 
+                        {{ 'CLIENTINFO.PHONE' | translate }} {{ 'CLIENTINFO.ISREQUIRED' | translate }}. 
                     } @else { 
-                        Invalid phone format. 
+                        {{ 'CLIENTINFO.PLEASEENTER' | translate }} {{ 'CLIENTINFO.PHONE' | translate }}. 
                     }
                 </div>
             }

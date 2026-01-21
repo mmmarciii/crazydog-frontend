@@ -5,7 +5,8 @@ import { ProductService } from '../../services/product.service';
 import { FileUploadComponent } from '../../components/file-upload/file-upload.component';
 import { ClientInfoComponent } from '../client-info/client-info.component';
 import { AddressFormComponent } from '../address-form/address-form.component';
-import { QuoteFormService } from '../../services/quote-form.service'; 
+import { QuoteFormService } from '../../services/quote-form.service';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-quote-form',
@@ -15,7 +16,8 @@ import { QuoteFormService } from '../../services/quote-form.service';
     CommonModule,
     ClientInfoComponent,
     FileUploadComponent,
-    AddressFormComponent
+    AddressFormComponent,
+    TranslateModule
 ],
   templateUrl: './quote-form.component.html',
   styleUrl: './quote-form.component.css'

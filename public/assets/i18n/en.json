@@ -21,7 +21,7 @@
     "PROD2_DET_2": "Medium-sized painted areas (approx. 20–50% of the shoe)",
     "PROD2_DET_3": "More complex patterns and graphic elements",
     "PROD2_DET_4": "Text, names, numbers, slogans",
-    "PROD3": "Elit",
+    "PROD3": "Elite",
     "PROD3_DESC": "Made for those who don’t just want a pair of shoes - but a wearable work of art that truly represents them.",
     "PROD3_DET_1": "No color limit",
     "PROD3_DET_2": "Full-coverage or large-scale paintings",
@@ -29,11 +29,90 @@
     "PROD3_DET_4": "Custom illustrations, logos, portraits, and complex patterns"
 
   },
+  "ORDERPROCESS": {
+    "TITLE": "How to Order",
+    "SUBTITLE": "From idea to reality in 4 simple steps",
+    "STEP1": {
+      "TITLE": "Getting Started",
+      "DESC": "Contact us via the form, Instagram, or email. Depending on availability, sourcing the shoes usually takes 1–2 weeks. If you would like us to purchase the shoes for you, the shoe price must be paid in advance. If you already own a pair you’d like painted, we can work with that as well, provided the shoeis suitable for the requested design.",
+      "NOTE": "Important: When filling out the form, please specify the shoe model as accurately as possible (e.g. Nike Air Force 1 '07)."
+    },
+    "STEP2": {
+      "TITLE": "Design",
+      "DESC": "Based on the information you provide, we create a digital mockup of your shoes. This allows you to see exactly how the final design will look on the selected model. Minor changes are included; however, creating a completely new concept involves an additional fee.",
+      "NOTE": "Price: Design fee for 1 custom concept: €40, payable in advance. If you choose from one of our previously created designs, the design fee is waived."
+    },
+    "STEP3": {
+      "TITLE": "Painting &amp; Production",
+      "DESC": "Once your order is approved, production takes approximately 15–20 business days. If you have a specific deadline, please let us know in advance so we can schedule your order accordingly.",
+      "NOTE": ""
+    },
+    "STEP4": {
+      "TITLE": "Payment &amp; Shipping",
+      "DESC": "Payment is made in two stages:",
+      "LIST": {
+        "ITEM1": "After contacting us and submitting your ideas, but before the design phase: One-time design fee via bank transfer to the account listed under “Contact.”",
+        "ITEM2": "After your design has been completed and approved, but before production starts: Payment of the shoe price, shipping cost, and production fee via bank transfer."
+      },
+      "NOTE": "All finished shoes are carefully packaged and shipped by courier to the address you provide."
+    }
+  },
+  "ORDER":{
+    "TITLE": "Ready to stand out?",
+    "SUBTITLE": "Turn your sneakers into a unique masterpiece.",
+    "BUTTON": "Start My Design"
+  },
+  "QUOTEFORM": {
+    "ACCORDION_TITLE": "Get a Quote",
+    "ACCORDION_SUBTITLE": "Fill out the form and we'll get back to you with a custom plan.",
+    "SHOETYPE_PLACEHOLDER": "Shoe type (e.g. Jordan 1)",
+    "SHOESIZE_PLACEHOLDER": "Shoe size (EU)",
+    "TEXTAREA_PLACEHOLDER": "Please give us some details about your dream sneaker...",
+    "ACCORDION_TITLE1": "Product configuration",
+    "ACCORDION_TITLE2": "Client Information",
+    "ACCORDION_TITLE3": "Billing Address",
+    "ACCORDION_LABEL1": "Shipping address is the same",
+    "ACCORDION_TITLE4": "Shipping Address",
+    "GDPR1": "I have read the ",
+    "GDPR2": "Privacy Policy",
+    "GDPR3": " and agree to the processing of my data for the purpose of creating an offer.",
+    "GDPR_WARNNG": "You must agree to the privacy policy to continue.",
+    "SENDING": "Sending...",
+    "BUTTON_1":"Send",
+    "GREETING": "Thank you!",
+    "MESSAGE": "Your quote has been sent successfully. We will get back to you soon.",
+    "BUTTON_2": "Send another Quote",
+    "BUTTON_3": "Cancel"
+  },
+  "ADDRESSFORM": {
+    "AUSTRIA": "Austria",
+    "GERMANY": "Germany",
+    "HUNGARY": "Hungary",
+    "ZIPCODE": "Zip Code",
+    "CITY": "City",
+    "STREET": "Street",
+    "HOUSE_NUMBER": "House Number"
+  },
+  "CLIENTINFO": {
+    "FIRSTNAME": "First name",
+    "LASTNAME": "Last name",
+    "EMAIL": "Email address",
+    "PHONE": "Phone number",
+    "ISREQUIRED": "is required",
+    "PLEASEENTER": "Please enter a valid"
+  },
+  "FILEUPLOAD": {
+      "DRAGDROP": "Drag & drop",
+      "BROWSE": "Choose Pictures",
+      "MAXFILES": "Maximum 5 images.",
+      "UPLOADED": "5 pictures uploaded"
+  },
+
   "FAQ": {
     "TITLE": "FAQ",
     "SUBTITLE": "Common questions about custom orders",
     "Q1": "How long does it take to make a pair of shoes?",
-    "A1": "The production time depends on several factors: our current capacity, the availability of the selected base shoe, and the complexity of the design. In general, the design process takes 35 business days, followed by approximately 1015 business days for production. This timeframe may vary depending on the season. The exact turnaround time is always confirmed when the order is finalized.",
+    "A1": "The production time depends on several factors: our current capacity, the availability of the selected base shoe, and the complexity of the design. In general, the design process takes 3–5 business days, followed by approximately 10–15 business days for production. This timeframe may vary depending on the season. The exact turnaround time is always confirmed when the order is finalized.",
     "Q2": "Does the listed price include the cost of the shoes?",
     "A2": "No, it does not.",
     "Q3": "Can used shoes be painted?",
@@ -43,7 +122,7 @@
     "Q5": "Can the shoes be washed or cleaned?",
     "A5": "Yes, you can gently clean the shoes using a soft, damp cloth. Avoid harsh cleaning agents, scrubbing, or washing machines, as these may damage the paint, protective layers, and the shoe material.",
     "Q6": "How can I extend the lifespan of my custom shoes?",
-    "A6": "To protect the paint and surface, we recommend reapplying a waterproofing spray about every 3 months after cleaning.You can use a standard water-repellent shoe spray available in shoe stores. This helps preserve the quality of the artwork and extend the life of the custom design. This way, your Crazy Dog Custom shoes will retain their original appearance for a long time.",
+    "A6": "To protect the paint and surface, we recommend reapplying a waterproofing spray about every 3 months after cleaning. You can use a standard water-repellent shoe spray available in shoe stores. This helps preserve the quality of the artwork and extend the life of the custom design. This way, your Crazy Dog Custom shoes will retain their original appearance for a long time.",
     "Q7": "What happens if I want to modify the design?",
     "A7": "Based on the information you provide and after the one-time design fee is paid, you will receive the design of your dream shoes. Minor changes are possible at this stage, and we are flexible about them. However, altering an already completed design or adding a new concept will incur additional costs, which will be communicated in advance. Important: Once a design is approved and the order is placed, it is final and cannot be changed.",
     "Q8": "What happens if I provide the wrong shoe size?",
@@ -58,5 +137,34 @@
     "A11": "Yes.",
     "Q12": "Can I return or exchange the shoes?",
     "A12": "Due to the custom-made and personalized nature of our products, we do not offer refunds, exchanges, or warranties (except for defects caused by material faults of the shoe itself)."
-   }
-}
+   },
+   "CONTACT": {
+    "TITLE": "Contact Us",
+    "SUBTITLE": "Ready to start your custom project? Drop us a line!",
+    "NAME": "Your Name",
+    "EMAIL": "Email Address",
+    "SUBJECT": "Subject",
+    "MESSAGE": "Message",
+    "AGGREE1": "I agree to the ",
+    "AGGREE2": "Privacy Policy",
+    "AGGREE3": "You must agree to continue.",
+    "SENDING": "Send Message",
+    "GREETING": "Thank you!",
+    "MESSAGE_SENT": "Your message has been caught. Our team will get back to you soon.",
+    "BUTTON": "Send Another Message"
+    },
+    "FOOTER":{
+      "TITLE": "Get connected with us on our social networks:",
+      "MOTTO": "Your sneakers, your rules. We bring unique designs to life with professional care and artistic passion.",
+      "PRODUCTS": "Products",
+      "SHOES": "Shoes",
+      "BRANDS": "Brands",
+      "MATERIALS": "Materials",
+      "USEFUL": "Useful Info",
+      "PRIVACY": "Privacy Policy",
+      "IMPRESSUM": "Impressum",
+      "DELIVERY": "Delivery & Returns",
+      "GUARANTEE": "Guarantee",
+      "CONTACT": "Contact"
+    }
+  }

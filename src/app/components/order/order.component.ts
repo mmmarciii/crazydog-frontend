@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
-import { QuoteFormComponent } from '../quote-form/quote-form.component'
+import { QuoteFormComponent } from '../quote-form/quote-form.component';
+import { TranslateModule } from '@ngx-translate/core';
 declare var bootstrap: any;
 
 @Component({
     selector: 'app-order',
     standalone: true,
-    imports: [QuoteFormComponent],
+    imports: [QuoteFormComponent, TranslateModule],
     templateUrl: './order.component.html',
     styleUrl: './order.component.css'
 })

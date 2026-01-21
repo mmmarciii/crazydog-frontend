@@ -10,8 +10,8 @@
     
     <div class="upload-content">
       <i class="bi bi-cloud-arrow-up upload-icon"></i>
-      <h5 class="mt-3 mb-2">Drag & Drop</h5>
-      <p class="text-muted small">PNG, JPG, GIF - max 5 pictures</p>
+      <h5 class="mt-3 mb-2">{{'FILEUPLOAD.DRAGDROP' | translate}}</h5>
+      <p class="text-muted small">PNG, JPG, GIF - {{'FILEUPLOAD.MAXFILES' | translate}}</p>
       <input 
         type="file" 
         class="form-control d-none" 
@@ -20,15 +20,16 @@
         multiple 
         (change)="onFileSelected($event)">
       <label for="fileInput" class="btn btn-primary btn-sm">
-        <i class="bi bi-plus-circle"></i> Choose Pictures
+        <i class="bi bi-plus-circle"></i> {{'FILEUPLOAD.BROWSE' | translate}}
       </label>
     </div>
   </div>
 
   <!-- Image Previews -->
-  <div class="preview-container mt-4" *ngIf="imagePreviews.length > 0">
+   @if (imagePreviews.length > 0) {
+  <div class="preview-container mt-4">
     <p class="text-muted small mb-3">
-      {{ imagePreviews.length }} / 5 pictures uploaded
+      {{ imagePreviews.length }} / {{'FILEUPLOAD.UPLOADED' | translate}}
     </p>
     <div class="d-flex flex-wrap gap-3">
       @for (preview of imagePreviews; track $index) {
@@ -38,7 +39,7 @@
             type="button" 
             class="btn-remove"
             (click)="removeImage($index)"
-            title="Eltávolítás">
+            title="Remove">
             <i class="bi bi-x"></i>
           </button>
           <span class="preview-number">{{ $index + 1 }}</span>
@@ -46,4 +47,5 @@
       }
     </div>
   </div>
+   }
 </div>

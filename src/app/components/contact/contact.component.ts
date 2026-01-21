@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { ContactService } from '../../services/contact.service';
 
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
     selector: 'app-contact',
     standalone: true,
-    imports: [ReactiveFormsModule],
+    imports: [ReactiveFormsModule, TranslateModule],
     templateUrl: './contact.component.html',
     styleUrl: './contact.component.css'
 })

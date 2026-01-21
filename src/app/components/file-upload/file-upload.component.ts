@@ -1,10 +1,11 @@
 import { Component, Output, EventEmitter, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-file-upload',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule ],
   templateUrl: './file-upload.component.html',
   styleUrl: './file-upload.component.css'
 })

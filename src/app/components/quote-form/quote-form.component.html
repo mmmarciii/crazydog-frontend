@@ -5,10 +5,10 @@
       <div class="mb-4">
         <i class="bi bi-check-circle-fill text-success" style="font-size: 5rem;"></i>
       </div>
-      <h2 class="display-4">Thank you!</h2>
-      <p class="lead text-muted">Your quote has been sent successfully. We will get back to you soon.</p>
+      <h2 class="display-4">{{ 'QUOTEFORM.GREETING' | translate }}</h2>
+      <p class="lead text-muted">{{ 'QUOTEFORM.MESSAGE' | translate }}</p>
       <button class="btn btn-outline-secondary btn-lg mt-4" (click)="isSent = false">
-        Send another Quote
+        {{ 'QUOTEFORM.BUTTON2' | translate }}
       </button>
     </div>
   </div>
@@ -20,7 +20,7 @@
     <div class="accordion-item">
       <h5 class="accordion-header">
         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseShoeDetails">
-          Product Configuration
+          {{'QUOTEFORM.ACCORDION_TITLE1' | translate}}
         </button>
       </h5>
       <div id="flush-collapseShoeDetails" class="accordion-collapse show" data-bs-parent="#accordionFlushExample">
@@ -30,17 +30,17 @@
             @for (item of productItems; track item.name) {
               <div class="col-md-4 mb-4">
                 <div class="product-select" (click)="selectProduct(item.name)">
-                  <img [src]="item.link" [alt]="item.name" class="img-fluid mb-2 product-img">
+                  <img [src]="item.link" [alt]="item.name | translate" class="img-fluid mb-2 product-img">
                   
                   <div class="d-flex flex-column align-items-center">
                     <input class="form-check-input ms-0" 
                           type="radio" 
-                          [id]="item.name" 
-                          [value]="item.name" 
+                          [id]="item.name | translate" 
+                          [value]="item.name | translate" 
                           [checked]="quoteForm.get('shoeSource')?.value === item.name"
                           (change)="onProductSelect(item.name)"
                           formControlName="shoeSource">
-                    <label [for]="item.name" class="product-label">{{ item.name }}</label>
+                    <label [for]="item.name | translate" class="product-label">{{ item.name | translate }}</label>
                   </div>
                 </div>
               </div>
@@ -51,7 +51,7 @@
             <!-- Shoe Type Field -->
             <div class="col-md-6 mb-3">
               <input type="text" class="form-control"
-              placeholder="Shoe type (e.g. Jordan 1)" 
+              placeholder="{{ 'QUOTEFORM.SHOETYPE_PLACEHOLDER' | translate }}" 
               [class.is-invalid]="isFieldInvalid('shoeType')"
               formControlName="shoeType">
               @if (isFieldInvalid('shoeType')) {
@@ -64,7 +64,7 @@
             <!-- Shoe Size Field -->
             <div class="col-md-6 mb-3">
               <input type="text" class="form-control" 
-              placeholder="Shoe size (EU)"
+              placeholder="{{ 'QUOTEFORM.SHOESIZE_PLACEHOLDER' | translate }}"
               [class.is-invalid]="isFieldInvalid('shoeSize')"
               formControlName="shoeSize">
               @if (isFieldInvalid('shoeSize')) {
@@ -78,7 +78,7 @@
           <app-file-upload (filesChanged)="onFilesUploaded($event)"></app-file-upload>
 
           <div class="mb-3">
-            <textarea class="form-control" rows="4" placeholder="Please give us some details about your dream sneaker..." formControlName="notes"></textarea>
+            <textarea class="form-control" rows="4" placeholder="{{ 'QUOTEFORM.TEXTAREA_PLACEHOLDER' | translate }}" formControlName="notes"></textarea>
           </div>
         </div>
       </div>
@@ -87,7 +87,7 @@
     <div class="accordion-item">
       <h5 class="accordion-header">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseDetails">
-            Client Information
+            {{ 'QUOTEFORM.ACCORDION_TITLE2' | translate }}
         </button>
       </h5>
       <div id="flush-collapseDetails" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
@@ -102,7 +102,7 @@
     <div class="accordion-item">
       <h5 class="accordion-header">
         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseBilling">
-          Billing Address
+          {{ 'QUOTEFORM.ACCORDION_TITLE3' | translate }}
         </button>
       </h5>
       <div id="flush-collapseBilling" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
@@ -112,7 +112,7 @@
           
           <div class="form-check">
             <input class="form-check-input" type="checkbox" formControlName="sameAsShipping">
-            <label class="form-check-label">Shipping address is the same</label>
+            <label class="form-check-label">{{ 'QUOTEFORM.ACCORDION_LABEL1' | translate }}</label>
           </div>
         </div>
       </div>
@@ -122,7 +122,7 @@
       <div class="accordion-item">
         <h5 class="accordion-header">
           <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseShipping">
-              Shipping Address
+              {{ 'QUOTEFORM.ACCCORDION_TITLE4' | translate }}
           </button>
         </h5>
         <div id="flush-collapseShipping" class="accordion-collapse show" data-bs-parent="#accordionFlushExample">
@@ -138,25 +138,25 @@
     <div class="mb-4 form-check">
       <input type="checkbox" class="form-check-input" id="gdprConsent" formControlName="gdprConsent">
       <label class="form-check-label" for="gdprConsent" style="font-size: 0.9rem;">
-        I have read the <a href="/privacy-policy" target="_blank">Privacy Policy</a> and agree to the processing of my data for the purpose of creating an offer.
+        {{ 'QUOTEFORM.GDPR1' | translate }}<a href="/privacy-policy" target="_blank">{{ 'QUOTEFORM.GDPR2' | translate }}</a> {{ 'QUOTEFORM.GDPR3' | translate }}
       </label>
       
       @if (quoteForm.get('gdprConsent')?.invalid && quoteForm.get('gdprConsent')?.touched) {
         <div class="text-danger small d-block mt-2">
-          You must agree to the privacy policy to continue.
+          {{ 'QUOTEFORM.GDPR_WARNNG' | translate }}
         </div>
       }
     </div>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4 mb-5">
       <button type="button" class="btn-custom-blue" data-bs-dismiss="modal">
-        <i class="bi bi-x-lg me-2"></i>Cancel
+        <i class="bi bi-x-lg me-2"></i>{{ 'QUOTEFORM.BUTTON_3' | translate }}
       </button>
       <button type="submit" class="btn btn-custom-orange" [disabled]="isLoading || quoteForm.invalid">
         @if (isLoading) {
           <span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
-          Sending...
+          {{ 'QUOTEFORM.SENDING' | translate }}
         } @else {
-          <i class="bi bi-send me-2"></i>Send
+          <i class="bi bi-send me-2"></i>{{ 'QUOTEFORM.BUTTON_1' | translate }}
         }
       </button>
     </div>

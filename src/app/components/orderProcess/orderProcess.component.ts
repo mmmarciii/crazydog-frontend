@@ -1,45 +1,47 @@
 import { Component } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 
 @Component({
     selector: 'app-orderProcess',
     standalone: true,
-    imports: [],
+    imports: [TranslateModule],
     templateUrl: './orderProcess.component.html',
     styleUrl: './orderProcess.component.css'
 })
 export class OrderProcessComponent {
   processItems = [
     { 
-      name: 'Getting Started', 
-      link: 'images/orderProcess/list.svg', 
+      name: 'ORDERPROCESS.STEP1.TITLE', 
+      link: 'images/orderProcess/Start.webp', 
       order: 'imageFirst', 
-      desc: 'Contact us via the form, Instagram, or email. Depending on availability, sourcing the shoes usually takes 1–2 weeks. If you would like us to purchase the shoes for you, the shoe price must be paid in advance. If you already own a pair you’d like painted, we can work with that as well, provided the shoe is suitable for the requested design.',
-      note: 'Important: When filling out the form, please specify the shoe model as accurately as possible (e.g. Nike Air Force 1 ’07).'
+      desc: 'ORDERPROCESS.STEP1.DESC',
+      note: 'ORDERPROCESS.STEP1.NOTE'
     },
     { 
-      name: 'Design', 
-      link: 'images/orderProcess/design.svg', 
+      name: 'ORDERPROCESS.STEP2.TITLE', 
+      link: 'images/orderProcess/Design.webp', 
       order: 'imageLast', 
-      desc: 'Based on the information you provide, we create a digital mockup of your shoes. This allows you to see exactly how the final design will look on the selected model. Minor changes are included; however, creating a completely new concept involves an additional fee.',
-      note: 'Price: Design fee for 1 custom concept: €40, payable in advance.If you choose from one of our previously created designs, the design fee is waived.'
+      desc: 'ORDERPROCESS.STEP2.DESC',
+      note: 'ORDERPROCESS.STEP2.NOTE'
     },
     { 
-      name: 'Painting & Production', 
-      link: 'images/orderProcess/draw.svg', 
+      name: 'ORDERPROCESS.STEP3.TITLE', 
+      link: 'images/orderProcess/Paint.webp', 
       order: 'imageFirst', 
-      desc: 'Once your order is approved, production takes approximately 15–20 business days. If you have a specific deadline, please let us know in advance so we can schedule your order accordingly.'
+      desc: 'ORDERPROCESS.STEP3.DESC',
+      note: 'ORDERPROCESS.STEP3.NOTE'
     },
     { 
-      name: 'Payment & Shipping', 
-      link: 'images/orderProcess/delivery.svg', 
+      name: 'ORDERPROCESS.STEP4.TITLE', 
+      link: 'images/orderProcess/Payment&delivery.webp', 
       order: 'imageLast', 
-      desc: 'Payment is made in two stages:',
+      desc: 'ORDERPROCESS.STEP4.DESC',
       list: [
-        'After contacting us and submitting your ideas, but before the design phase: One-time design fee via bank transfer to the account listed under “Contact.”',
-        'After your design has been completed and approved, but before production starts: Payment of the shoe price, shipping cost, and production fee via bank transfer.'
+        'ORDERPROCESS.STEP4.LIST.ITEM1',
+        'ORDERPROCESS.STEP4.LIST.ITEM2'
       ],
-      note: 'All finished shoes are carefully packaged and shipped by courier to the address you provide.'
+      note: 'ORDERPROCESS.STEP4.NOTE'
     },
   ];
 

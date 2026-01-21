@@ -4,22 +4,20 @@ import { CookieService } from 'ngx-cookie-service';
 import { routes } from './app.routes';
 import { HttpClient, provideHttpClient } from '@angular/common/http';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
-import { Observable } from 'rxjs'
+import { Observable } from 'rxjs';
 
-
+// A Loader marad itt
 export class MyHttpLoader implements TranslateLoader {
   constructor(private http: HttpClient) {}
-
   public getTranslation(lang: string): Observable<any> {
-
     return this.http.get(`./assets/i18n/${lang}.json`);
   }
 }
 
-
 export function HttpLoaderFactory(http: HttpClient) {
   return new MyHttpLoader(http);
 }
+
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }), 
@@ -36,7 +34,7 @@ export const appConfig: ApplicationConfig = {
           useFactory: HttpLoaderFactory,
           deps: [HttpClient]
         },
-        defaultLanguage: 'en'
+        defaultLanguage: 'en' 
       })
     )
   ]
