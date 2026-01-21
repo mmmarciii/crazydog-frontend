@@ -33,7 +33,7 @@
         }
     </div>
     <div class="col-md-4">
-        <input type="text" class="form-control" placeholder="{{'ADDRESSFORM.HOUSENUMBER' | translate}}" 
+        <input type="text" class="form-control" placeholder="{{'ADDRESSFORM.HOUSE_NUMBER' | translate}}" 
                [class.is-invalid]="isFieldInvalid('HouseNumber')"
                [formControlName]="prefix + 'HouseNumber'">
         @if (isFieldInvalid('HouseNumber')) {
