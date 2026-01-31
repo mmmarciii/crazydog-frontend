@@ -50,6 +50,15 @@
           <div class="row mt-3 mb-3">
             <!-- Shoe Type Field -->
             <div class="col-md-6 mb-3">
+              <label for="shoeType" class="form-label d-flex align-items-center fw-bold">
+                {{'QUOTEFORM.SHOETYPE_LABEL' | translate}}
+               <i class="bi bi-info-circle info-icon ms-2" 
+                  data-bs-toggle="tooltip" 
+                  data-bs-placement="top" 
+                  data-bs-custom-class="custom-tooltip"
+                  title="{{ 'QUOTEFORM.SHOETYPE_TOOLTIP' | translate }}">
+                </i>
+              </label>
               <input type="text" class="form-control"
               placeholder="{{ 'QUOTEFORM.SHOETYPE_PLACEHOLDER' | translate }}" 
               [class.is-invalid]="isFieldInvalid('shoeType')"
@@ -63,6 +72,15 @@
 
             <!-- Shoe Size Field -->
             <div class="col-md-6 mb-3">
+              <label for="shoeSize" class="form-label d-flex align-items-center fw-bold">
+                {{'QUOTEFORM.SHOESIZE_LABEL' | translate}}
+                <i class="bi bi-info-circle info-icon ms-2" 
+                  data-bs-toggle="tooltip" 
+                  data-bs-placement="top" 
+                  data-bs-custom-class="custom-tooltip"
+                  title="{{ 'QUOTEFORM.SHOESIZE_TOOLTIP' | translate }}">
+                </i>
+              </label>
               <input type="text" class="form-control" 
               placeholder="{{ 'QUOTEFORM.SHOESIZE_PLACEHOLDER' | translate }}"
               [class.is-invalid]="isFieldInvalid('shoeSize')"
@@ -75,8 +93,26 @@
             </div>
           </div>
           
+          <label for="upload" class="form-label d-flex align-items-center fw-bold">
+            {{'QUOTEFORM.FILEUPLOAD_LABEL' | translate}}
+            <i class="bi bi-info-circle info-icon ms-2" 
+              data-bs-toggle="tooltip" 
+              data-bs-placement="top" 
+              data-bs-custom-class="custom-tooltip"
+              title="{{ 'QUOTEFORM.FILEUPLOAD_TOOLTIP' | translate }}">
+            </i>
+          </label>
           <app-file-upload (filesChanged)="onFilesUploaded($event)"></app-file-upload>
 
+          <label for="notes" class="form-label d-flex align-items-center fw-bold">
+            {{'QUOTEFORM.TEXTAREA_LABEL' | translate}}
+            <i class="bi bi-info-circle info-icon ms-2" 
+              data-bs-toggle="tooltip" 
+              data-bs-placement="top" 
+              data-bs-custom-class="custom-tooltip"
+              title="{{ 'QUOTEFORM.TEXTAREA_TOOLTIP' | translate }}">
+            </i>
+          </label>
           <div class="mb-3">
             <textarea class="form-control" rows="4" placeholder="{{ 'QUOTEFORM.TEXTAREA_PLACEHOLDER' | translate }}" formControlName="notes"></textarea>
           </div>
@@ -111,7 +147,7 @@
           <app-address-form [parentForm]="quoteForm" prefix="billing"></app-address-form>
           
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" formControlName="sameAsShipping">
+            <input class="form-check-input" type="checkbox" id="sameAsShipping" formControlName="sameAsShipping">
             <label class="form-check-label">{{ 'QUOTEFORM.ACCORDION_LABEL1' | translate }}</label>
           </div>
         </div>
@@ -134,11 +170,20 @@
     }
 
 
+    <!-- Finalize Checkbox Fix -->
+    <div class="mb-4 form-check">
+      <label class="form-check-label" for="" style="font-size: 0.9rem;">
+        {{ 'QUOTEFORM.FINALIZE_ORDER_TEXT1' | translate }}<br>
+        {{ 'QUOTEFORM.FINALIZE_ORDER_TEXT2' | translate }}<br>
+        {{ 'QUOTEFORM.FINALIZE_ORDER_TEXT3' | translate }}
+      </label>
+    </div>
+
     <!-- GDPR Checkbox Fix -->
     <div class="mb-4 form-check">
       <input type="checkbox" class="form-check-input" id="gdprConsent" formControlName="gdprConsent">
       <label class="form-check-label" for="gdprConsent" style="font-size: 0.9rem;">
-        {{ 'QUOTEFORM.GDPR1' | translate }}<a href="/privacy-policy" target="_blank">{{ 'QUOTEFORM.GDPR2' | translate }}</a> {{ 'QUOTEFORM.GDPR3' | translate }}
+         {{ 'QUOTEFORM.GDPR1' | translate }}<a href="/privacy-policy" target="_blank">{{ 'QUOTEFORM.GDPR2' | translate }}</a>
       </label>
       
       @if (quoteForm.get('gdprConsent')?.invalid && quoteForm.get('gdprConsent')?.touched) {

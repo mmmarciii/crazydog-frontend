@@ -3,21 +3,21 @@ import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { RouterOutlet, RouterModule } from "@angular/router";
 import { CookieBannerComponent } from "../cookie-banner/cookie-banner.component";
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule } from '@ngx-translate/core';  
 
 @Component({
-  selector: 'app-imprint',
+  selector: 'app-privacy',
   imports: [
-    HeaderComponent, 
-    FooterComponent, 
+    HeaderComponent,
+    FooterComponent,
     RouterOutlet,
     RouterModule,
     CookieBannerComponent,
     TranslateModule
   ],
-  templateUrl: './imprint.component.html',
-  styleUrl: './imprint.component.css',
+  templateUrl: './privacy.component.html',
+  styleUrl: './privacy.component.css',
 })
-export class ImprintComponent {
+export class PrivacyComponent {
 
 }

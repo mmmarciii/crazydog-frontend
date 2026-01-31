@@ -43,15 +43,10 @@ class MailHandler
         }
     }
     // 2. Create the Message
-    private function buildMessage()
+    private function buildMessage($templateFile = 'email_contact_template.html')
     {
-        // DSGVO
-        $userIp = $_SERVER['REMOTE_ADDR'];
-        $timestamp = date('d-m-Y H:i:s');
-        $consentText = "The user has accepted the privacy policy";
 
-        $templateFile = 'email_contact_template.html';
-        if (!file_exists($templateFile)) return "Template error.";
+        if (!file_exists($templateFile)) return "Template error: $templateFile not found.";
 
         // DSGVO 
         $userIp = $_SERVER['REMOTE_ADDR'];
@@ -69,6 +64,7 @@ class MailHandler
                 "<strong>Timestamp:</strong> $timestamp"
         ];
 
+        $message = file_get_contents($templateFile);
         return str_replace(array_keys($replace), array_values($replace), $message);
     }
 
@@ -93,21 +89,25 @@ class MailHandler
         $mail->CharSet    = 'UTF-8';
 
         // 1. Letter to owner
+        $ownerMessage = $this->buildMessage('email_contact_template.html');
+
         $mail->setFrom('info@crazydogcustom.com', 'CrazyDog Website');
         $mail->addAddress('info@crazydogcustom.com');
         $mail->addReplyTo($this->data['email'], $this->data['name']);
         $mail->isHTML(true);
         $mail->Subject = 'New Contact mail: ' . ($this->data['name'] ?? 'Unknown');
-        $mail->Body    = $message;
+        $mail->Body    = $ownerMessage;
         $mail->send();
 
         // 2. Letter to customer
+        $customerMessage = $this->buildMessage('email_contact_template_customer.html');
+
         $mail->clearAddresses();
         $mail->clearReplyTos();
         $mail->addAddress($this->data['email']);
         $mail->setFrom('info@crazydogcustom.com', 'CrazyDog Custom');
         $mail->Subject = 'Confirmation: We received your message';
-        $mail->Body    = $message;
+        $mail->Body    = $customerMessage;
         $mail->send();
 
         return ["status" => "success", "message" => "Thank You! We received your message."];

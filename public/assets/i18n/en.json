@@ -40,15 +40,15 @@
     "STEP2": {
       "TITLE": "Design",
       "DESC": "Based on the information you provide, we create a digital mockup of your shoes. This allows you to see exactly how the final design will look on the selected model. Minor changes are included; however, creating a completely new concept involves an additional fee.",
-      "NOTE": "Price: Design fee for 1 custom concept: €40, payable in advance. If you choose from one of our previously created designs, the design fee is waived."
+      "NOTE": "Price: Design fee for 1 custom concept €40, payable in advance. If you choose from one of our previously created designs, the design fee is waived."
     },
     "STEP3": {
-      "TITLE": "Painting &amp; Production",
+      "TITLE": "Painting & Production",
       "DESC": "Once your order is approved, production takes approximately 15–20 business days. If you have a specific deadline, please let us know in advance so we can schedule your order accordingly.",
-      "NOTE": ""
+      "NOTE": "Important: After the design is approved and the order is placed, it is final and cannot be changed."
     },
     "STEP4": {
-      "TITLE": "Payment &amp; Shipping",
+      "TITLE": "Payment & Shipping",
       "DESC": "Payment is made in two stages:",
       "LIST": {
         "ITEM1": "After contacting us and submitting your ideas, but before the design phase: One-time design fee via bank transfer to the account listed under “Contact.”",
@@ -65,17 +65,27 @@
   "QUOTEFORM": {
     "ACCORDION_TITLE": "Get a Quote",
     "ACCORDION_SUBTITLE": "Fill out the form and we'll get back to you with a custom plan.",
-    "SHOETYPE_PLACEHOLDER": "Shoe type (e.g. Jordan 1)",
+    "SHOETYPE_LABEL": "Shoe Base",
+    "SHOESIZE_LABEL": "Shoe Size",
+    "SHOETYPE_TOOLTIP": "When filling out the form, please specify the shoe model as accurately as possible (e.g. Nike Air Force 1 ’07)",
+    "SHOESIZE_TOOLTIP": "Please enter your exact size (EU). As these are custom-made shoes, refunds and exchanges are not possible.",
+    "SHOETYPE_PLACEHOLDER": "Shoe base (e.g. Nike Air Force 1 ’07)",
     "SHOESIZE_PLACEHOLDER": "Shoe size (EU)",
     "TEXTAREA_PLACEHOLDER": "Please give us some details about your dream sneaker...",
+    "TEXTAREA_LABEL": "Design Details",
+    "TEXTAREA_TOOLTIP": "Describe your idea in as much detail as possible — colors, style, theme, concepts. The more precise your description, the better we can bring your custom design to life. If you need the shoes by a specific date, please indicate it here.",
+    "FILEUPLOAD_LABEL": "Upload Reference Images",
+    "FILEUPLOAD_TOOLTIP": "If you have any reference images, sketches, or inspiration for your design, please upload them here. This will help us better understand your vision and create a design that matches your expectations.",
     "ACCORDION_TITLE1": "Product configuration",
     "ACCORDION_TITLE2": "Client Information",
     "ACCORDION_TITLE3": "Billing Address",
     "ACCORDION_LABEL1": "Shipping address is the same",
     "ACCORDION_TITLE4": "Shipping Address",
+    "FINALIZE_ORDER_TEXT1": "All orders placed after a design is approved are final. Due to the custom-made and personalized nature of the product, we do not offer refunds, exchanges, or warranties. Each pair is hand-painted using unique techniques. As with all footwear, natural wear and tear may occur over time.",
+    "FINALIZE_ORDER_TEXT2": "To maintain durability, shoes must not be cleaned in a washing machine. After submitting the form, we will review your request and send you the final quote and estimated production time by email.",
+    "FINALIZE_ORDER_TEXT3": "If your requested deadline cannot be met, we will notify you by email.",
     "GDPR1": "I have read the ",
-    "GDPR2": "Privacy Policy",
-    "GDPR3": " and agree to the processing of my data for the purpose of creating an offer.",
+    "GDPR2": "Privacy Policy.",
     "GDPR_WARNNG": "You must agree to the privacy policy to continue.",
     "SENDING": "Sending...",
     "BUTTON_1":"Send",
@@ -166,5 +176,40 @@
       "DELIVERY": "Delivery & Returns",
       "GUARANTEE": "Guarantee",
       "CONTACT": "Contact"
-    }
+  },
+  "IMPRINT": {
+    "TITLE": "Imprint",
+    "RESP_CONTENT": "Responsible for the content",
+    "CONTACT_TEXT": "Contact",
+    "NAME": "Reka Judit Molnar-Gelei",
+    "ADDRESS1": "Margarethen 87",
+    "ADDRESS2": "4020 Linz, Österreich",
+    "EMAIL_TEXT": "E-Mail",
+    "WEB_TEXT": "Website",
+    "TEL_TEXT": "Telefon",
+    "VAT_TEXT": "VAT-Number",
+    "PHONE": "+43 690 1032 1083",
+    "WEB": "crazydogcustom.com",
+    "EMAIL": "info@crazydogcustom.com",
+    "VAT": "ATU79768002",
+    "BUSINESS_INFO_TEXT": "Business information",
+    "SUPERVISOR_AUTH_TEXT": "Supervisory authority",
+    "MEMBERSHIP_TEXT": "Membership",
+    "PROFESSIONAL_REGULATION_TEXT": "Professional regulations",
+    "SUPERVISOR_AUTH": "Magistrat Linz",
+    "MEMBERSHIP": "WKO Oberösterreich",
+    "PROFESSIONAL_REGULATION": "Trade Regulation Act",
+    "BANK_DETAILS_TEXT": "Bank details",
+    "BANK_TEXT": "Bank",
+    "BANK_NAME": "Sparkasse",
+    "IBAN_TEXT": "IBAN",
+    "IBAN": "AT13 2032 0324 0286 3629",
+    "BIC_TEXT": "BIC",
+    "BIC": "ASPKAT2LXXX",
+    "BUTTON_TEXT": "Back to Homepage"
+  },
+  "PRIVACY": {
+    "TITLE": "Privacy Policy",
+    "BUTTON_TEXT": "Back to Homepage"
   }
+}

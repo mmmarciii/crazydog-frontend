@@ -1,9 +1,73 @@
 <app-header></app-header>
 
-<div class="container my-5">
-  <h1>Impressum</h1>
-</div>
+<section class="imprint-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10">
+        <div class="row mb-5 px-3 px-md-5 section-heading">
+          <div class="col-12 border-start border-orange border-4 ps-4">
+              <h1 class="display-3 fw-bold">{{'IMPRINT.TITLE' | translate}}</h1>
+          </div>
+        </div>
 
+        <div class="contact-card shadow-lg rounded-5 p-4 p-md-5 bg-white">
+          <div class="card-body p-4 p-md-5">
+            <div class="row">
+              
+              <div class="col-md-6 border-end-md">
+                <section class="mb-5">
+                  <h5 class="fw-bold text-muted text-uppercase small mb-3">{{'IMPRINT.RESP_CONTENT' | translate}}</h5>
+                  <p class="fs-5 mb-1"><strong>{{'IMPRINT.NAME' | translate}}</strong></p>
+                  <p class="text-secondary mb-0">{{'IMPRINT.ADDRESS1' | translate}}</p>
+                  <p class="text-secondary">{{'IMPRINT.ADDRESS2' | translate}}</p>
+                </section>
+
+                <section class="mb-5">
+                  <h5 class="fw-bold text-muted text-uppercase small mb-3">{{'IMPRINT.CONTACT_TEXT' | translate}}</h5>
+                  <p class="mb-2">
+                    <strong>{{'IMPRINT.EMAIL_TEXT' | translate}}:</strong> 
+                    <a href="mailto:info@crazydogcustom.com" class="text-primary text-decoration-none"> {{'IMPRINT.EMAIL' | translate}}</a>
+                  </p>
+                  <p class="mb-2"><strong>{{'IMPRINT.WEB_TEXT' | translate}}:</strong> <span class="text-secondary"> {{'IMPRINT.WEB' | translate}}</span></p>
+                  <p class="mb-2"><strong>{{'IMPRINT.TEL_TEXT' | translate}}:</strong> <span class="text-secondary"> {{'IMPRINT.PHONE' | translate}}</span></p>
+                  <p class="mb-0"><strong>{{'IMPRINT.VAT_TEXT' | translate}}:</strong> <span class="text-secondary"> {{'IMPRINT.VAT' | translate}}</span></p>
+                </section>
+
+                <section>
+                  <h5 class="fw-bold text-muted text-uppercase small mb-3">{{'IMPRINT.BUSINESS_INFO_TEXT' | translate}}</h5>
+                  <div class="small">
+                    <p class="mb-1"><strong>{{'IMPRINT.SUPERVISOR_AUTH_TEXT' | translate}}:</strong> {{'IMPRINT.SUPERVISOR_AUTH' | translate}}</p>
+                    <p class="mb-1"><strong>{{'IMPRINT.MEMBERSHIP_TEXT' | translate}}:</strong> {{'IMPRINT.MEMBERSHIP' | translate}}</p>
+                    <p class="mb-0"><strong>{{'IMPRINT.PROFESSIONAL_REGULATION_TEXT' | translate}}:</strong> <a href="https://www.ris.bka.gv.at" target="_blank" class="text-dark"> {{'IMPRINT.PROFESSIONAL_REGULATION' | translate}}</a></p>
+                  </div>
+                </section>
+              </div>
+
+              <div class="col-md-6 ps-md-5 mt-5 mt-md-0">
+                <section class="mb-5">
+                  <h5 class="fw-bold text-muted text-uppercase small mb-3">{{'IMPRINT.BANK_DETAILS_TEXT' | translate}}</h5>
+                  <div class="p-3 border rounded bg-white">
+                    <p class="mb-1 small text-muted text-uppercase">{{'IMPRINT.BANK_TEXT' | translate}}</p>
+                    <p class="fw-bold mb-3">{{'IMPRINT.BANK_NAME' | translate}}</p>
+                    
+                    <p class="mb-1 small text-muted text-uppercase">{{'IMPRINT.IBAN_TEXT' | translate}}</p>
+                    <p class="fw-bold mb-3 text-break">{{'IMPRINT.IBAN' | translate}}</p>
+                    
+                    <p class="mb-1 small text-muted text-uppercase">{{'IMPRINT.BIC_TEXT' | translate}}</p>
+                    <p class="fw-bold mb-0">{{'IMPRINT.BIC' | translate}}</p>
+                  </div>
+                </section>
+              </div>
+
+            </div> </div> </div> <div class="text-center mt-5">
+          <button routerLink="/" class="btn btn-custom-orange btn-lg px-5 py-3 rounded-pill shadow">
+          {{'IMPRINT.BUTTON_TEXT' | translate}}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 <app-footer></app-footer>
 <router-outlet></router-outlet>
 <app-cookie-banner></app-cookie-banner>

@@ -27,27 +27,66 @@
     "PROD3_DET_2": "Teljes felületű vagy nagyméretű festés",
     "PROD3_DET_3": "Extrán részletes, művészi grafikák",
     "PROD3_DET_4": "Egyedi illusztrációk, logók, portrék, összetett minták"
-
   },
+
+  "ORDERPROCESS": {
+    "TITLE": "A rendelés menete",
+    "SUBTITLE": "Az ötlettől a megvalósításig 4 egyszerű lépésben",
+    "STEP1": {
+      "TITLE": "Első lépések",
+      "DESC": "Vedd fel velünk a kapcsolatot az űrlapon, Instagramon vagy e-mailen keresztül. Az elérhetőségtől függően a cipők beszerzése általában 1–2 hetet vesz igénybe. Amennyiben szeretnéd, hogy mi vásároljuk meg a cipőt számodra, annak árát előre ki kell egyenlíteni. Ha már van egy saját cipőd, amit szívesen kifestetnél, azzal is tudunk dolgozni, feltéve, hogy a cipő alkalmas a kért minta megvalósítására.",
+      "NOTE": "Fontos: Az űrlap kitöltésekor kérjük, a lehető legpontosabban add meg a cipő modelljét (pl. Nike Air Force 1 '07)."
+    },
+    "STEP2": {
+      "TITLE": "Tervezés",
+      "DESC": "Az általad megadott információk alapján készítünk egy digitális látványtervet a cipőről. Így pontosan láthatod, hogyan mutat majd a végleges minta a kiválasztott modellen. Az apróbb módosításokat az ár tartalmazza, azonban egy teljesen új koncepció kidolgozása plusz költséggel jár.",
+      "NOTE": "Ár: Egy egyedi terv elkészítési díja 40 €, amely előre fizetendő. Ha egy korábbi mintánk közül választasz, a tervezési díjat elengedjük."
+    },
+    "STEP3": {
+      "TITLE": "Festés és gyártás",
+      "DESC": "A megrendelés jóváhagyása után a gyártás körülbelül 15–20 munkanapot vesz igénybe. Ha konkrét határidőre van szükséged, kérjük, jelezd előre, hogy a rendelésedet ennek megfelelően ütemezhessük.",
+      "NOTE": "Fontos: A terv jóváhagyása és a rendelés leadása után a minta végleges, azon már nem tudunk módosítani."
+    },
+    "STEP4": {
+      "TITLE": "Fizetés és szállítás",
+      "DESC": "A fizetés két szakaszban történik:",
+      "LIST": {
+        "ITEM1": "A kapcsolatfelvétel és az ötletek leadása után, de még a tervezési fázis előtt: Egyszeri tervezési díj banki átutalással a „Kapcsolat” menüpontban megadott számlaszámra.",
+        "ITEM2": "A látványterv elkészülte és jóváhagyása után, de még a gyártás megkezdése előtt: A cipő árának, a szállítási költségnek és a gyártási díjnak a kiegyenlítése banki átutalással."
+      },
+      "NOTE": "Minden elkészült cipőt gondosan becsomagolunk és futárszolgálattal küldünk el az általad megadott címre."
+    }
+  },
+
   "ORDER": {
-    "TITLE": "Készen állsz a kitűnésre?",
+    "TITLE": "Készen állsz, hogy kitűnj a tömegből?",
     "SUBTITLE": "Változtasd a sneakeredet egyedi műalkotássá.",
     "BUTTON": "Tervezés indítása"
   },
   "QUOTEFORM": {
     "ACCORDION_TITLE": "Kérj ajánlatot",
-    "ACCORDION_SUBTITLE": "Töltsd ki az űrlapot, és mi elkészítjük neked az egyedi tervedet.",
-    "SHOETYPE_PLACEHOLDER": "Cipő típusa (pl. Jordan 1)",
+    "ACCORDION_SUBTITLE": "Töltsd ki az űrlapot, és mi elkészítjük neked az egyedi cipőtervedet.",
+    "SHOETYPE_LABEL": "Cipő típusa",
+    "SHOESIZE_LABEL": "Cipőméret",
+    "SHOETYPE_TOOLTIP": "Kérjük, a lehető legpontosabban adja meg a cipő modelljét (pl. Nike Air Force 1 ’07)!",
+    "SHOESIZE_TOOLTIP": "Kérjük, a pontos (EU-s) méretét adja meg! Mivel egyedi gyártású termékről van szó, visszaküldésre és cserére nincs lehetőség.",
+    "SHOETYPE_PLACEHOLDER": "Cipő típusa (pl. Nike Air Force 1 ’07)",
     "SHOESIZE_PLACEHOLDER": "Cipőméret (EU)",
     "TEXTAREA_PLACEHOLDER": "Kérjük, írj pár részletet álmaid sneakeréről...",
+    "TEXTAREA_LABEL": "Design részletei",
+    "TEXTAREA_TOOLTIP": "Írja le elképzelését a lehető legrészletesebben – színek, stílus, téma, koncepciók. Minél pontosabb a leírás, annál jobban életre tudjuk kelteni az egyedi tervet. Ha egy konkrét dátumra van szüksége a cipőre, kérjük, itt jelezze.",
+    "FILEUPLOAD_LABEL": "Referenciaképek feltöltése",
+    "FILEUPLOAD_TOOLTIP": "Ha rendelkezik referenciaképekkel, vázlatokkal vagy inspirációval a tervhez, kérjük, töltse fel őket ide. Ez segít nekünk jobban megérteni az elképzelését, és olyan designt alkotni, amely megfelel az elvárásainak.",
     "ACCORDION_TITLE1": "Termék konfiguráció",
     "ACCORDION_TITLE2": "Ügyfél adatai",
     "ACCORDION_TITLE3": "Számlázási cím",
     "ACCORDION_LABEL1": "A szállítási cím megegyezik",
     "ACCORDION_TITLE4": "Szállítási cím",
+    "FINALIZE_ORDER_TEXT1": "A terv jóváhagyása után leadott összes rendelés végleges. A termék egyedi és személyre szabott jellege miatt nem áll módunkban visszatérítést, cserét vagy garanciát biztosítani. Minden pár cipő egyedi technikával, kézzel festett alkotás. Mint minden lábbeli esetében, az idővel jelentkező természetes elhasználódás és kopás itt is előfordulhat.",
+    "FINALIZE_ORDER_TEXT2": "A tartósság megőrzése érdekében a cipőket tilos mosógépben tisztítani. Az űrlap beküldése után felülvizsgáljuk kérését, majd e-mailben megküldjük a végleges árajánlatot és a várható elkészítési időt.",
+    "FINALIZE_ORDER_TEXT3": "Amennyiben a kért határidőt nem tudjuk vállalni, e-mailben értesíteni fogjuk.",
     "GDPR1": "Elolvastam az ",
-    "GDPR2": "Adatkezelési tájékoztatót",
-    "GDPR3": " és hozzájárulok adataim kezeléséhez az ajánlatkészítés céljából.",
+    "GDPR2": "Adatkezelési tájékoztató",
     "GDPR_WARNNG": "A folytatáshoz el kell fogadnod az adatkezelési tájékoztatót.",
     "SENDING": "Küldés...",
     "BUTTON_1": "Küldés",
@@ -117,7 +156,7 @@
     "SUBJECT": "Tárgy",
     "MESSAGE": "Üzenet",
     "AGGREE1": "Elfogadom az ",
-    "AGGREE2": "Adatkezelési tájékoztatót",
+    "AGGREE2": "Adatkezelési tájékoztató",
     "AGGREE3": "A folytatáshoz el kell fogadnod a feltételeket.",
     "SENDING": "Üzenet küldése",
     "GREETING": "Köszönjük!",
@@ -137,5 +176,40 @@
     "DELIVERY": "Szállítás és visszaküldés",
     "GUARANTEE": "Garancia",
     "CONTACT": "Kapcsolat"
+  },
+  "IMPRINT": {
+    "TITLE": "Impresszum",
+    "RESP_CONTENT": "Tartalomért felelős",
+    "CONTACT_TEXT": "Kapcsolat",
+    "NAME": "Reka Judit Molnar-Gelei",
+    "ADDRESS1": "Margarethen 87",
+    "ADDRESS2": "4020 Linz, Österreich",
+    "EMAIL_TEXT": "E-Mail",
+    "WEB_TEXT": "Honlap",
+    "TEL_TEXT": "Telefon",
+    "VAT_TEXT": "Közösségi adószám",
+    "PHONE": "+43 690 1032 1083",
+    "WEB": "crazydogcustom.com",
+    "EMAIL": "info@crazydogcustom.com",
+    "VAT": "ATU79768002",
+    "BUSINESS_INFO_TEXT": "Vállalkozási adatok",
+    "SUPERVISOR_AUTH_TEXT": "Felügyelő hatóság",
+    "MEMBERSHIP_TEXT": "Tagság",
+    "PROFESSIONAL_REGULATION_TEXT": "Szakmai szabályzat",
+    "SUPERVISOR_AUTH": "Magistrat Linz",
+    "MEMBERSHIP": "WKO Oberösterreich",
+    "PROFESSIONAL_REGULATION": "Iparűzési törvény",
+    "BANK_DETAILS_TEXT": "Banki adatok",
+    "BANK_TEXT": "Bank",
+    "BANK_NAME": "Sparkasse",
+    "IBAN_TEXT": "IBAN",
+    "IBAN": "AT13 2032 0324 0286 3629",
+    "BIC_TEXT": "BIC",
+    "BIC": "ASPKAT2LXXX",
+    "BUTTON_TEXT": "Vissza a kezdőlapra"
+  },
+  "PRIVACY": {
+    "TITLE": "Adatvédelmi nyilatkozat",
+    "BUTTON_TEXT": "Vissza a kezdőlapra"
   }
 }

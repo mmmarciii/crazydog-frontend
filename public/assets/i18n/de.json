@@ -29,6 +29,34 @@
     "PROD3_DET_4": "Individuelle Illustrationen, Logos, Porträts und komplexe Designs"
 
   },
+  "ORDERPROCESS": {
+    "TITLE": "Bestellablauf",
+    "SUBTITLE": "Von der Idee zur Realität in 4 einfachen Schritten",
+    "STEP1": {
+      "TITLE": "Erste Schritte",
+      "DESC": "Kontaktiere uns über das Formular, Instagram oder per E-Mail. Je nach Verfügbarkeit dauert die Beschaffung der Schuhe in der Regel 1–2 Wochen. Wenn wir die Schuhe für dich kaufen sollen, muss der Schuhpreis im Voraus bezahlt werden. Falls du bereits ein Paar besitzt, das du bemalt haben möchtest, können wir auch damit arbeiten, sofern der Schuh für das gewünschte Design geeignet ist.",
+      "NOTE": "Wichtig: Bitte gib beim Ausfüllen des Formulars das Schuhmodell so genau wie möglich an (z. B. Nike Air Force 1 '07)."
+    },
+    "STEP2": {
+      "TITLE": "Design",
+      "DESC": "Basierend auf deinen Angaben erstellen wir ein digitales Mockup deiner Schuhe. So kannst du genau sehen, wie das fertige Design auf dem gewählten Modell aussehen wird. Kleinere Änderungen sind inklusive; die Erstellung eines komplett neuen Konzepts ist jedoch mit einer zusätzlichen Gebühr verbunden.",
+      "NOTE": "Preis: Designgebühr für 1 individuelles Konzept 40 €, im Voraus zahlbar. Wenn du dich für eines unserer bereits bestehenden Designs entscheidest, entfällt die Designgebühr."
+    },
+    "STEP3": {
+      "TITLE": "Bemalung & Produktion",
+      "DESC": "Sobald deine Bestellung genehmigt ist, dauert die Produktion etwa 15–20 Werktage. Wenn du eine bestimmte Frist hast, lass es uns bitte im Voraus wissen, damit wir deine Bestellung entsprechend einplanen können.",
+      "NOTE": "Wichtig: Nachdem das Design genehmigt und die Bestellung aufgegeben wurde, ist sie final und kann nicht mehr geändert werden."
+    },
+    "STEP4": {
+      "TITLE": "Zahlung & Versand",
+      "DESC": "Die Zahlung erfolgt in zwei Schritten:",
+      "LIST": {
+        "ITEM1": "Nach der Kontaktaufnahme und Übermittlung deiner Ideen, aber vor der Designphase: Einmalige Designgebühr per Banküberweisung auf das unter „Kontakt“ aufgeführte Konto.",
+        "ITEM2": "Nachdem dein Design fertiggestellt und genehmigt wurde, aber vor Produktionsbeginn: Zahlung des Schuhpreises, der Versandkosten und der Produktionsgebühr per Banküberweisung."
+      },
+      "NOTE": "Alle fertigen Schuhe werden sorgfältig verpackt und per Kurier an die von dir angegebene Adresse versandt."
+    }
+  },
   "ORDER": {
     "TITLE": "Bereit, aus der Masse herauszustechen?",
     "SUBTITLE": "Verwandle deine Sneaker in ein einzigartiges Meisterwerk.",
@@ -37,17 +65,27 @@
   "QUOTEFORM": {
     "ACCORDION_TITLE": "Angebot anfordern",
     "ACCORDION_SUBTITLE": "Fülle das Formular aus und wir melden uns mit einem individuellen Plan bei dir.",
-    "SHOETYPE_PLACEHOLDER": "Schuhmodell (z.B. Jordan 1)",
+    "SHOETYPE_LABEL": "Schuhmodell",
+    "SHOESIZE_LABEL": "Schuhgröße",
+    "SHOETYPE_TOOLTIP": "Bitte geben Sie das Schuhmodell so genau wie möglich an (z. B. Nike Air Force 1 ’07).",
+    "SHOESIZE_TOOLTIP": "Bitte geben Sie Ihre genaue Größe (EU) an. Da es sich um maßgefertigte Schuhe handelt, sind Rückgabe und Umtausch ausgeschlossen.",
+    "SHOETYPE_PLACEHOLDER": "Schuhmodell (z.B. Nike Air Force 1 '07)",
     "SHOESIZE_PLACEHOLDER": "Schuhgröße (EU)",
     "TEXTAREA_PLACEHOLDER": "Bitte teile uns einige Details über deinen Traum-Sneaker mit...",
+    "TEXTAREA_LABEL": "Design-Details",
+    "TEXTAREA_TOOLTIP": "Beschreiben Sie Ihre Idee so detailliert wie möglich – Farben, Stil, Thema, Konzepte. Je präziser Ihre Beschreibung ist, desto besser können wir Ihr individuelles Design umsetzen. Falls Sie die Schuhe bis zu einem bestimmten Datum benötigen, geben Sie dies bitte hier an.",
+    "FILEUPLOAD_LABEL": "Referenzbilder hochladen",
+    "FILEUPLOAD_TOOLTIP": "Wenn Sie Referenzbilder, Skizzen oder Inspirationen für Ihr Design haben, laden Sie diese bitte hier hoch. Dies hilft uns, Ihre Vision besser zu verstehen und ein Design zu entwerfen, das Ihren Erwartungen entspricht.",
     "ACCORDION_TITLE1": "Produktkonfiguration",
     "ACCORDION_TITLE2": "Kundeninformationen",
     "ACCORDION_TITLE3": "Rechnungsadresse",
     "ACCORDION_LABEL1": "Lieferadresse ist identisch",
     "ACCORDION_TITLE4": "Lieferadresse",
+    "FINALIZE_ORDER_TEXT1": "Alle Bestellungen, die nach der Freigabe des Designs aufgegeben werden, sind verbindlich. Aufgrund der individuellen Anfertigung und Personalisierung des Produkts bieten wir keine Rückerstattung, keinen Umtausch und keine Gewährleistung an. Jedes Paar wird mit einzigartigen Techniken handbemalt. Wie bei allen Fußbekleidungen kann im Laufe der Zeit natürlicher Verschleiß auftreten.",
+    "FINALIZE_ORDER_TEXT2": "Um die Haltbarkeit zu gewährleisten, dürfen die Schuhe nicht in der Waschmaschine gereinigt werden. Nach dem Absenden des Formulars werden wir Ihre Anfrage prüfen und Ihnen das endgültige Angebot sowie die voraussichtliche Produktionszeit per E-Mail zusenden.",
+    "FINALIZE_ORDER_TEXT3": "Sollte Ihr gewünschter Termin nicht realisierbar sein, werden wir Sie per E-Mail benachrichtigen.",
     "GDPR1": "Ich habe die ",
     "GDPR2": "Datenschutzerklärung",
-    "GDPR3": " gelesen und erkläre mich mit der Verarbeitung meiner Daten zum Zweck der Angebotserstellung einverstanden.",
     "GDPR_WARNNG": "Du musst der Datenschutzerklärung zustimmen, um fortzufahren.",
     "SENDING": "Wird gesendet...",
     "BUTTON_1": "Absenden",
@@ -138,5 +176,40 @@
     "DELIVERY": "Versand & Rückgabe",
     "GUARANTEE": "Garantie",
     "CONTACT": "Kontakt"
+  },
+  "IMPRINT": {
+    "TITLE": "Impressum",
+    "RESP_CONTENT": "Für den Inhalt verantwortlich",
+    "CONTACT_TEXT": "Kontakt",
+    "NAME": "Reka Judit Molnar-Gelei",
+    "ADDRESS1": "Margarethen 87",
+    "ADDRESS2": "4020 Linz, Österreich",
+    "EMAIL_TEXT": "E-Mail",
+    "WEB_TEXT": "Webseite",
+    "TEL_TEXT": "Telefon",
+    "VAT_TEXT": "UID-Nummer",
+    "PHONE": "+43 690 1032 1083",
+    "WEB": "crazydogcustom.com",
+    "EMAIL": "info@crazydogcustom.com",
+    "VAT": "ATU79768002",
+    "BUSINESS_INFO_TEXT": "Gewerbeinformationen",
+    "SUPERVISOR_AUTH_TEXT": "Aufsichtsbehörde",
+    "MEMBERSHIP_TEXT": "Mitgliedschaft",
+    "PROFESSIONAL_REGULATION_TEXT": "Berufsrecht",
+    "SUPERVISOR_AUTH": "Magistrat Linz",
+    "MEMBERSHIP": "WKO Oberösterreich",
+    "PROFESSIONAL_REGULATION": "Gewerbeordnung",
+    "BANK_DETAILS_TEXT": "Bankverbindung",
+    "BANK_TEXT": "Bank",
+    "BANK_NAME": "Sparkasse",
+    "IBAN_TEXT": "IBAN",
+    "IBAN": "AT13 2032 0324 0286 3629",
+    "BIC_TEXT": "BIC",
+    "BIC": "ASPKAT2LXXX",
+    "BUTTON_TEXT": "Zurück zur Startseite"
+  },
+  "PRIVACY": {
+    "TITLE": "Datenschutz",
+    "BUTTON_TEXT": "Zurück zur Startseite"
   }
 }

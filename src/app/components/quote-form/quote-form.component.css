@@ -206,7 +206,6 @@ textarea.is-invalid {
   height: 18px;
   border: 1px solid #cbd5e1;
   border-radius: 4px;
-  margin-right: 8px;
   transition: all 0.2s ease;
 }
 
@@ -222,6 +221,10 @@ textarea.is-invalid {
 .form-check-input:focus {
   box-shadow: 0 0 0 3px rgba(247, 137, 16, 0.1);
   border-color: #f78910;
+}
+
+#gdprConsent, #sameAsShipping{
+  margin-right: 8px;
 }
 
 /* Success Message */
