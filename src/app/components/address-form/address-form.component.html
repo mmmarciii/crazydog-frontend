@@ -1,9 +1,9 @@
 <div class="row mb-3" [formGroup]="parentForm">
     <div class="col-md-4">
         <select class="form-select" [formControlName]="prefix + 'Country'">
-        <option value="Austria">{{'ADDRESSFORM.AUSTRIA' | translate}}</option>
-        <option value="Germany">{{'ADDRESSFORM.GERMANY' | translate}}</option>
-        <option value="Hungary">{{'ADDRESSFORM.HUNGARY' | translate}}</option>
+            <option *ngFor="let country of countries" [value]="country">
+            {{ 'ADDRESSFORM.' + country.toUpperCase().replace(' ', '_') | translate }}
+            </option>
         </select>
     </div>
     <div class="col-md-4">

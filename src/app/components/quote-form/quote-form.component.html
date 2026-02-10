@@ -52,12 +52,13 @@
             <div class="col-md-6 mb-3">
               <label for="shoeType" class="form-label d-flex align-items-center fw-bold">
                 {{'QUOTEFORM.SHOETYPE_LABEL' | translate}}
-               <i class="bi bi-info-circle info-icon ms-2" 
-                  data-bs-toggle="tooltip" 
-                  data-bs-placement="top" 
-                  data-bs-custom-class="custom-tooltip"
-                  title="{{ 'QUOTEFORM.SHOETYPE_TOOLTIP' | translate }}">
-                </i>
+              <i class="bi bi-info-circle info-icon ms-2" 
+                style="cursor: pointer;"
+                tabindex="0"
+                data-bs-toggle="popover" 
+                data-bs-placement="top"
+                title="{{ 'QUOTEFORM.SHOETYPE_TOOLTIP' | translate }}">
+              </i>
               </label>
               <input type="text" class="form-control"
               placeholder="{{ 'QUOTEFORM.SHOETYPE_PLACEHOLDER' | translate }}" 
@@ -75,9 +76,10 @@
               <label for="shoeSize" class="form-label d-flex align-items-center fw-bold">
                 {{'QUOTEFORM.SHOESIZE_LABEL' | translate}}
                 <i class="bi bi-info-circle info-icon ms-2" 
-                  data-bs-toggle="tooltip" 
-                  data-bs-placement="top" 
-                  data-bs-custom-class="custom-tooltip"
+                  style="cursor: pointer;"
+                  tabindex="0"
+                  data-bs-toggle="popover" 
+                  data-bs-placement="top"
                   title="{{ 'QUOTEFORM.SHOESIZE_TOOLTIP' | translate }}">
                 </i>
               </label>
@@ -96,9 +98,10 @@
           <label for="upload" class="form-label d-flex align-items-center fw-bold">
             {{'QUOTEFORM.FILEUPLOAD_LABEL' | translate}}
             <i class="bi bi-info-circle info-icon ms-2" 
-              data-bs-toggle="tooltip" 
-              data-bs-placement="top" 
-              data-bs-custom-class="custom-tooltip"
+              style="cursor: pointer;"
+              tabindex="0"
+              data-bs-toggle="popover" 
+              data-bs-placement="top"
               title="{{ 'QUOTEFORM.FILEUPLOAD_TOOLTIP' | translate }}">
             </i>
           </label>
@@ -107,9 +110,10 @@
           <label for="notes" class="form-label d-flex align-items-center fw-bold">
             {{'QUOTEFORM.TEXTAREA_LABEL' | translate}}
             <i class="bi bi-info-circle info-icon ms-2" 
-              data-bs-toggle="tooltip" 
-              data-bs-placement="top" 
-              data-bs-custom-class="custom-tooltip"
+              style="cursor: pointer;"
+              tabindex="0"
+              data-bs-toggle="popover" 
+              data-bs-placement="top"
               title="{{ 'QUOTEFORM.TEXTAREA_TOOLTIP' | translate }}">
             </i>
           </label>

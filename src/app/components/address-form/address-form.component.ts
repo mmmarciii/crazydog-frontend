@@ -5,10 +5,11 @@ import { of } from 'rxjs';
 import { catchError, debounceTime, distinctUntilChanged, filter, switchMap } from 'rxjs/operators';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { TranslateModule } from '@ngx-translate/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-address-form',
-  imports: [ReactiveFormsModule, TranslateModule],
+  imports: [CommonModule, ReactiveFormsModule, TranslateModule],
   templateUrl: './address-form.component.html',
   styleUrl:'../quote-form/quote-form.component.css'
 })
@@ -20,12 +21,55 @@ export class AddressFormComponent implements OnInit{
   private destroyRef = inject(DestroyRef);
 
   private countryCodes: { [key: string]: string } = {
-    'Hungary': 'HU',
+    'Albania': 'AL',
+    'Andorra': 'AD',
     'Austria': 'AT',
-    'Germany': 'DE'
+    'Belarus': 'BY',
+    'Belgium': 'BE',
+    'Bosnia': 'BA',
+    'Bulgaria': 'BG',
+    'Croatia': 'HR',
+    'Cyprus': 'CY',
+    'Czech Republic': 'CZ',
+    'Denmark': 'DK',
+    'Estonia': 'EE',
+    'Finland': 'FI',
+    'France': 'FR',
+    'Germany': 'DE',
+    'Greece': 'GR',
+    'Hungary': 'HU',
+    'Iceland': 'IS',
+    'Ireland': 'IE',
+    'Italy': 'IT',
+    'Latvia': 'LV',
+    'Liechtenstein': 'LI',
+    'Lithuania': 'LT',
+    'Luxembourg': 'LU',
+    'Malta': 'MT',
+    'Moldova': 'MD',
+    'Monaco': 'MC',
+    'Montenegro': 'ME',
+    'Netherlands': 'NL',
+    'North Macedonia': 'MK',
+    'Norway': 'NO',
+    'Poland': 'PL',
+    'Portugal': 'PT',
+    'Romania': 'RO',
+    'San Marino': 'SM',
+    'Serbia': 'RS',
+    'Slovakia': 'SK',
+    'Slovenia': 'SI',
+    'Spain': 'ES',
+    'Sweden': 'SE',
+    'Switzerland': 'CH',
+    'Ukraine': 'UA',
+    'United Kingdom': 'GB'
   };
 
+  countries: string[] = [];
+
   ngOnInit() {
+    this.countries = Object.keys(this.countryCodes);
     this.setupZipLookup();
   }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ProductService } from '../../services/product.service'; 
@@ -7,6 +7,8 @@ import { ClientInfoComponent } from '../client-info/client-info.component';
 import { AddressFormComponent } from '../address-form/address-form.component';
 import { QuoteFormService } from '../../services/quote-form.service';
 import { TranslateModule } from '@ngx-translate/core';
+
+declare var bootstrap: any;
 
 @Component({
   selector: 'app-quote-form',
@@ -22,7 +24,7 @@ import { TranslateModule } from '@ngx-translate/core';
   templateUrl: './quote-form.component.html',
   styleUrl: './quote-form.component.css'
 })
-export class QuoteFormComponent implements OnInit {
+export class QuoteFormComponent implements OnInit, AfterViewInit {
   quoteForm!: FormGroup;
   productItems: any[] = [];
   isSent = false;
@@ -34,6 +36,20 @@ export class QuoteFormComponent implements OnInit {
     private productService: ProductService,
     private quoteService: QuoteFormService,
   ) {}
+
+  ngAfterViewInit() {
+      setTimeout(() => {
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+        popoverTriggerList.forEach(el => {
+          new bootstrap.Popover(el, {
+            trigger: 'focus',
+            content: () => {
+              return el.getAttribute('data-bs-content') || el.getAttribute('title');
+            }
+          });
+        });
+      });
+    }
 
   ngOnInit(): void {
     
