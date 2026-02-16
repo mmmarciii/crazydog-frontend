@@ -196,7 +196,8 @@ export class QuoteFormComponent implements OnInit, AfterViewInit {
           sameAsShipping: true,
           billingCountry: 'Austria',
           shippingCountry: 'Austria',
-          gdprConsent: false
+          gdprConsent: false,
+          termsConsent: false
         });
       }, 1500); 
       return;
@@ -225,7 +226,8 @@ export class QuoteFormComponent implements OnInit, AfterViewInit {
           sameAsShipping: true,
           billingCountry: 'Austria',
           shippingCountry: 'Austria',
-          gdprConsent: false
+          gdprConsent: false,
+          termsConsent: false
         });
         this.uploadedFiles = [];
       },

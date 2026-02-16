@@ -110,7 +110,8 @@ class QuoteHandler
             '{{shoeType}}'            => $this->data['shoeType'] ?? '',
             '{{shoeSize}}'            => $this->data['shoeSize'] ?? '',
             '{{notes}}'               => nl2br($this->data['notes'] ?? ''),
-            '{{gdpr_info}}'           => "<strong>GDPR Consent:</strong> $consentText<br>" .
+            '{{gdpr_info}}'           => "<strong>GDPR Consent:</strong> $consentText<br>",
+            '{{terms_info}}'          => "<strong>Terms & Conditions:</strong> Accepted<br>" .
                 "<strong>IP Address:</strong> $userIp<br>" .
                 "<strong>Timestamp:</strong> $timestamp",
             '{{fileLinks}}'  => ($this->fileLinks ?: "<li>No uploaded pictures</li>")
