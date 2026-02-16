@@ -9,7 +9,7 @@
 
         <div class="row g-4 px-3 px-md-5 py-4">
             @for (item of productItems; track item.name) {
-            <div class="col-12 col-md-6 col-lg-4">
+            <div class="col-12 col-lg-4">
                 <div class="card h-100 product-card">
                     <div class="product-img-container">
                          <img [src]="item.link" class="card-img-top" [alt]="item.name">
@@ -25,6 +25,9 @@
                             <span class="badge-item"><i class="bi bi-brush"></i> {{ item.areas | translate }}</span>
                             <span class="badge-item"><i class="bi bi-layers"></i> {{ item.patterns | translate }}</span>
                             <span class="badge-item"><i class="bi bi-fonts"></i> {{ item.desing | translate }}</span>
+                        </div>
+                        <div class="col-12 text-center mt-4 mb-2">
+                            <span class="price-tag col-4">{{ item.price }}€</span >
                         </div>
                     </div>
                 </div>

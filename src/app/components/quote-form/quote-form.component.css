@@ -112,7 +112,6 @@ textarea.is-invalid {
   border-radius: 12px;
   padding: 16px;
   transition: all 0.3s ease;
-  background-color: #f8fafc;
 }
 
 .product-select:hover {
@@ -223,8 +222,47 @@ textarea.is-invalid {
   border-color: #f78910;
 }
 
-#gdprConsent, #sameAsShipping{
+#gdprConsent, #sameAsShipping, #termsConsent {
   margin-right: 8px;
+}
+
+.price-tag {
+    background: linear-gradient(45deg, #f78910, #ffae42);
+    color: white!important;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    display: inline-block;
+    box-shadow: 0 2px 8px rgba(247, 137, 16, 0.3);
+    z-index: 1;
+    animation: _ngcontent-ng-c1147851287_pulse-orange 2s infinite;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.price-tag:hover {
+    transform: scale(1.05);
+}
+
+.badge-item {
+    background-color: #fff4e6;
+    color: #f78910!important;
+    padding: 6px 12px;
+    border-radius: 12px; 
+    font-size: 0.85rem;
+    font-weight: 500;
+    display: flex;
+    align-items: flex-start; 
+    border: 1px solid rgba(247, 137, 16, 0.1);
+    white-space: normal;     
+    word-wrap: break-word;   
+    max-width: 100%;          
+}
+
+.badge-item i {
+    margin-right: 8px;
+    margin-top: 2px;        
+    flex-shrink: 0;           
 }
 
 /* Success Message */

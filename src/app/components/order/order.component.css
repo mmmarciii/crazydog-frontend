@@ -33,31 +33,6 @@
     }
 }
 
-.shimmer {
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(
-        to right,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(255, 255, 255, 0.4) 50%,
-        rgba(255, 255, 255, 0) 100%
-    );
-    transform: skewX(-25deg);
-    transition: none;
-}
-
-.btn-glow-orange:hover .shimmer {
-    animation: shimmer-effect 0.8s ease-in-out;
-}
-
-@keyframes shimmer-effect {
-    100% {
-        left: 150%;
-    }
-}
 
 .btn-glow-orange:hover {
     transform: scale(1.08) translateY(-3px);

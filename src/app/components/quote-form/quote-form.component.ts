@@ -67,7 +67,7 @@ export class QuoteFormComponent implements OnInit, AfterViewInit {
       // Product Selection
       shoeSource: ['Basic', Validators.required],
       shoeType: ['', Validators.required],
-      shoeSize: ['', [Validators.required, Validators.pattern('^[0-9]*$')]], // Csak számok
+      shoeSize: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       notes: [''],
       // Client Info
       firstName: ['', Validators.required],
@@ -89,7 +89,8 @@ export class QuoteFormComponent implements OnInit, AfterViewInit {
       shippingCity: [''],
       shippingStreet: [''],
       shippingHouseNumber: [''],
-      gdprConsent: [false, Validators.requiredTrue]
+      gdprConsent: [false, Validators.requiredTrue],
+      termsConsent: [false, Validators.requiredTrue]
     });
   }
 

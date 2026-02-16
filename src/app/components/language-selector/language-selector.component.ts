@@ -11,11 +11,19 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
 })
 export class LanguageSelectorComponent {
   private translate = inject(TranslateService);
-  currentLang = localStorage.getItem('lang') || 'hu';
+  /*currentLang = localStorage.getItem('lang') || 'de';*/
+  currentLang = 'de';
+
+  ngOnInit() {    
+    this.translate.setDefaultLang('de');
+    this.translate.use('de').subscribe();
+  }
 
   changeLang(lang: string) {
     this.currentLang = lang;
-    this.translate.use(lang);
+
+    this.translate.use(lang).subscribe();
+    
     localStorage.setItem('lang', lang);
   }
 }

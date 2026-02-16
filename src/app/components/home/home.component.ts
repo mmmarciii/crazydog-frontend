@@ -25,7 +25,7 @@ import { CookieBannerComponent } from '../cookie-banner/cookie-banner.component'
         /*InstaFeedComponent,*/
         ContactComponent,
         FooterComponent,
-        CookieBannerComponent
+        /*CookieBannerComponent*/
       ],
     templateUrl: './home.component.html',
     styleUrl: './home.component.css'
